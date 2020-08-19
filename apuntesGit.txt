@@ -57,6 +57,12 @@ hacer un git pull antes para jalar cambios, sino puede sobreescribir cambios del
 
 === para fusionar el codigo de la rama master con el de una rama ==== 
 git merge nombre_rama_secundaria
+ejemplos:
+se creo una rama agregando lineas y se hizo nuevos cambios en esa rama ojo que ya no es la master
+o	Comando: git merge agregando_lineas
+	Con esto mezclamos el código de la rama principal con la rama agreando_lineas
+•	Rama afectada: master
+•	Rama no afectada: agreando_lineas
 
 
 
