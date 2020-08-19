@@ -1,0 +1,64 @@
+Concepto importante:
+	- Git tiene 3 estados
+		- working dyrectory (modified)
+			- que hay aqui?
+				- codigo modificado, nuevos archivos, nuevas carpetas, etc.. todo lo nuevo 
+			- para pasar al estado staged
+				- se necesita hacer un git add archivo_modificado, para una serie de archivos: git add --all
+		- stagin area (staged)
+			- area lista para pasar al almacenamiento local 
+			- par apasar al commited  se ejecuta: git commit -m "comentario"
+		- local repository (commited)
+			- aca ya tenemos todos los cambios listos para subirlso a un alojamiento como puede ser Github
+			- para enviar la informacion local a github
+				- git push origin master
+					- origin nombre del repositorio
+					- master rama por defecto en la que estamos trabajandop
+		
+
+
+============= para trabajar en un respositorio desde nuestra maquina ======================
+git clone permite que clones o descargues un repositorio a tu computador.
+git clone urlRepositorio
+
+git remote permite modificar o configurar el repositorio remoto, puedes tener varios remote para enviar a diferentes repositorios.
+--- comando ---
+git remote add <nombre_repo_propio> <nombre_rama>
+ejemplos:
+- git remote add origin master
+- git remote add origin dbas
+
+
+============= para ver las ramas ============
+git branch
+
+=============  para movernos entre ramas  (si ya esta creada la rama que voy a utilizar) y si no existe la crea ==================
+--probar primero con este metodo
+actualizo la rama: git pull origin nombre_rama
+me cambio a la rama: git checkout nombre_rama
+
+-- sino si probar con este otro (por si cuando demos git branch si aparace la rama) 
+Git checkout -b nombre_rama.
+
+
+============= para crear una rama  ==================
+Git Branch rama_nueva;
+
+============= Para jalar los cambios de un respositorio en github y actualizarlos en mi maquina ==================
+git pull origin nombre_rama
+origin: nombre del repositorio de mi maquina o computador
+nombre_rama : rama en la que estamos trabajando
+
+
+============= para subir cambios a la rama  ==================
+git push origin nombre_rama
+recomendaciones:
+hacer un git pull antes para jalar cambios, sino puede sobreescribir cambios del otro programador
+
+=== para fusionar el codigo de la rama master con el de una rama ==== 
+git merge nombre_rama_secundaria
+
+
+
+
+
