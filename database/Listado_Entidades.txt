@@ -11,8 +11,12 @@
 
 ----------- Alejandro -----------
 - seccion
+-->ID_secc
+-->Nombre
 - auxiliar
 - curso_aprobado
+-->Fecha_aprobado
+-->Nota
 - desasignacion
 - rol
 - laboratorio
