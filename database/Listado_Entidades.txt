@@ -1,12 +1,31 @@
+---------- Randolph ------------
 - curso
 - catedratico
 - salon
 - edificio
-- semestre
-- escuela
 - congreso
 - estudiante
-- asignacion
+- semestre
+- escuela
+- departamento
+
+----------- Alejandro -----------
 - seccion
 - auxiliar
-- curso aprobado
+- curso_aprobado
+- desasignacion
+- rol
+- laboratorio
+- retrasada
+- escuela_vacaciones
+- cursos_repitencia
+
+
+
+
+---- Posibles atributos ------
+- horario
+- 
+
+--- con dudas -----
+- cupo de curso
