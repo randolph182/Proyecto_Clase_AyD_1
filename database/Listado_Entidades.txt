@@ -1,0 +1,12 @@
+- curso
+- catedratico
+- salon
+- edificio
+- semestre
+- escuela
+- congreso
+- estudiante
+- asignacion
+- seccion
+- auxiliar
+- curso aprobado
