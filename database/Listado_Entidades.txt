@@ -10,19 +10,36 @@
 - departamento
 
 ----------- Alejandro -----------
-- seccion
--->ID_secc
--->Nombre
-- auxiliar
-- curso_aprobado
--->Fecha_aprobado
--->Nota
-- desasignacion
-- rol
-- laboratorio
-- retrasada
-- escuela_vacaciones
-- cursos_repitencia
+**SECCION*
+--->>ID_seccion
+--->>Nombre
+**AUXILIAR**
+--->> Carnet
+--->> Nombre
+**CURSO APROBADO**
+--->>Codigo
+--->>Fecha_aprobado
+--->>Nota
+**DESASIGNACION**
+--->>ID_desasignacion
+--->>Fecha_deasignacion
+**ROL**
+--->>ID_rol
+--->>Tipo
+--->>Descripcion
+**LABORATORIO**
+--->>ID_lab
+--->>horario
+--->>seccion
+**RETRASADA**
+--->>ID_retrasada
+--->>Curso
+--->>Fecha_asignacion
+**ESCUELA_VACACIONES
+--->>ID_escuela
+**CURSO_REPITENCIA**
+--->>Codigo
+--->>Fecha_asignacion
 
 
 
