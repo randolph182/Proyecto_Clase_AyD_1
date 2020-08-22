@@ -4,15 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AsignacionComponent } from './components/asignacion/asignacion.component';
-import { HeaderPrincipalComponent } from './components/header-principal/header-principal.component';
-import { RegistroUsuarioComponent } from './Components/registro-usuario/registro-usuario.component';
+import { EncabezadoComponent } from './components/encabezado/encabezado.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AsignacionComponent,
-    HeaderPrincipalComponent,
-    RegistroUsuarioComponent
+    EncabezadoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
