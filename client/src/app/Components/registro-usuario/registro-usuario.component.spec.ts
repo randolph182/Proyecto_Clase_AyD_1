@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderPrincipalComponent } from './header-principal.component';
+import { RegistroUsuarioComponent } from './registro-usuario.component';
 
-describe('HeaderPrincipalComponent', () => {
-  let component: HeaderPrincipalComponent;
-  let fixture: ComponentFixture<HeaderPrincipalComponent>;
+describe('RegistroUsuarioComponent', () => {
+  let component: RegistroUsuarioComponent;
+  let fixture: ComponentFixture<RegistroUsuarioComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderPrincipalComponent ]
+      declarations: [ RegistroUsuarioComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderPrincipalComponent);
+    fixture = TestBed.createComponent(RegistroUsuarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
