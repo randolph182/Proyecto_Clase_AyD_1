@@ -41,6 +41,20 @@
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_semestre" id="2246085D-ECE0-D825-C877-DB09F3D5E140">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:39:34 UTC</createdTime>
+<generatorID>721A78F4-5532-3717-FE99-81A9AB090790</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>286BB245-2C0A-A4B8-15F5-CAC332CAD02D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="1A907A04-520E-2A0C-E916-E69033154BA8" name="Escuela_vacaciones PK">

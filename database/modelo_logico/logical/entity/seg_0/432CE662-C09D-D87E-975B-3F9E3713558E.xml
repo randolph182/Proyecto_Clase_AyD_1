@@ -14,4 +14,58 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_estudiante" id="4C004B7A-E132-91B8-BC8D-C3C3BFAC9708">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:35:08 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="88F685E7-A882-2B05-72BB-A123B09357B7">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:35:25 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellido" id="49DA951A-B7C1-F758-FA38-2E56BC8B4143">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:35:39 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CFB72B7B-9716-8F73-5072-BB70CBB63749" name="Estudiante PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:35:23 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4C004B7A-E132-91B8-BC8D-C3C3BFAC9708</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

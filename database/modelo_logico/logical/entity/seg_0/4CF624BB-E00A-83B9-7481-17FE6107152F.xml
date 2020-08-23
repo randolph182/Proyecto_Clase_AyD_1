@@ -52,6 +52,21 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_seccion" id="8838E0E3-6A94-7C41-FB26-0CAE9C114F90">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:05:36 UTC</createdTime>
+<generatorID>E9474D71-11A2-8C8D-9198-87D1667D0E3E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>11D8F417-5AB1-9AEF-007E-4677976A8419</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A8E5DFBA-07EB-19BA-E740-F2FF2A426C51" name="Laboratorio PK">

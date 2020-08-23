@@ -14,4 +14,123 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_congreso" id="127AC065-5A3E-AAC4-9A0A-53E0C5EB5168">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:34:07 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="EB041D23-E014-254E-44C0-38E4355C7724">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:34:28 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ubicacion" id="C85CC268-5F67-81E7-0456-79F1E2073BD2">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:34:42 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="45D1FF4E-9C0B-10DC-3E93-0592BAFB3C3A">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:23:00 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="anio" id="55B1AA8F-4B49-6532-A044-1A5DC8123A1F">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:23:17 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha" id="E0FF1849-AD54-F53A-57A9-F2A2EF81F803">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:23:28 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Attribute_7" id="E58CD8D4-7EF2-85F1-EDC1-E582D96D1C6B">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:23:28 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_escuela" id="91CDA276-5FF8-7C34-8D8B-1A1AAACBB53D">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:24:22 UTC</createdTime>
+<generatorID>DFC46A64-408F-6088-A7FD-EDE63CA715DF</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>44611CB3-C918-9DF7-71FF-D41FFAB0438C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="61458881-3253-17DC-EEA8-BF02E9363F18" name="Congreso PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:34:27 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>127AC065-5A3E-AAC4-9A0A-53E0C5EB5168</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

@@ -40,6 +40,49 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_curso" id="1D6E84F1-2B83-35E3-DC60-BB60B2680747">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:03:59 UTC</createdTime>
+<generatorID>0A7151A4-CDF5-3124-34AE-07BCDB19F6F9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>64A3504F-EE66-1545-BDC2-7262213169EA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_laboratorio" id="3C602CC3-0BEE-6B92-B7AF-B0A2046F67A5">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:05:49 UTC</createdTime>
+<generatorID>E9474D71-11A2-8C8D-9198-87D1667D0E3E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>6B4CB7B7-66C4-B12B-E06B-66C226229A5C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_salon" id="2048F0DE-CC66-CD5A-D7C2-B008789C4161">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:11:09 UTC</createdTime>
+<generatorID>620F0F55-3AB0-1A29-4C4E-D222958314DD</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>EA253481-6A03-20C5-967D-F80E1E5CBA1B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="00A5D52B-9F75-4C5A-C20B-21D2380F1A46" name="Seccion PK">

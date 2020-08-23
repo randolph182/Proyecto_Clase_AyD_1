@@ -14,4 +14,71 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_salon" id="EA253481-6A03-20C5-967D-F80E1E5CBA1B">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:31:14 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numero" id="7A53287F-589A-2372-B2E5-913EE249F76B">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:32:08 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="capacidad" id="58D15577-8CEE-D244-3072-E619524CE965">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:45:21 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_edificio" id="B87FFFCB-5BD0-3BBA-EF19-8D4EB70C8559">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:11:50 UTC</createdTime>
+<generatorID>25FC5A74-30F7-5E4A-3F38-3AEAD698A7B9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>DF97E6A7-A33F-AB8B-C8AC-71278450ADF1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B8AC6252-8CC9-694F-E799-96655E2A4F11" name="Salon PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 22:32:19 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EA253481-6A03-20C5-967D-F80E1E5CBA1B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>
