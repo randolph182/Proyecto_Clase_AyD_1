@@ -24,7 +24,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="2B62D5F2-42EB-3239-3CB3-77C890A0D350" otype="Entity" vid="A973F1BC-D25C-0DFE-48FD-D0E9C69565A3">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="59" y="133" width="128" height="86"/>
+<bounds x="62" y="159" width="128" height="86"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="432CE662-C09D-D87E-975B-3F9E3713558E" otype="Entity" vid="148BC47F-4E10-F5BC-A18A-0DFBC74C50D1">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -40,7 +40,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="81387937-BA03-92D5-1714-4C0EA6090E94" otype="Entity" vid="2F04EAFC-046A-C2E1-DA43-63A7F5C0F832">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="235" y="139" width="131" height="80"/>
+<bounds x="239" y="142" width="131" height="80"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="92271CCE-DAE6-9D51-B8D1-27E92C434AEA" otype="Entity" vid="D7F2FCED-524C-72E4-0B10-658FB83026FA">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -52,15 +52,15 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="B43C2DEC-67BE-3286-2A67-000E1033804D" otype="Entity" vid="6E272893-E835-C770-89CD-9EA5F8AC9F54">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="55" y="19" width="123" height="63"/>
+<bounds x="60" y="22" width="141" height="92"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="DE183664-F96A-CDDC-DC06-C9DA6818BA33" otype="Entity" vid="1B46CC20-D3CF-45E4-D793-079A83F280D6">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="71" y="367" width="111" height="74"/>
+<bounds x="69" y="372" width="111" height="74"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="EAD319AD-126B-4B18-6EA9-0D88657AB339" otype="Entity" vid="D786612F-ADB0-0BBB-888F-904CD3FA77E0">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="245" y="20" width="127" height="69"/>
+<bounds x="244" y="22" width="127" height="69"/>
 </OView>
 </objectViews>
 </Diagram>
