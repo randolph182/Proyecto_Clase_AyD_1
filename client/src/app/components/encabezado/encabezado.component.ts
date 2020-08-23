@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSms } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-encabezado',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
-
-  constructor() { }
+  faSignInAlt  = faSignInAlt;
+  faSms = faSms;
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }
