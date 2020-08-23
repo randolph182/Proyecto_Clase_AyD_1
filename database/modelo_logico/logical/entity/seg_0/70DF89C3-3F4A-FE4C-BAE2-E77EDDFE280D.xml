@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DE183664-F96A-CDDC-DC06-C9DA6818BA33" name="Seccion">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-21 19:31:34 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="70DF89C3-3F4A-FE4C-BAE2-E77EDDFE280D" name="Escuela_vacaciones">
+<createdBy>Alejandro</createdBy>
+<createdTime>2020-08-23 22:39:18 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_seccion" id="11D8F417-5AB1-9AEF-007E-4677976A8419">
+<Attribute name="id_escuela" id="DB307E95-E201-7889-7322-06849ADEC68A">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:36 UTC</createdTime>
+<createdTime>2020-08-23 22:39:26 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -27,31 +27,32 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="seccion" id="B33CEEE7-8611-0F1B-F291-8536605DDB47">
+<Attribute name="descripcion" id="63DD48ED-7AB8-A765-5DA5-5AB7BE012CA5">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:49 UTC</createdTime>
+<createdTime>2020-08-23 22:39:26 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="00A5D52B-9F75-4C5A-C20B-21D2380F1A46" name="Seccion PK">
+<identifier id="1A907A04-520E-2A0C-E916-E69033154BA8" name="Escuela_vacaciones PK">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:47 UTC</createdTime>
+<createdTime>2020-08-23 22:39:36 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>11D8F417-5AB1-9AEF-007E-4677976A8419</attributeRef>
+<attributeRef>DB307E95-E201-7889-7322-06849ADEC68A</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

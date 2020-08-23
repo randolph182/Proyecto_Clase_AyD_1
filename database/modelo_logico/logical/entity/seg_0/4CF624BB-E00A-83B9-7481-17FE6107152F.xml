@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DE183664-F96A-CDDC-DC06-C9DA6818BA33" name="Seccion">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-21 19:31:34 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4CF624BB-E00A-83B9-7481-17FE6107152F" name="Laboratorio">
+<createdBy>Alejandro</createdBy>
+<createdTime>2020-08-23 22:35:24 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_seccion" id="11D8F417-5AB1-9AEF-007E-4677976A8419">
+<Attribute name="id_laboratorio" id="6B4CB7B7-66C4-B12B-E06B-66C226229A5C">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:36 UTC</createdTime>
+<createdTime>2020-08-23 22:35:30 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -27,9 +27,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="seccion" id="B33CEEE7-8611-0F1B-F291-8536605DDB47">
+<Attribute name="horario" id="CC3C5864-20E1-C46D-EAB1-E7C6F817DE8E">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:49 UTC</createdTime>
+<createdTime>2020-08-23 22:35:30 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="seccion" id="BF67061E-1E99-1E20-EDCF-6A110EC53C13">
+<createdBy>Alejandro</createdBy>
+<createdTime>2020-08-23 22:36:08 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -42,16 +54,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="00A5D52B-9F75-4C5A-C20B-21D2380F1A46" name="Seccion PK">
+<identifier id="A8E5DFBA-07EB-19BA-E740-F2FF2A426C51" name="Laboratorio PK">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:47 UTC</createdTime>
+<createdTime>2020-08-23 22:35:43 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>11D8F417-5AB1-9AEF-007E-4677976A8419</attributeRef>
+<attributeRef>6B4CB7B7-66C4-B12B-E06B-66C226229A5C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

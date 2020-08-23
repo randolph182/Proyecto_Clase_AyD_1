@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DE183664-F96A-CDDC-DC06-C9DA6818BA33" name="Seccion">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-21 19:31:34 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="799CD2CB-C1C6-48CB-8F6D-5CFAA1980A2B" name="Rol">
+<createdBy>Alejandro</createdBy>
+<createdTime>2020-08-23 22:33:26 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_seccion" id="11D8F417-5AB1-9AEF-007E-4677976A8419">
+<Attribute name="id_rol" id="90743A4F-F31E-4B26-A11F-A4633787B94C">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:36 UTC</createdTime>
+<createdTime>2020-08-23 22:33:31 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -27,31 +27,45 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="seccion" id="B33CEEE7-8611-0F1B-F291-8536605DDB47">
+<Attribute name="tipo" id="4DC1E6E2-2AEC-2BE2-2918-01626301BAC3">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:49 UTC</createdTime>
+<createdTime>2020-08-23 22:34:09 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="F5D7F422-5B09-675C-98C5-70D7A04685EE">
+<createdBy>Alejandro</createdBy>
+<createdTime>2020-08-23 22:34:39 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="00A5D52B-9F75-4C5A-C20B-21D2380F1A46" name="Seccion PK">
+<identifier id="4B468ACA-1D43-0FCD-8FF0-EFC1F2D31310" name="Rol PK">
 <createdBy>Alejandro</createdBy>
-<createdTime>2020-08-23 22:32:47 UTC</createdTime>
+<createdTime>2020-08-23 22:34:00 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>11D8F417-5AB1-9AEF-007E-4677976A8419</attributeRef>
+<attributeRef>90743A4F-F31E-4B26-A11F-A4633787B94C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
