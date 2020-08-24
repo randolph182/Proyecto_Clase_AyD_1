@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Curso } from '../../model/Curso'
+import { Curso } from '../../Models/Curso'
+import {CursoService} from '../../Services/curso.service'
 @Component({
   selector: 'app-asignacion',
   templateUrl: './asignacion.component.html',
@@ -7,13 +8,24 @@ import { Curso } from '../../model/Curso'
 })
 export class AsignacionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cursoService:CursoService) { }
   cursos:any=[];
   cursosAgregados:any=[];
-  agregar(curso:Curso){
-    this.cursos.push(curso);
-  }
+  
   ngOnInit(): void {
+    //this.getCursos();
   }
-
+  /*getCursos(){
+    const id_usuario:number = 0;
+    this.cursoService.getCursosEstudiante(id_usuario).subscribe(
+      res=>{
+        this.cursos= res;
+      },
+      err=> console.error(err)
+    );
+  }
+  agregar(id_curso:number){
+    let curso = this.cursoService.getCurso(id_curso);
+    this.cursosAgregados.push(curso);
+  }*/
 }
