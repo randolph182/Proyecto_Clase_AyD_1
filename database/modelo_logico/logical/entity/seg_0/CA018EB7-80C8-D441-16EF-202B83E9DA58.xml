@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CA018EB7-80C8-D441-16EF-202B83E9DA58" name="Detalle_Sig_Est">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-25 21:28:24 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_asignacion" id="12BC01CF-D69D-2E4A-3687-9E2CE96C984A">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-25 21:29:24 UTC</createdTime>
+<generatorID>41DA8586-6851-5FC4-5CD6-AB05C278013E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>6EF94E68-5464-7360-4338-DE193416D2A2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_asig_cate" id="9500C227-04C4-C939-44A0-2645E4F99263">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-25 21:40:32 UTC</createdTime>
+<generatorID>6AD39337-A16E-7CF1-A623-90F4EBFCA7C9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>A032442A-1FD9-5B00-5D2A-76CABBA9BE8C</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_asig_cate1" id="B65E49E1-54AD-44DB-924C-DDC7D4AAE3FA">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-25 21:40:32 UTC</createdTime>
+<generatorID>6AD39337-A16E-7CF1-A623-90F4EBFCA7C9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>A032442A-1FD9-5B00-5D2A-76CABBA9BE8C</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_seccion" id="FFFC4C6B-B0CA-5551-B70C-CBD1A2559053">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-25 21:40:32 UTC</createdTime>
+<generatorID>6AD39337-A16E-7CF1-A623-90F4EBFCA7C9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>14A86A76-ECC8-8890-23A9-28775F3C6065</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

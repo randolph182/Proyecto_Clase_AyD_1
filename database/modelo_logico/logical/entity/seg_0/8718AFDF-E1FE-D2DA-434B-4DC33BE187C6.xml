@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="430D29C7-DA27-A619-6F4B-0F508242F637" name="Asignacion">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8718AFDF-E1FE-D2DA-434B-4DC33BE187C6" name="Asignacion_estudiante">
 <createdBy>Rm</createdBy>
-<createdTime>2020-08-25 01:09:32 UTC</createdTime>
+<createdTime>2020-08-25 21:25:47 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -15,50 +15,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_asignacion" id="D28BAC69-E3D5-4211-969D-28792DD36158">
+<Attribute name="id_estudiante" id="DACA6604-0034-AF33-1149-B4564B411DB9">
 <createdBy>Rm</createdBy>
-<createdTime>2020-08-25 01:09:47 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_catedratico" id="591BC216-43DD-B380-5749-ABAD49CC4EFE">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-25 01:10:42 UTC</createdTime>
-<generatorID>05EC7384-2902-D671-74D9-E9F31FEE71F5</generatorID>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
-</engineerTo>
-<referedAttribute>2E63647C-40D3-4606-5885-90D6475EA0D9</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_curso" id="A7604E3A-0BD1-4BB1-2DD8-F37A2AC087F1">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-25 01:10:46 UTC</createdTime>
-<generatorID>3457012E-2D6D-8B0C-4D9D-88092B34B30C</generatorID>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
-</engineerTo>
-<referedAttribute>64A3504F-EE66-1545-BDC2-7262213169EA</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_estudiante" id="3E16B104-04CD-D8B1-942E-F2C3CCB6A27E">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-25 01:10:53 UTC</createdTime>
-<generatorID>A2654876-2B21-0176-6787-D356A617701E</generatorID>
+<createdTime>2020-08-25 21:26:42 UTC</createdTime>
+<generatorID>9151714E-08A2-15C9-B387-AE4ED7FB852D</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
@@ -69,18 +29,44 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_asignacion" id="6EF94E68-5464-7360-4338-DE193416D2A2">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-25 21:27:48 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_semestre" id="A8020B38-F4E2-18A4-76EF-B09DCD3FE163">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-25 21:43:01 UTC</createdTime>
+<generatorID>C9B40432-2644-DB59-038D-9E60A74F0405</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>286BB245-2C0A-A4B8-15F5-CAC332CAD02D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="3621005E-A7C0-E875-3EBE-0A831A324122" name="Asignacion PK">
+<identifier id="34F3987B-FEE8-9B64-32C3-A1663ED9C06B" name="Asignacion_estudiante PK">
 <createdBy>Rm</createdBy>
-<createdTime>2020-08-25 01:09:58 UTC</createdTime>
+<createdTime>2020-08-25 21:28:03 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>D28BAC69-E3D5-4211-969D-28792DD36158</attributeRef>
+<attributeRef>6EF94E68-5464-7360-4338-DE193416D2A2</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
