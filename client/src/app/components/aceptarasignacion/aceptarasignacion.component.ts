@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aceptarasignacion.component.css']
 })
 export class AceptarasignacionComponent implements OnInit {
-
+  asignaciones:any=[];
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

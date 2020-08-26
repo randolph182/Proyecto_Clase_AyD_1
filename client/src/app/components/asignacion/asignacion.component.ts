@@ -8,12 +8,12 @@ import {CursoService} from '../../Services/curso.service'
 })
 export class AsignacionComponent implements OnInit {
 
-  constructor(private cursoService:CursoService) { }
+  constructor(/*private cursoService:CursoService*/) { }
   cursos:any=[];
   cursosAgregados:any=[];
   
   ngOnInit(): void {
-    //this.getCursos();
+    //this.getCursos(); 
   }
   /*getCursos(){
     const id_usuario:number = 0;
