@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 
 library.add(fas,far);
 @NgModule({
@@ -17,7 +18,8 @@ library.add(fas,far);
     AppComponent,
     AsignacionComponent,
     EncabezadoComponent,
-    HomeComponent
+    HomeComponent,
+    RegistroUsuarioComponent
   ],
   imports: [
     BrowserModule,
