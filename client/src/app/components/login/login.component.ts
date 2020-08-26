@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { AlertService, AuthenticationService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -29,8 +31,14 @@ export class LoginComponent implements OnInit {
     
 
 }
-  get f() { return this.loginForm.controls; }
+  get f() { return this.loginForm.controls;}
 
-  }
+  
 
 
+
+
+    
+  
+
+}
