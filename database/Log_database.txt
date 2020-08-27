@@ -1,1 +1,3 @@
 Normalización entre catedratico-curso-estudiante 24/08/2020
+
+Analisis y normalización completa de la base de datos 25/08/2020
