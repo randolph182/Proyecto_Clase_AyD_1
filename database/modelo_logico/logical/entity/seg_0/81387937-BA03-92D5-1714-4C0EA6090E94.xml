@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="81387937-BA03-92D5-1714-4C0EA6090E94" name="Semestre">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="81387937-BA03-92D5-1714-4C0EA6090E94" name="Ciclo_Academico">
 <createdBy>Rm</createdBy>
 <createdTime>2020-08-21 19:30:23 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
@@ -40,15 +40,13 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_escuela" id="AED009BC-8EA2-EA61-F343-B7DAD16F95CE">
+<Attribute name="anio" id="13E79682-9A2F-4EA9-A67F-809935A9C3C1">
 <createdBy>Rm</createdBy>
-<createdTime>2020-08-23 23:39:38 UTC</createdTime>
-<generatorID>721A78F4-5532-3717-FE99-81A9AB090790</generatorID>
+<createdTime>2020-08-26 23:40:41 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
 </engineerTo>
-<referedAttribute>DB307E95-E201-7889-7322-06849ADEC68A</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>

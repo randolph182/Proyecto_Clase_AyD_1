@@ -69,10 +69,10 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_salon" id="2048F0DE-CC66-CD5A-D7C2-B008789C4161">
+<Attribute name="id_salon" id="8F194352-FCCA-2568-3662-4F54547D13D5">
 <createdBy>Rm</createdBy>
-<createdTime>2020-08-23 23:11:09 UTC</createdTime>
-<generatorID>620F0F55-3AB0-1A29-4C4E-D222958314DD</generatorID>
+<createdTime>2020-08-27 00:46:53 UTC</createdTime>
+<generatorID>9009AAE4-8D5D-5713-F5E6-C735F705B256</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>

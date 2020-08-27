@@ -81,29 +81,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fecha" id="E0FF1849-AD54-F53A-57A9-F2A2EF81F803">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-23 23:23:28 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Attribute_7" id="E58CD8D4-7EF2-85F1-EDC1-E582D96D1C6B">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-23 23:23:28 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="id_escuela" id="91CDA276-5FF8-7C34-8D8B-1A1AAACBB53D">
 <createdBy>Rm</createdBy>
 <createdTime>2020-08-23 23:24:22 UTC</createdTime>

@@ -52,10 +52,10 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_edificio" id="B87FFFCB-5BD0-3BBA-EF19-8D4EB70C8559">
+<Attribute name="id_edificio" id="D55D411B-F202-D746-0D1B-9438792F2E5C">
 <createdBy>Rm</createdBy>
-<createdTime>2020-08-23 23:11:50 UTC</createdTime>
-<generatorID>25FC5A74-30F7-5E4A-3F38-3AEAD698A7B9</generatorID>
+<createdTime>2020-08-27 00:42:51 UTC</createdTime>
+<generatorID>16028024-1297-E0AA-954C-62ED57FC3703</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>

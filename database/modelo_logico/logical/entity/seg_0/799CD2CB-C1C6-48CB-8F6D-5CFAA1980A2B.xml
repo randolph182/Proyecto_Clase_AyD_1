@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="tipo" id="4DC1E6E2-2AEC-2BE2-2918-01626301BAC3">
+<Attribute name="nombre" id="4DC1E6E2-2AEC-2BE2-2918-01626301BAC3">
 <createdBy>Alejandro</createdBy>
 <createdTime>2020-08-23 22:34:09 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
