@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3B34AC2B-F9F8-11FE-B5D6-38F12ED80D84" containerWithKeyObject="CD30B58C-AA93-276D-32AA-58F43573B9CC" localFKIndex="DE090223-C855-39BC-7028-EFE18566D250" name="Detalle_Cat_Curso_Asigancion_Cate_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>2D031979-BEE4-4F85-CA82-EF6320EB16AC</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<referredTableLongName>Asigancion_Cate</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A767DBB5-50E7-CB84-B507-B059B67D4E1B</referredTableID>
+<keyObject>6999E1F2-8429-F0D7-43B4-1E0C3E670141</keyObject>
+<referredKeyID>6999E1F2-8429-F0D7-43B4-1E0C3E670141</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_asig_cate</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
