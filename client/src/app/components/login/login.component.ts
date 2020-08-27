@@ -16,6 +16,9 @@ export class LoginComponent implements OnInit {
     submitted = false;
     returnUrl: string;
 
+    getuser: string;
+    getpass: string;
+
   constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
@@ -33,7 +36,29 @@ export class LoginComponent implements OnInit {
 }
   get f() { return this.loginForm.controls;}
 
-  
+  GetControls(){
+    this.getuser = this.f.username.value;
+    this.getpass = this.f.password.value;
+  }
+ 
+  onSubmit()
+  {
+    this.submitted = true;
+  }
+
+  login(getuser, getpass)
+  {
+
+
+  }
+
+public showMyMessage = false
+
+Mostrar() {
+  setTimeout(() => {
+    this.showMyMessage = true
+  }, 1000)
+}
 
 
 
