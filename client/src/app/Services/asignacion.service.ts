@@ -12,4 +12,7 @@ export class AsignacionService {
   getAsgignacionEstudiante(id_estudiante:number){
     return this.http.post(`${this.API_URI}/getAsignacion`,id_estudiante);
   }
+  addAsignacionEstudiante(asignacion){
+    return this.http.post(`${this.API_URI}/getAsignacion`,asignacion);
+  }
 }

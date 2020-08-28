@@ -13,9 +13,9 @@ export class AsignacionComponent implements OnInit {
   cursosAgregados:any=[];
   
   ngOnInit(): void {
-    //this.getCursos(); 
+    this.getCursos(); 
   }
-  /*getCursos(){
+  getCursos(){
     const id_usuario:number = 0;
     this.cursoService.getCursosEstudiante(id_usuario).subscribe(
       res=>{
@@ -27,5 +27,5 @@ export class AsignacionComponent implements OnInit {
   agregar(id_curso:number){
     let curso = this.cursoService.getCurso(id_curso);
     this.cursosAgregados.push(curso);
-  }*/
+  }
 }
