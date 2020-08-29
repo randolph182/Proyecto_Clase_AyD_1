@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D1E7B651-E58D-02A6-51D8-CD20FFAB533A" name="Departamento">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>9013635B-A1F6-EF7E-D079-0E576E8B051B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_departamento" id="E554E6FB-0158-8425-CF21-1141EC6DB094">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>22C90C6A-1E34-0403-59B6-ADD5DF62185B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="064F45C6-F7D9-A96B-6A0B-215527ABE706">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>7AF1E3A8-39C3-B1EB-3C8F-62C851C421CE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Escuela_id_escuela" id="82992F8A-1F6F-D259-0979-88E25EFDD3CB">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>4BEC56C4-7001-C742-1B54-8A7442276D4B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F29F52F0-691D-FA17-F148-C1C1B6ECB4F4" referredColumn="114E0967-C1AC-57EF-3521-EEBB07B1FD24"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1693C81C-4E6B-54FB-766C-D580FD26352C" name="Departamento_PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>A65AF709-DFB8-F1DD-07EF-CCFCD5BE4EF2</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E554E6FB-0158-8425-CF21-1141EC6DB094"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC3E0165-0F88-2C5C-36B6-21AAF45AE877" name="Departamento_Escuela_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>607634BE-D468-EE94-7232-977E712B8478</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="82992F8A-1F6F-D259-0979-88E25EFDD3CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

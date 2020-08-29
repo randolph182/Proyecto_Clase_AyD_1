@@ -4,7 +4,7 @@
 <createdTime>2020-08-26 23:09:11 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+<item key="1F62062F-6E8F-1608-0E70-C890B99CEFEA" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,24 +21,12 @@
 <generatorID>ECFCEA04-EA1D-EFD7-6199-D277A46C81C0</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+<item key="1F62062F-6E8F-1608-0E70-C890B99CEFEA" value="true"/>
 </engineerTo>
 <referedAttribute>6EF94E68-5464-7360-4338-DE193416D2A2</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_asig_cate" id="0FD56212-4F04-18AF-27AE-E241C4101827">
-<createdBy>Rm</createdBy>
-<createdTime>2020-08-26 23:09:26 UTC</createdTime>
-<generatorID>C1EE0169-808F-3D6C-4043-CD702A5568D0</generatorID>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
-</engineerTo>
-<referedAttribute>A032442A-1FD9-5B00-5D2A-76CABBA9BE8C</referedAttribute>
-<use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id_seccion" id="8F206E6F-67F0-EA8C-9D0B-03D3EA91FFA0">
@@ -47,7 +35,7 @@
 <generatorID>C1EE0169-808F-3D6C-4043-CD702A5568D0</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+<item key="1F62062F-6E8F-1608-0E70-C890B99CEFEA" value="true"/>
 </engineerTo>
 <referedAttribute>14A86A76-ECC8-8890-23A9-28775F3C6065</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -60,7 +48,7 @@
 <createdTime>2020-08-26 23:09:36 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+<item key="1F62062F-6E8F-1608-0E70-C890B99CEFEA" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -72,9 +60,22 @@
 <createdTime>2020-08-26 23:11:31 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
-<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+<item key="1F62062F-6E8F-1608-0E70-C890B99CEFEA" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_asig_cate" id="C2AA21B8-32EE-5362-B214-6FFA2E8F0BE4">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:05:00 UTC</createdTime>
+<generatorID>C1EE0169-808F-3D6C-4043-CD702A5568D0</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="1F62062F-6E8F-1608-0E70-C890B99CEFEA" value="true"/>
+</engineerTo>
+<referedAttribute>F5D914A3-5151-7214-EF1E-A61AE30DDE05</referedAttribute>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>

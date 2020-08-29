@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="93503E0F-67F9-9B2E-3BCE-6C6F872DE24F" name="Salon">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>9693D54E-3F09-F6D9-07C2-3586C99819B7</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_salon" id="19EE798A-679F-7B42-7E54-96860DCA61A1">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>EA253481-6A03-20C5-967D-F80E1E5CBA1B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero" id="37B7F41D-E23B-7926-C536-340CF06D5F41">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>7A53287F-589A-2372-B2E5-913EE249F76B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="18E28D34-3C64-8526-8E1A-1714265FA784">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>58D15577-8CEE-D244-3072-E619524CE965</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Edificio_id_edificio" id="7DB1EE8D-820A-DC84-51A1-B2EBCCE4C137">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>D55D411B-F202-D746-0D1B-9438792F2E5C</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B93DE23-1F40-E178-DF75-2B0ED750EBC2" referredColumn="84A37922-AB98-9A4D-F9A5-FC08A0F82915"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D5FD578B-B4FB-1DD9-B981-CE03920DF35A" name="Salon_PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>B8AC6252-8CC9-694F-E799-96655E2A4F11</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19EE798A-679F-7B42-7E54-96860DCA61A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="502FC61D-EF0D-8EBA-87E3-C18F85A34CE5" name="Salon_Edificio_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>16028024-1297-E0AA-954C-62ED57FC3703</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DB1EE8D-820A-DC84-51A1-B2EBCCE4C137"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
