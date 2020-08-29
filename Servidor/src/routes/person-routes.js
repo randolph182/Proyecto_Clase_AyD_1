@@ -17,7 +17,7 @@ function base64_encode(file) {
 
 //-------REGISTRAR USUARIO------
 router.post('/registrar', async (req, res) => {
-    const { nombre, apellido, correo, password, telefono, direccion, fecha_nacimiento, fotografia, genero, fecha_registro, rol, clase, credito, estado, ganancia } = req.body;
+    const { nombre, apellido, correo, password, telefono, direccion, fecha_nacimiento, genero, fecha_registro, rol } = req.body;
 
     sql = "SELECT  * FROM USUARIO WHERE correo=:correo";
 
@@ -33,35 +33,9 @@ router.post('/registrar', async (req, res) => {
     }
     else {
 
-        sql = "INSERT INTO USUARIO(nombre, apellido, correo, pass, telefono, direccion, fecha_nacimiento, fotografia, genero, fecha_registro, rol, clase, credito, estado, ganancia) VALUES ( :nombre, :apellido,  :correo, :password, :telefono, :direccion, TO_DATE(:fecha_nacimiento, 'dd/mm/yyyy'), :fotografia, :genero, TO_DATE(:fecha_registro, 'dd/mm/yyyy'), :rol, :clase, :credito, :estado, :ganancia)";
+        sql = "INSERT INTO USUARIO(nombre, apellido, correo, pass, telefono, direccion, fecha_nacimiento, genero, fecha_registro, rol) VALUES ( :nombre, :apellido,  :correo, :password, :telefono, :direccion, TO_DATE(:fecha_nacimiento, 'dd/mm/yyyy'),  :genero, TO_DATE(:fecha_registro, 'dd/mm/yyyy'), :rol)";
 
-        let respuesta = await cnn.Open(sql, [nombre, apellido, correo, password, telefono, direccion, fecha_nacimiento, fotografia, genero, fecha_registro, rol, clase, credito, estado, ganancia], true, res);
-
-        //----Mandar correo----
-
-        var transport = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'alerod620@gmail.com',
-                pass: 's1t2a3r4'
-            }
-        });
-
-        var mail_option = {
-            from: 'Alejandro <alerod620@gmail.com>',
-            to: correo,
-            subject: 'Activacion cuenta',
-            text: 'Bienvenido',
-            html: '<h2>Alie-Sell</h2> \n <h1>Verificacion de Cuenta</h1>\n <h5>Hola\n Lo primero que necesitamos es validar tu dirección de email, así te daremos la mejor atención.</h5>\n <a href="http://localhost:4200/validacion/' + correo + '" class="btn btn-primary stretched-link">Confirmar Correo</a> '// cuerpo de texto sin formato
-        }
-
-        transport.sendMail(mail_option, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message sent: %s', info.messageId);
-            return info.messageId;
-        });
+        let respuesta = await cnn.Open(sql, [nombre, apellido, correo, password, telefono, direccion, fecha_nacimiento, genero, fecha_registro, rol], true, res);
 
         console.log(nombre, apellido, correo, password, telefono, direccion, fecha_nacimiento, fotografia, genero, fecha_registro, rol, clase, credito, estado, ganancia);
 
@@ -73,14 +47,9 @@ router.post('/registrar', async (req, res) => {
             "telefono": telefono,
             "direccion": direccion,
             "fecha_nacimiento": fecha_nacimiento,
-            "fotografia": fotografia,
             "genero": genero,
             "fecha_registro": fecha_registro,
-            "rol": rol,
-            "clase": clase,
-            "credito": credito,
-            "estado": estado,
-            "ganancia": ganancia
+            "rol": rol
         }
 
         res.json({
