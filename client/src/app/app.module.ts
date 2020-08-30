@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule} from '@angular/common/http'
+import { AceptarasignacionComponent } from './components/aceptarasignacion/aceptarasignacion.component' 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AsignacionComponent } from './components/asignacion/asignacion.component';
@@ -28,6 +29,7 @@ library.add(fas,far);
     EncabezadoComponent,
 <<<<<<< HEAD
     HomeComponent,
+    AceptarasignacionComponent,
     RegistroUsuarioComponent
 =======
     LoginComponent

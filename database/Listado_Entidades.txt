@@ -1,0 +1,77 @@
+---------- Randolph ------------
+- curso
+	-id_curso
+	-nombre
+	-no_creditos
+	-pre_requisitos
+	-descripcion
+- catedratico
+	- id_catedratico
+	- nombre
+	- apellido
+	
+- salon
+	-id_salon
+	- numero
+- edificio
+	-id_edificio
+	-nombre
+- congreso
+	- id_congreso
+	- nombre
+	- hubicacion
+- estudiante
+	- id_estudiante
+	- nombre
+	- apellido
+- semestre
+	-id_semestre
+	-nombre
+- escuela
+	-id_escuela
+	-nombre
+- departamento
+	-id_departamento
+	- nombre
+
+----------- Alejandro -----------
+**SECCION*
+--->>ID_seccion
+--->>Nombre
+**AUXILIAR**
+--->> Carnet
+--->> Nombre
+**CURSO APROBADO**
+--->>Codigo
+--->>Fecha_aprobado
+--->>Nota
+**DESASIGNACION**
+--->>ID_desasignacion
+--->>Fecha_deasignacion
+**ROL**
+--->>ID_rol
+--->>Tipo
+--->>Descripcion
+**LABORATORIO**
+--->>ID_lab
+--->>horario
+--->>seccion
+**RETRASADA**
+--->>ID_retrasada
+--->>Curso
+--->>Fecha_asignacion
+**ESCUELA_VACACIONES
+--->>ID_escuela
+**CURSO_REPITENCIA**
+--->>Codigo
+--->>Fecha_asignacion
+
+
+
+
+---- Posibles atributos ------
+- horario
+- 
+
+--- con dudas -----
+- cupo de curso

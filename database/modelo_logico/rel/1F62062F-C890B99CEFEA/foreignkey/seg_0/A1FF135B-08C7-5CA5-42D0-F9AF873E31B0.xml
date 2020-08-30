@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A1FF135B-08C7-5CA5-42D0-F9AF873E31B0" containerWithKeyObject="A767DBB5-50E7-CB84-B507-B059B67D4E1B" localFKIndex="EFE606DF-D95F-4C5D-521C-49CD08E63773" name="Asigancion_Cate_Ciclo_Academico_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>9D21FFCA-1AC5-DACF-E29E-1FC319810A4C</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<referredTableLongName>Ciclo_Academico</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>07C6C99C-EC0F-F615-D3FF-F037D87B3EE6</referredTableID>
+<keyObject>9D8E2616-397F-CC89-588A-D6035786B44B</keyObject>
+<referredKeyID>9D8E2616-397F-CC89-588A-D6035786B44B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_semestre</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

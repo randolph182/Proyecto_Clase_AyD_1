@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD30B58C-AA93-276D-32AA-58F43573B9CC" name="Detalle_Cat_Curso">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>725622A6-46A6-91E0-E3F3-1278C1596FAB</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Seccion_id_seccion" id="48F4595E-4F25-EE5F-8B92-6106581BAFED">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>14A86A76-ECC8-8890-23A9-28775F3C6065</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="874F1C08-1B5B-BD3F-A6CC-6C12628D4EE3" referredColumn="746D9980-AB3D-BD9A-F797-042A14B5C318"/>
+</associations>
+</Column>
+<Column name="Asigancion_Cate_id_asig_cate" id="E82553FA-1FAA-721E-2C4E-FFD84BEBDFF4">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>F5D914A3-5151-7214-EF1E-A61AE30DDE05</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3B34AC2B-F9F8-11FE-B5D6-38F12ED80D84" referredColumn="A04ECF8F-C228-1AE8-4E4F-1E64F1739B90"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B968BCC4-BC05-1508-1474-2E05BF4455DB" name="Detalle_Cat_Curso_PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>A4E43762-6ECE-A861-7DDF-36586BDFA54F</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48F4595E-4F25-EE5F-8B92-6106581BAFED"/>
+<colUsage columnID="E82553FA-1FAA-721E-2C4E-FFD84BEBDFF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DE090223-C855-39BC-7028-EFE18566D250" name="Detalle_Cat_Curso_Asigancion_Cate_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>2D031979-BEE4-4F85-CA82-EF6320EB16AC</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E82553FA-1FAA-721E-2C4E-FFD84BEBDFF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5F5B9C76-7A94-7FAD-D735-2E892CA9FDB9" name="Detalle_Cat_Curso_Seccion_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>74CC048E-A9AE-10CB-68BE-EE08F4EBE6CE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48F4595E-4F25-EE5F-8B92-6106581BAFED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

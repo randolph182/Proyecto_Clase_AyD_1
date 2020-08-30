@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6A3CB60D-3E80-C737-D15B-06B3C87E85CE" name="Detalle_Asig_est">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>7ABD282F-6743-0F63-FBFA-401C949C997E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Asignacion_estudiante_id_asignacion" id="DB5A9DC6-93E6-3FD9-DDA0-DF0C9FBB60C2">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>1C44BE06-252D-8FEC-9837-6A71D9D0E603</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7595CCCC-0F72-A88B-CC70-093B30E9E725" referredColumn="1F0214C9-AB4A-EB89-DF43-1E045D0382CA"/>
+</associations>
+</Column>
+<Column name="Detalle_Cat_Curso_Seccion_id_seccion" id="DAF1504E-3D2F-147A-CCA6-8A63F73DDB3A">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>8F206E6F-67F0-EA8C-9D0B-03D3EA91FFA0</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A8F96912-418B-1587-6C6F-222F96C5E562" referredColumn="48F4595E-4F25-EE5F-8B92-6106581BAFED"/>
+</associations>
+</Column>
+<Column name="nota" id="05442021-4374-87AC-79BC-5B1762D342B8">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>1A6861BD-28CF-7D2C-13A1-9B963D3BF7D8</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zona" id="9D83C477-CB3E-1987-0474-32EB6220AC19">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>9B138B0B-E895-6785-9FDD-15E894352827</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Detalle_Cat_Curso_Asigancion_Cate_id_asig_cate" id="B5759B66-6A3F-3044-35A6-170B1364E5AC">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>C2AA21B8-32EE-5362-B214-6FFA2E8F0BE4</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A8F96912-418B-1587-6C6F-222F96C5E562" referredColumn="E82553FA-1FAA-721E-2C4E-FFD84BEBDFF4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="909E2A63-6363-8ADE-147C-A47C3808C284" name="Detalle_Asig_est_Asignacion_estudiante_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>ECFCEA04-EA1D-EFD7-6199-D277A46C81C0</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DB5A9DC6-93E6-3FD9-DDA0-DF0C9FBB60C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="817F1D1F-B156-DD70-2FCE-0F57CF5874E1" name="Detalle_Asig_est_Detalle_Cat_Curso_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>C1EE0169-808F-3D6C-4043-CD702A5568D0</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DAF1504E-3D2F-147A-CCA6-8A63F73DDB3A"/>
+<colUsage columnID="B5759B66-6A3F-3044-35A6-170B1364E5AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
