@@ -37,7 +37,7 @@ router.post('/registrar', async (req, res) => {
 
         let respuesta = await cnn.Open(sql, [nombre, apellido, correo, password, telefono, direccion, fecha_nacimiento, genero, fecha_registro, rol], true, res);
 
-        console.log(nombre, apellido, correo, password, telefono, direccion, fecha_nacimiento, fotografia, genero, fecha_registro, rol, clase, credito, estado, ganancia);
+        console.log(nombre, apellido, correo, password, telefono, direccion, fecha_nacimiento, genero, fecha_registro, rol);
 
         let datos_usuario = {
             "nombre": nombre,
@@ -90,31 +90,6 @@ router.post('/registrar_admin', async (req, res) => {
             tipo = "Servicio de Ayuda";
         }
 
-        //----Mandar correo----
-
-        var transport = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'alerod620@gmail.com',
-                pass: 's1t2a3r4'
-            }
-        });
-
-        var mail_option = {
-            from: 'Alejandro <alerod620@gmail.com>',
-            to: correo,
-            subject: 'Registro en Ali-Sell',
-            text: 'Has sido registrado como ' + tipo + ' en Ali-Sell\nUtiliza tu correo para ingresar con la siguiente clave de acceso: ' + password
-        }
-
-        transport.sendMail(mail_option, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message sent: %s', info.messageId);
-            return info.messageId;
-        });
-
         res.json({
             "response": true,
             "datos_usuario": ""
@@ -140,16 +115,11 @@ router.post('/get_cuenta', async (req, res) => {
             "password": result.rows[0][3],
             "correo": result.rows[0][4],
             "telefono": result.rows[0][5],
-            "fotografia": result.rows[0][6],
             "genero": result.rows[0][7],
             "fecha_nacimiento": result.rows[0][8],
             "fecha_registro": result.rows[0][9],
             "direccion": result.rows[0][10],
-            "credito": result.rows[0][11],
-            "ganancia": result.rows[0][12],
-            "clase": result.rows[0][13],
-            "rol": result.rows[0][14],
-            "estado": result.rows[0][15]
+            "rol": result.rows[0][14]
         }
 
         res.json({
@@ -177,16 +147,11 @@ router.post('/login', async (req, res) => {
             "password": result.rows[0][3],
             "correo": result.rows[0][4],
             "telefono": result.rows[0][5],
-            "fotografia": result.rows[0][6],
             "genero": result.rows[0][7],
             "fecha_nacimiento": result.rows[0][8],
             "fecha_registro": result.rows[0][9],
             "direccion": result.rows[0][10],
-            "credito": result.rows[0][11],
-            "ganancia": result.rows[0][12],
-            "clase": result.rows[0][13],
-            "rol": result.rows[0][14],
-            "estado": result.rows[0][15]
+            "rol": result.rows[0][14]
         }
 
         if (result.rows[0][15] == 1) {
@@ -247,8 +212,6 @@ router.put('/eliminar', async (req, res) => {
     if (result.rowsAffected) {
         res.json({
             "response": true,
-
-
         });
     } else {
         res.json({
@@ -302,56 +265,6 @@ router.put('/update_usuario', async (req, res) => {
         });
     }
 })
-
-
-//------ PAGINA ------
-router.post('/get_pagina', async (req, res) => {
-    const { cod } = req.body;
-
-    sql = "SELECT * FROM PAGINA WHERE cod=:cod";
-
-    let result = await cnn.Open(sql, [cod], true, res);
-    console.log(result.rows);
-
-    if (result.rows.length > 0) {
-
-        let datos_usuario = {
-            "eslogan": result.rows[0][1],
-            "vision": result.rows[0][2],
-            "mision": result.rows[0][3],
-            "acerca": result.rows[0][4],
-            "video": result.rows[0][5]
-        }
-
-        res.json(datos_usuario);
-
-    }
-
-})
-
-//------ EDITAR PAGINA ------
-router.put('/editar_pagina', async (req, res) => {
-
-    const { eslogan, vision, mision, acerca } = req.body;
-
-    sql = "UPDATE PAGINA SET eslogan=:eslogan, vision=:vision, mision=:mision, acerca=:acerca WHERE cod=1";
-
-    let result = await cnn.Open(sql, [eslogan, vision, mision, acerca], true, res);
-
-    if (result.rowsAffected) {
-        res.json({
-            "response": true
-
-        });
-    } else {
-        res.json({
-            "response": false
-
-        });
-    }
-
-})
-
 
 //------ OBTENER USUARIO ------
 router.get('/get_users', async (req, res) => {
@@ -462,93 +375,6 @@ router.get('/get_arbol', async (req, res) => {
 
 })
 
-//------ BITACORA ------
-router.post('/bitacora', async (req, res) => {
-
-    const { id, fecha, descripcion } = req.body;
-
-    sql = "INSERT INTO BITACORA(id_usuario, fecha, descripcion) VALUES(:id, TO_DATE(:fecha, 'dd/mm/yyyy'), :descripcion)";
-
-    let respuesta = await cnn.Open(sql, [id, fecha, descripcion], true, res);
-
-    res.json({
-        "response": true
-    })
-})
-
-//------ OBTENER BITACORA ------
-router.get('/get_bitacora', async (req, res) => {
-
-
-    sql = "SELECT (SELECT correo FROM USUARIO WHERE USUARIO.id_usuario=BITACORA.id_usuario), TO_CHAR(fecha, 'dd/mm/yyyy'), descripcion FROM BITACORA"
-
-    let result = await cnn.Open(sql, [], false);
-    Users = [];
-
-    result.rows.map(user => {
-        let userSchema = {
-            "correo": user[0],
-            "fecha": user[1],
-            "descripcion": user[2]
-        }
-
-
-        Users.push(userSchema);
-    })
-
-    res.json(Users);
-    console.log(Users);
-})
-
-//------ RECUPERAR ------
-router.put('/recuperar', async (req, res) => {
-    const { correo, password } = req.body;
-
-    sql = "SELECT * FROM USUARIO WHERE correo=:correo";
-
-    let result = await cnn.Open(sql, [correo], true, res);
-
-    if (result.rows.length > 0) {
-        sql = "UPDATE USUARIO SET pass=:password WHERE correo=:correo";
-
-        let respuesta = await cnn.Open(sql, [password, correo], true, res);
-
-        //----Mandar correo----
-
-        var transport = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'alerod620@gmail.com',
-                pass: 's1t2a3r4'
-            }
-        });
-
-        var mail_option = {
-            from: 'Alejandro <alerod620@gmail.com>',
-            to: correo,
-            subject: 'Recuperacion cuenta',
-            text: 'Hola',
-            html: '<h2>Alie-Sell</h2> \n <h1>Recuperacion de Cuenta</h1>\n <h5>Hola\n Su nueva contraseña es: ' + password + '</h5>  '// cuerpo de texto sin formato
-        }
-
-        transport.sendMail(mail_option, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message sent: %s', info.messageId);
-            return info.messageId;
-        });
-
-        res.json({
-            "response": true
-        });
-    }
-    else {
-        res.json({
-            "response": false
-        });
-    }
-})
 
 //------ REPORTE AYUDA MASCULINO ------
 router.post('/rep_am', async (req, res) => {
