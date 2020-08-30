@@ -17,15 +17,15 @@ export class AsignacionComponent implements OnInit {
   }
   getCursos(){
     const id_usuario:number = 0;
-    this.cursoService.getCursosEstudiante(id_usuario).subscribe(
+    /*this.cursoService.getCursosEstudiante(id_usuario).subscribe(
       res=>{
         this.cursos= res;
       },
       err=> console.error(err)
-    );
+    );*/
   }
   agregar(id_curso:number){
-    let curso = this.cursoService.getCurso(id_curso);
-    this.cursosAgregados.push(curso);
+    /*let curso = this.cursoService.getCurso(id_curso);
+    this.cursosAgregados.push(curso);*/
   }
 }
