@@ -7,6 +7,10 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'client';
+=======
+  title = 'Login';
+>>>>>>> login2
   faCoffee = faCoffee;
 }
