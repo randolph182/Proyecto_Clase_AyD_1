@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="98C3EB3D-6D7F-1516-5FF8-C709DF27C131" name="Laboratorio">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>4CF624BB-E00A-83B9-7481-17FE6107152F</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_laboratorio" id="B68B354C-DC4D-4F6F-206E-C62F1B96C1AD">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>6B4CB7B7-66C4-B12B-E06B-66C226229A5C</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horario" id="1263EE9E-BEBB-AAEF-06BC-7AE2B1C67D9F">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>CC3C5864-20E1-C46D-EAB1-E7C6F817DE8E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="seccion" id="EC3E2B75-FA34-5568-29C4-DA1FBDDDEFD1">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>BF67061E-1E99-1E20-EDCF-6A110EC53C13</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Seccion_id_seccion" id="A0FC0FFF-D1EA-51B5-5BC5-0DD3325233DD">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>8838E0E3-6A94-7C41-FB26-0CAE9C114F90</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="22B32298-613E-DFC0-BBC7-CF79CCCD167C" referredColumn="746D9980-AB3D-BD9A-F797-042A14B5C318"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FBE8F54A-5077-AB6C-143C-28BB0569C160" name="Laboratorio_PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>A8E5DFBA-07EB-19BA-E740-F2FF2A426C51</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B68B354C-DC4D-4F6F-206E-C62F1B96C1AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="067FE2B0-D554-F292-0833-3E48CE079490" name="Laboratorio__IDX">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>E9474D71-11A2-8C8D-9198-87D1667D0E3E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A0FC0FFF-D1EA-51B5-5BC5-0DD3325233DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F557378A-200D-EEF7-D65C-8F9924B1A17A" name="Laboratorio_Seccion_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>E9474D71-11A2-8C8D-9198-87D1667D0E3E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0FC0FFF-D1EA-51B5-5BC5-0DD3325233DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

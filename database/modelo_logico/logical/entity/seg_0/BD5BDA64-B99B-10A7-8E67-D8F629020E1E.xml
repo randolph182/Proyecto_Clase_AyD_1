@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BD5BDA64-B99B-10A7-8E67-D8F629020E1E" name="Asignacion_Congreso">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-26 23:29:10 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_asig_congr" id="AE7AD645-C6CA-7283-FFD2-D2B24B42DDEC">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-26 23:29:30 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_estudiante" id="F4940E1A-0C8A-3B43-B21F-6A0C917F1352">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-26 23:30:16 UTC</createdTime>
+<generatorID>A430B0CA-BDDE-68D3-3AFA-7FA8BC07CEB9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>4C004B7A-E132-91B8-BC8D-C3C3BFAC9708</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_congreso" id="BBF4D2A4-0249-2F52-267F-4DE6C06D4D2D">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-26 23:30:22 UTC</createdTime>
+<generatorID>22E754D8-F0DA-FE92-1E80-E79999E7C6AE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>127AC065-5A3E-AAC4-9A0A-53E0C5EB5168</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha" id="A345FF7B-32FE-FA2B-2478-8287D215236E">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-26 23:30:53 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4124ADF2-1C40-80ED-B0FF-C404A18306D2" name="Asignacion_Congreso PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-26 23:29:48 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AE7AD645-C6CA-7283-FFD2-D2B24B42DDEC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

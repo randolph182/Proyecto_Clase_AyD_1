@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4BD94892-CC5E-0A44-A97A-3CDDB5A9F0EB" name="Seccion">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>DE183664-F96A-CDDC-DC06-C9DA6818BA33</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_seccion" id="746D9980-AB3D-BD9A-F797-042A14B5C318">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>11D8F417-5AB1-9AEF-007E-4677976A8419</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="seccion" id="53EA7965-FF84-9C46-E098-93EDBB32154A">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>B33CEEE7-8611-0F1B-F291-8536605DDB47</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Curso_id_curso" id="C8E2BC7E-76ED-B2D6-A64D-362E6D7DFDA3">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>1D6E84F1-2B83-35E3-DC60-BB60B2680747</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9B0CB9C1-C47D-2F28-CE9E-5F28EDBA4A40" referredColumn="BD981A6B-05A5-010E-A188-2808E3E20098"/>
+</associations>
+</Column>
+<Column name="Laboratorio_id_laboratorio" id="A696EFF0-CE0F-FBA9-09A2-944BDFA15654">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>3C602CC3-0BEE-6B92-B7AF-B0A2046F67A5</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1A587823-A273-BAD6-A789-33723F22D9A8" referredColumn="B68B354C-DC4D-4F6F-206E-C62F1B96C1AD"/>
+</associations>
+</Column>
+<Column name="Salon_id_salon" id="992F308C-8C82-9EA8-2DB9-DEB0381A584B">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>8F194352-FCCA-2568-3662-4F54547D13D5</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5171F27F-FDC0-6819-7AB7-B566107E7C0B" referredColumn="19EE798A-679F-7B42-7E54-96860DCA61A1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="121834EA-A076-9AA4-4170-17043586E08C" name="Seccion_PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>00A5D52B-9F75-4C5A-C20B-21D2380F1A46</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="746D9980-AB3D-BD9A-F797-042A14B5C318"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B825D0C-473B-23FF-0A53-23EB592A810A" name="Seccion__IDX">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>E9474D71-11A2-8C8D-9198-87D1667D0E3E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A696EFF0-CE0F-FBA9-09A2-944BDFA15654"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FE948669-98C2-DA0F-F28D-DDB423A17BFF" name="Seccion_Curso_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>0A7151A4-CDF5-3124-34AE-07BCDB19F6F9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8E2BC7E-76ED-B2D6-A64D-362E6D7DFDA3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="066515FE-F983-2643-E836-68618416DCB5" name="Seccion_Salon_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>9009AAE4-8D5D-5713-F5E6-C735F705B256</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="992F308C-8C82-9EA8-2DB9-DEB0381A584B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2A3802FD-9D26-C2F8-A154-241A1284B4DE" name="Seccion_Laboratorio_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>E9474D71-11A2-8C8D-9198-87D1667D0E3E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A696EFF0-CE0F-FBA9-09A2-944BDFA15654"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

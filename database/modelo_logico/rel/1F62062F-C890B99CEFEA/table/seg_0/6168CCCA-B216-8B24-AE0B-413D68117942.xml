@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6168CCCA-B216-8B24-AE0B-413D68117942" name="Usuario">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>3A4B20D9-5C4A-EFD8-A54A-57A7D3FBC431</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_usuario" id="C676D2A3-F5CC-C708-4F5F-0327CC196A2B">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>61BBCC9C-4244-4192-DEA0-8B4CE388B18A</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="identificador" id="EE491387-7BF7-50A2-91E1-A3DA174AB3FA">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>99DE04BC-4280-1310-9BDC-C41145D86C5C</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="5D550F78-1FCB-A58A-2DC6-2E6B77D7F6E6">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>8DC66A76-45F6-E400-7E8B-A47DB0A6F122</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rol_id_rol" id="30230315-7B25-3EBA-3F0F-3E2C5184758D">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>295ABED1-3BE1-C435-B565-95087D6834F2</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1ACCA921-B425-44CC-224F-42E0D628BE6F" referredColumn="EF89838B-80E7-90B7-38AB-4751B4072B53"/>
+</associations>
+</Column>
+<Column name="Estudiante_id_estudiante" id="59BAE120-5509-F6CF-991D-70CA41F6CA8A">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>A885C191-79AD-9CCA-F7EF-A75521BCB188</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="798A3926-48CD-8DDC-F0EF-13D56926120D" referredColumn="18409E08-5F4F-7A1B-FF0E-B8C7B4CEAFA8"/>
+</associations>
+</Column>
+<Column name="Catedratico_id_catedratico" id="65CF3D17-D62D-843F-838F-83C07CE3A208">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>816C625F-EB52-F319-3E6C-F7FAA54F44E6</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F76A381-3238-0F53-C079-EDC9A53F171D" referredColumn="3437F4DD-04D4-2746-BACB-EE1326382774"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FA5890C4-377D-6173-1205-682F0287E8AE" name="Usuario_PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>4562D213-FE99-6394-39E8-47B21FAEBB03</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C676D2A3-F5CC-C708-4F5F-0327CC196A2B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="218BA28B-FDF8-F312-0F06-17FDC48DE2A9" name="Usuario_Rol_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>DE3D61C0-645D-81BE-996E-C88415C12E03</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30230315-7B25-3EBA-3F0F-3E2C5184758D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8384EA2B-AC37-57F2-2DDD-039966FF26AA" name="Usuario_Estudiante_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>4EA90F5A-6E18-E425-126B-9EA3FC63CFF4</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59BAE120-5509-F6CF-991D-70CA41F6CA8A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB065FB2-3CFE-58F1-F07A-A1921BB70262" name="Usuario_Catedratico_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>A6AB4365-B88D-9F27-4287-63398C34C8EE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="65CF3D17-D62D-843F-838F-83C07CE3A208"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

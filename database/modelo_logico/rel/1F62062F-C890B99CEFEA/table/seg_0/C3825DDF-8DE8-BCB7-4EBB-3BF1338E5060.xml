@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C3825DDF-8DE8-BCB7-4EBB-3BF1338E5060" name="Asignacion_Congreso">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>BD5BDA64-B99B-10A7-8E67-D8F629020E1E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_asig_congr" id="5EE5BFB3-52EE-859A-233C-4748810FD7F3">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>AE7AD645-C6CA-7283-FFD2-D2B24B42DDEC</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estudiante_id_estudiante" id="8DEF32A5-AB1B-9EC1-85A3-92652A4C00B5">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>F4940E1A-0C8A-3B43-B21F-6A0C917F1352</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F40D73DB-EDCD-A8C5-B882-26780A13650C" referredColumn="18409E08-5F4F-7A1B-FF0E-B8C7B4CEAFA8"/>
+</associations>
+</Column>
+<Column name="Congreso_id_congreso" id="BCC1C262-9AF3-D404-2350-66A28EA29061">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>BBF4D2A4-0249-2F52-267F-4DE6C06D4D2D</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D19237D9-D590-4A13-D599-20BF749DC58B" referredColumn="051932B9-331A-7F54-48EA-898C77E54166"/>
+</associations>
+</Column>
+<Column name="fecha" id="9DB0A6E9-316D-C661-CACC-89101BE0FBAB">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>A345FF7B-32FE-FA2B-2478-8287D215236E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="00EDFA36-7E6E-52A5-8CEE-B61F71E9AF13" name="Asignacion_Congreso_PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>4124ADF2-1C40-80ED-B0FF-C404A18306D2</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5EE5BFB3-52EE-859A-233C-4748810FD7F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB3B7F0D-3C0A-CBD4-153A-8EDE7BCA36DD" name="Asignacion_Congreso_Estudiante_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>A430B0CA-BDDE-68D3-3AFA-7FA8BC07CEB9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8DEF32A5-AB1B-9EC1-85A3-92652A4C00B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26466B20-4663-13EF-D8F9-1C0D98598428" name="Asignacion_Congreso_Congreso_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>22E754D8-F0DA-FE92-1E80-E79999E7C6AE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BCC1C262-9AF3-D404-2350-66A28EA29061"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
