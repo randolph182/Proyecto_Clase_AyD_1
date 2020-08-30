@@ -46,11 +46,6 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
   }
 
-  login(getuser, getpass)
-  {
-
-
-  }
 
 public showMyMessage = false
 
@@ -59,11 +54,5 @@ Mostrar() {
     this.showMyMessage = true
   }, 1000)
 }
-
-
-
-
-    
-  
 
 }
