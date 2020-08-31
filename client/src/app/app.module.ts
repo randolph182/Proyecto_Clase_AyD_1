@@ -11,6 +11,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {WebStorageModule, LocalStorageService} from "angular-localstorage";
 
 library.add(fas,far);
 @NgModule({
@@ -25,9 +26,10 @@ library.add(fas,far);
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    [WebStorageModule],
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

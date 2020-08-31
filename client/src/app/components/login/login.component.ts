@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService, AuthenticationService } from './login.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
   GetControls(){
     this.getuser = this.f.username.value;
     this.getpass = this.f.password.value;
+    localStorage.setItem("sesion", this.getuser); // seteando variable de sesión con el nombre del usuario
   }
  
   onSubmit()
