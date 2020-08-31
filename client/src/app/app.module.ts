@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AsignacionComponent } from './components/asignacion/asignacion.component';
@@ -12,6 +12,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {WebStorageModule, LocalStorageService} from "angular-localstorage";
+import { CommonModule } from '@angular/common';
+import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 
 library.add(fas,far);
 @NgModule({
@@ -19,17 +21,26 @@ library.add(fas,far);
     AppComponent,
     AsignacionComponent,
     EncabezadoComponent,
-    LoginComponent
+    LoginComponent,
+    RegistroUsuarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot([
+      {path: 'login', component: LoginComponent},
+      {path: 'registro', component: RegistroUsuarioComponent}
+    ]),
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    [WebStorageModule],
+    CommonModule,
+    RouterModule
   ],
-  providers: [LocalStorageService],
+  exports:[
+    [RouterModule]
+  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

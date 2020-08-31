@@ -1,3 +1,4 @@
+
 <form [formGroup]="loginForm">
     <div class="form-group">
         <label for="username">Usuario</label>
@@ -19,6 +20,8 @@
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Ingresar
         </button>
-        <a routerLink="/register" class="btn btn-link">Registrarse</a>
-    </div>
+        <a routerLink="/registro" class="btn btn-link"  routerLinkActive="active">Registrarse</a>
+      </div>
 </form>
+<router-outlet></router-outlet>
+
