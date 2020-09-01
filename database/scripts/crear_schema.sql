@@ -28,3 +28,6 @@ CREATE TABLE LABORATORIO (
     horario              DATE NOT NULL,
     seccion              CHAR(1) NOT NULL,
 );
+
+
+
