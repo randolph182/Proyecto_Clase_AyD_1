@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   //Propiedades
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: '1234',
   database: 'bd'
 });
 
@@ -17,7 +17,7 @@ connection.connect(function(error) {
   }
   else
   {
-    console.log('Conexion exitosa');
+    console.log('Conexión exitosa');
   }
 });
 
