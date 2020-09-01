@@ -27,5 +27,6 @@ export class AsignacionComponent implements OnInit {
   agregar(id_curso:number){
     /*let curso = this.cursoService.getCurso(id_curso);
     this.cursosAgregados.push(curso);*/
+    
   }
 }
