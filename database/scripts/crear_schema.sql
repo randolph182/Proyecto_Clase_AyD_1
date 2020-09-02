@@ -23,12 +23,6 @@ CREATE TABLE CURSO (
     CONSTRAINT fk_esc_curso FOREIGN KEY(id_escuela) REFERENCES ESCUELA(id_escuela)
 );
 
-CREATE TABLE LABORATORIO (
-    id_laboratorio       INTEGER AUTO_INCREMENT,
-    horario              DATE NOT NULL,
-    seccion              CHAR(1) NOT NULL,
-    PRIMARY KEY(id_laboratorio)
-);
 
 
 
@@ -49,17 +43,24 @@ CREATE TABLE SALON (
 );
 
 
+
 CREATE TABLE  SECCION (
     id_seccion                  INTEGER AUTO_INCREMENT,
     seccion                     CHAR(1) NOT NULL,
     id_curso                    INTEGER NOT NULL,
-    id_laboratorio              INTEGER,            --DEBIDO A QUE LA SECCION PUEDE O NO TENER UN LABORATORIO
     id_salon                    INTEGER NOT NULL,
     PRIMARY KEY(id_seccion),
     CONSTRAINT fk_cur_secc FOREIGN KEY(id_curso) REFERENCES CURSO(id_curso),
-    CONSTRAINT fk_saln_secc FOREIGN KEY(id_salon) REFERENCES SALON(id_salon),
-    CONSTRAINT fk_lab_secc FOREIGN KEY(id_laboratorio) REFERENCES LABORATORIO(id_laboratorio),
-    CONSTRAINT uk_lab_secc UNIQUE (id_laboratorio)
+    CONSTRAINT fk_saln_secc FOREIGN KEY(id_salon) REFERENCES SALON(id_salon)
+);
+
+CREATE TABLE LABORATORIO (
+    id_laboratorio       INTEGER AUTO_INCREMENT,
+    horario              DATE NOT NULL,
+    id_seccion           INTEGER NOT NULL,
+    PRIMARY KEY(id_laboratorio),
+    CONSTRAINT fk_secc_lab FOREIGN KEY(id_seccion) REFERENCES SECCION(id_seccion),
+    CONSTRAINT uk_lab_secc UNIQUE (id_seccion)
 );
 
 CREATE TABLE CATEDRATICO (
@@ -75,6 +76,7 @@ CREATE TABLE CATE_CUENTA (
     password        VARCHAR(20) NOT NULL,
     activo          CHAR(1) NOT NULL,
     id_cate   INTEGER NOT NULL,
+    id_catedratico INTEGER NOT NULL,
     PRIMARY KEY(id_cate_cuenta),
     CONSTRAINT fk_cate_cuenta FOREIGN KEY (id_catedratico) REFERENCES CATEDRATICO(id_catedratico)
 
@@ -90,7 +92,7 @@ CREATE TABLE CICLO_ACADEMICO (
 
 CREATE TABLE ASIG_CATEDRATICO (
     id_asig_cate   INTEGER AUTO_INCREMENT,
-    id_cl_acad        VARCHAR(50) NOT NULL,
+    id_cl_acad        INTEGER NOT NULL,
     id_catedratico          INTEGER NOT NULL,
     PRIMARY KEY(id_asig_cate),
     CONSTRAINT fk_cl_acad_asig_cat FOREIGN KEY(id_cl_acad) REFERENCES CICLO_ACADEMICO(id_cl_acad),
@@ -150,7 +152,7 @@ CREATE TABLE CONGRESO (
     descripcion          VARCHAR(200),
     anio                 INTEGER NOT NULL,
     id_escuela   INTEGER NOT NULL,
-    FOREIGN KEY(id_congreso),
+    PRIMARY KEY(id_congreso),
     CONSTRAINT fk_esc_congre FOREIGN KEY (id_escuela) REFERENCES ESCUELA(id_escuela),
     CONSTRAINT uk_anio_cgr UNIQUE(anio)
 );
