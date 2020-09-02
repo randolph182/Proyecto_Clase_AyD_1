@@ -16,12 +16,12 @@
     </div>
     <div class='form-group'>
         <label for="cars">Elija su tipo de usuario :</label>
-        <select name="rol" id="rol">
+        <select name="rol" id="rol" (change)="selectChangeHandler($event)">
         <option value="estudiante">Estudiante</option>
         <option value="catedratico">Catedratico</option>
         <option value="admin">Administrador</option>
         </select>
-
+        <!--<p><span>You selected: </span><b>{{selectedDay}}</b></p>-->
     </div>
     <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary" (click) = "Mostrar()">

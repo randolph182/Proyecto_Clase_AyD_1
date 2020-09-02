@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 
     getuser: string;
     getpass: string;
+    selectedDay: string = '';
 
   constructor(
         private formBuilder: FormBuilder,
@@ -48,6 +49,9 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
   }
 
+  selectChangeHandler (event: any) {
+    this.selectedDay = event.target.value;
+  }
 
 public showMyMessage = false
 
