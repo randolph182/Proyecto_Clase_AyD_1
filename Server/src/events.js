@@ -8,7 +8,7 @@ function createRouter(db) {
   router.get('/insertar_escuela', (req, res, next) => {
     db.query(
       'INSERT INTO ESCUELA(id_escuela, nombre) VALUES(?,?)',
-      [1, 'dfsafads'],
+      [req.body.id, req.body.nombre],
       (error) => {
         if(error)
         {
