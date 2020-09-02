@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
 
     getuser: string;
     getpass: string;
-    selectedDay: string = '';
+    rolseleccionado: string = '';
+    mensaje: string;
 
   constructor(
         private formBuilder: FormBuilder,
@@ -41,6 +42,13 @@ export class LoginComponent implements OnInit {
   GetControls(){
     this.getuser = this.f.username.value;
     this.getpass = this.f.password.value;
+    if (this.getuser == '' || this.getpass == '') {
+        this.mensaje = "Favor de llenar todos los campos!";
+    }
+    else
+    {
+        this.mensaje = "";
+    }
     localStorage.setItem("sesion", this.getuser); // seteando variable de sesión con el nombre del usuario
   }
  
@@ -50,7 +58,7 @@ export class LoginComponent implements OnInit {
   }
 
   selectChangeHandler (event: any) {
-    this.selectedDay = event.target.value;
+    this.rolseleccionado = event.target.value;
   }
 
 public showMyMessage = false
