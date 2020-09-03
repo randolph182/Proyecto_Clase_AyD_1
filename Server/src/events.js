@@ -45,11 +45,11 @@ function createRouter(db) {
   });
 
 //******Login******
-router.post('/login', (req, res, next) => {
+router.get('/login', (req, res, next) => {
   db.query(
-    'SELECT * FROM ESCUELA(id_escuela, nombre) VALUES(?,?)',
-    [req.body.id, req.body.nombre],
-    (error) => {
+    'SELECT * FROM ESTUDIANTE_CUENTA WHERE login = ? AND password = ?',
+    [req.body.login, req.body.password],
+    (error, results) => {
       if(error)
       {
         console.error(error);
@@ -57,11 +57,13 @@ router.post('/login', (req, res, next) => {
       }
       else
       {
-        res.status(200).json({status:'ok'});
+        res.status(200).json(results);
       }
     }
   );
 });
+
+
 
   return router;
 }
