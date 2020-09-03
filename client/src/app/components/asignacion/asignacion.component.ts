@@ -24,8 +24,13 @@ export class AsignacionComponent implements OnInit {
       err=> console.error(err)
     );*/
   }
-  agregar(id_curso:number){
-    /*let curso = this.cursoService.getCurso(id_curso);
-    this.cursosAgregados.push(curso);*/
+  agregar(curso){
+    let nuevo = this.cursos.filter(item=>item.id_curso=curso.id_curso);
+    this.cursosAgregados.push(nuevo);
+  }
+  eliminar(id_curso:number){
+    if(this.cursosAgregados.length>0){
+      this.cursosAgregados = this.cursosAgregados.filter(curso=> curso.id!=id_curso);
+    }
   }
 }
