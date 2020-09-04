@@ -5,6 +5,7 @@ export class Catedratico {
     rol:number;
     password:string;
     login:string;
+    activo:number;
     
     public Catedratico(){
 
