@@ -15,9 +15,9 @@ CREATE TABLE DEPARTAMENTO (
 
 CREATE TABLE CURSO (
     id_curso             INTEGER AUTO_INCREMENT,
-    nombre               VARCHAR(30) NOT NULL,
+    nombre               VARCHAR(100) NOT NULL,
     no_creditos          INTEGER NOT NULL,
-    descripcion          VARCHAR(100),
+    descripcion          VARCHAR(300),
     id_escuela           INTEGER NOT NULL,
     PRIMARY KEY (id_curso),
     CONSTRAINT fk_esc_curso FOREIGN KEY(id_escuela) REFERENCES ESCUELA(id_escuela)
@@ -39,7 +39,7 @@ CREATE TABLE SALON (
     capacidad              INTEGER,
     id_edificio             INTEGER NOT NULL,
     PRIMARY KEY(id_salon),
-    CONSTRAINT fk_edif_salon FOREIGN KEY(id_salon) REFERENCES EDIFICIO(id_edificio)
+    CONSTRAINT fk_edif_salon FOREIGN KEY(id_edificio) REFERENCES EDIFICIO(id_edificio)
 );
 
 
@@ -75,11 +75,10 @@ CREATE TABLE CATE_CUENTA (
     login           VARCHAR(50) NOT NULL,
     password        VARCHAR(20) NOT NULL,
     activo          CHAR(1) NOT NULL,
-    id_cate   INTEGER NOT NULL,
     id_catedratico INTEGER NOT NULL,
     PRIMARY KEY(id_cate_cuenta),
-    CONSTRAINT fk_cate_cuenta FOREIGN KEY (id_catedratico) REFERENCES CATEDRATICO(id_catedratico)
-
+    CONSTRAINT fk_cate_cuenta FOREIGN KEY (id_catedratico) REFERENCES CATEDRATICO(id_catedratico),
+    CONSTRAINT uk_catcuent_login UNIQUE(login)
 );
 
 
@@ -113,7 +112,8 @@ CREATE TABLE ESTUDIANTE_CUENTA (
     activo          CHAR(1) NOT NULL,
     id_estudiante   INTEGER NOT NULL,
     PRIMARY KEY(id_est_cuenta),
-    CONSTRAINT fk_est_cuenta FOREIGN KEY (id_estudiante) REFERENCES ESTUDIANTE(id_estudiante)
+    CONSTRAINT fk_est_cuenta FOREIGN KEY (id_estudiante) REFERENCES ESTUDIANTE(id_estudiante),
+    CONSTRAINT uk_estcuent_login UNIQUE(login)
 
 );
 
@@ -136,7 +136,7 @@ CREATE TABLE DETALLE_CAT_CURSO (
     
 );
 
-CREATE TABLE detalle_asig_est ( 
+CREATE TABLE DETALLE_ASIG_EST ( 
     id_asig_est             INTEGER NOT NULL, 
     id_seccion              INTEGER NOT NULL,
     nota                    INTEGER NOT NULL,
@@ -170,7 +170,7 @@ CREATE TABLE ASIG_CONGRESO (
 
 
 
-CREATE TABLE ADMINSTRADOR (
+CREATE TABLE ADMINISTRADOR (
     id_admin   INTEGER AUTO_INCREMENT,
     nombre          VARCHAR(30) NOT NULL,
     apellido        VARCHAR(30) NOT NULL,
@@ -184,5 +184,6 @@ CREATE TABLE ADMIN_CUENTA (
     activo          CHAR(1) NOT NULL,
     id_admin        INTEGER NOT NULL,
     PRIMARY KEY(id_admin_cuenta),
-    CONSTRAINT fk_admin_cuenta FOREIGN KEY (id_admin) REFERENCES ADMINSTRADOR(id_admin)
+    CONSTRAINT fk_admin_cuenta FOREIGN KEY (id_admin) REFERENCES ADMINISTRADOR(id_admin),
+    CONSTRAINT uk_admincuent_login UNIQUE(login)
 );
