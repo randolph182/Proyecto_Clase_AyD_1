@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService, AuthenticationService } from './login.service';
+import { LogearseService} from '../../services/logearse.service';
 
 
 @Component({
@@ -48,8 +49,9 @@ export class LoginComponent implements OnInit {
     else
     {
         this.mensaje = "";
+        
     }
-    localStorage.setItem("sesion", this.getuser); // seteando variable de sesión con el nombre del usuario
+    
   }
  
   onSubmit()
@@ -59,6 +61,23 @@ export class LoginComponent implements OnInit {
 
   selectChangeHandler (event: any) {
     this.rolseleccionado = event.target.value;
+  }
+
+  elegirapi()
+  {
+    if(this.rolseleccionado == 'estudiante')
+    {
+      //mandar a api estudiante
+    }
+    else if(this.rolseleccionado == 'catedratico')
+    {
+      //mandar a api catedratico
+    }
+    else
+    {
+      //mandar a api admin      
+    }
+
   }
 
 public showMyMessage = false
