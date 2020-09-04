@@ -18,9 +18,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RegistroService {
-  private catedraticourl = 'http://localhost:3000/api/catedraticos';
-  private estudianteurl = 'http://localhost:3000/api/estudiantes';
-  private adminurl = 'http://localhost:3000/api/administradores';
+  private catedraticourl = 'http://localhost:3000/regisrar_usuario';
   constructor(private http: HttpClient) {
 
    }
@@ -60,77 +58,6 @@ export class RegistroService {
     );
 
   }
-
-  /** GET estudiantes from the server */
-  getEstudiantes(): Observable<Estudiante[]> {
-    return this.http.get<Estudiante[]>(this.estudianteurl)
-    .pipe(tap(_ => console.log('fetched estudiantes')),
-    catchError(this.handleError<Estudiante[]>('getEstudiantes', []))
-    );
-  }
-
-  /** GET hero by id. Will 404 if id not found */
-  getEstudiante(id_estudiante: number): Observable<Estudiante> {
-    if(id_estudiante < 0){
-      return of();
-    }
-    
-    const url = `${this.estudianteurl}/${id_estudiante}`;
-    return this.http.get<Estudiante>(url).
-    pipe(
-      tap(_ => console.log(`fetched estudiante codestudiante=${id_estudiante}`)),
-      catchError(this.handleError<Estudiante>(`getestudiante username=${id_estudiante}`))
-    );
-  }
-
-  
-
-
-  /*** DML */
-  addEstudiante(estudiante : Estudiante) : Observable<Estudiante>{
-    return this.http.post<Estudiante>(this.estudianteurl, estudiante, httpOptions)
-    .pipe(
-      tap((newEstudiante : Estudiante) => console.log(`added new user w/ id=${newEstudiante}`)),
-      catchError(this.handleError<Estudiante>('Catedratico'))
-    );
-
-  }
-
-    /** GET estudiantes from the server */
-    getAdministrativos(): Observable<Administrativo[]> {
-      return this.http.get<Administrativo[]>(this.adminurl)
-      .pipe(tap(_ => console.log('fetched administrador')),
-      catchError(this.handleError<Administrativo[]>('getEstudiantes', []))
-      );
-    }
-  
-    /** GET hero by id. Will 404 if id not found */
-    getAdministrativo(id_admin: number): Observable<Administrativo> {
-      if(id_admin < 0){
-        return of();
-      }
-      
-      const url = `${this.adminurl}/${id_admin}`;
-      return this.http.get<Administrativo>(url).
-      pipe(
-        tap(_ => console.log(`fetched estudiante codestudiante=${id_admin}`)),
-        catchError(this.handleError<Administrativo>(`getestudiante username=${id_admin}`))
-      );
-    }
-  
-    
-  
-  
-    /*** DML */
-    addAdministrador(administrador : Administrativo) : Observable<Administrativo>{
-      return this.http.post<Administrativo>(this.adminurl,administrador, httpOptions)
-      .pipe(
-        tap((newAdmin : Administrativo) => console.log(`added new user w/ id=${newAdmin}`)),
-        catchError(this.handleError<Administrativo>('Catedratico'))
-      );
-  
-    }
-
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

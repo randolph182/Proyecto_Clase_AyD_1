@@ -1,8 +1,8 @@
 export class Catedratico {
-    id_usuario:number;
+    id:number;
     nombre:string;
     apellido:string;
-    tipo:number;
+    rol:number;
     password:string;
     login:string;
     
