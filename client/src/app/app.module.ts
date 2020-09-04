@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {WebStorageModule, LocalStorageService} from "angular-localstorage";
 import { CommonModule } from '@angular/common';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 library.add(fas,far);
 @NgModule({
@@ -35,7 +36,8 @@ library.add(fas,far);
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
   ],
   exports:[
     [RouterModule]

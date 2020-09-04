@@ -17,9 +17,9 @@
     <div class='form-group'>
         <label for="cars">Elija su tipo de usuario :</label>
         <select name="rol" id="rol" (change)="selectChangeHandler($event)">
-        <option value="estudiante">Estudiante</option>
-        <option value="catedratico">Catedratico</option>
-        <option value="admin">Administrador</option>
+        <option value="1">Estudiante</option>
+        <option value="2">Catedratico</option>
+        <option value="3">Administrador</option>
         </select>
         <!--<p><span>You selected: </span><b>{{selectedDay}}</b></p>-->
     </div>
@@ -30,7 +30,7 @@
             Ingresar
         </button>
         <a routerLink="/registro" class="btn btn-link"  routerLinkActive="active">Registrarse</a>
-    <tr><td>{{mensaje}}</td></tr>
+    <!--<tr><td>{{mensaje}}</td></tr>-->
       </div>
 </form>
 <router-outlet></router-outlet>

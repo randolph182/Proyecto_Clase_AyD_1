@@ -22,11 +22,13 @@ export class LoginComponent implements OnInit {
     getpass: string;
     rolseleccionado: string = '';
     mensaje: string;
+    retorno: string;
 
   constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private LogearseService: LogearseService
   ) { }
 
   ngOnInit() {
@@ -49,7 +51,7 @@ export class LoginComponent implements OnInit {
     else
     {
         this.mensaje = "";
-        
+        this.LogearseService.login2(this.getuser, this.getpass, this.rolseleccionado);
     }
     
   }
@@ -61,23 +63,6 @@ export class LoginComponent implements OnInit {
 
   selectChangeHandler (event: any) {
     this.rolseleccionado = event.target.value;
-  }
-
-  elegirapi()
-  {
-    if(this.rolseleccionado == 'estudiante')
-    {
-      //mandar a api estudiante
-    }
-    else if(this.rolseleccionado == 'catedratico')
-    {
-      //mandar a api catedratico
-    }
-    else
-    {
-      //mandar a api admin      
-    }
-
   }
 
 public showMyMessage = false
