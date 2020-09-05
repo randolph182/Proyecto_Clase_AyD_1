@@ -263,8 +263,9 @@ router.get('/obtener_cursos', (req, res, next) => {
 ************Obtener lista dependiendo del rol enviado************
 *****************************************************************
 */
-router.post('/obtener_usuarios', (req, res, next) => {
-  if(req.body.rol = 1)
+router.get('/obtener_usuarios/:rol', (req, res, next) => {
+  const {rol} = req.params;
+  if(rol == 1)
   {
     db.query(
       'SELECT * FROM ESTUDIANTE',
@@ -281,7 +282,7 @@ router.post('/obtener_usuarios', (req, res, next) => {
       }
     );
   }
-  if(req.body.rol = 2)
+  else if(rol == 2)
   {
     db.query(
       'SELECT * FROM CATEDRATICO',
@@ -298,7 +299,7 @@ router.post('/obtener_usuarios', (req, res, next) => {
       }
     );
   }
-  else
+  else if(rol == 3)
   {
     db.query(
       'SELECT * FROM ADMINISTRADOR',
