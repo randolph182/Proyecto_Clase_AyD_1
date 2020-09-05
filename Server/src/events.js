@@ -263,7 +263,7 @@ router.get('/obtener_cursos', (req, res, next) => {
 ************Obtener lista dependiendo del rol enviado************
 *****************************************************************
 */
-router.get('/obtener_usuarios', (req, res, next) => {
+router.post('/obtener_usuarios', (req, res, next) => {
   if(req.body.rol = 1)
   {
     db.query(
