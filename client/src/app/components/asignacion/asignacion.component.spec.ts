@@ -23,8 +23,17 @@ describe('AsignacionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it ('should delete curso',()=>{
-    //let arr = [casdkljfañslkdfj];
-    //eliminar(0);
+  it ('should be false',()=>{
+    let curso1 = {
+      curso:"curso",
+      seccion:'A'
+    }
+    let curso2 = {
+      curso:"curso",
+      seccion:'B'
+    }
+    component.cursosAgregados.push(curso1);
+    component.cursosAgregados.push(curso2);
+    expect(component.aceptar()).toBeTruthy();
   })
 });
