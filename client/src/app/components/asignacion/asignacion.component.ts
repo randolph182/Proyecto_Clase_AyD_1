@@ -41,17 +41,22 @@ export class AsignacionComponent implements OnInit {
   }
   aceptar():boolean{
     let aux:any;
+    if(this.cursosAgregados.length==0){
+      return false;
+    }
     for (let i = 0;i<this.cursosAgregados.length;i++) {
       aux = this.cursosAgregados[i];
       if(i+1<this.cursosAgregados.length){
-        if(aux.curso==this.cursosAgregados[i+1]){
+        if(aux.curso==this.cursosAgregados[i+1].curso){
           return false;
         }
       }
     }
+
     return true;
   }
-  irAAsignación(){
+  irAAsignacion(){
+    console.log(this.aceptar());
     if(this.aceptar()){
       this.router.navigate['aceptarasignacion'];
     }
