@@ -1,0 +1,18 @@
+
+**************** PARA CAMBIAR EL VARCHAR DE UN CAMPO DE UNA ENTIDAD ****************
+ALTER TABLE `asig_cursos`.`CURSO` 
+CHANGE COLUMN `nombre` `nombre` VARCHAR(100) NOT NULL ,
+CHANGE COLUMN `descripcion` `descripcion` VARCHAR(300) NULL DEFAULT NULL ;
+
+
+**************** PARA CAMBIAR UNA LLAVE FORANEA EQUIVOCADA ****************
+ALTER TABLE `asig_cursos`.`SALON` 
+DROP FOREIGN KEY `fk_edif_salon`;
+ALTER TABLE `asig_cursos`.`SALON` 
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`id_edificio`);
+;
+ALTER TABLE `asig_cursos`.`SALON` 
+ADD CONSTRAINT `fk_edif_salon`
+  FOREIGN KEY (`id_edificio`)
+  REFERENCES `asig_cursos`.`EDIFICIO` (`id_edificio`);

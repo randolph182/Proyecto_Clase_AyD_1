@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D19237D9-D590-4A13-D599-20BF749DC58B" containerWithKeyObject="C3825DDF-8DE8-BCB7-4EBB-3BF1338E5060" localFKIndex="26466B20-4663-13EF-D8F9-1C0D98598428" name="Asignacion_Congreso_Congreso_FK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-27 22:07:34 UTC</createdTime>
+<generatorID>22E754D8-F0DA-FE92-1E80-E79999E7C6AE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<referredTableLongName>Congreso</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>57016C7E-9480-A900-9FF8-99E9AB14C60A</referredTableID>
+<keyObject>E3AB359E-C103-5AD9-7220-4EB82C14291C</keyObject>
+<referredKeyID>E3AB359E-C103-5AD9-7220-4EB82C14291C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_congreso</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

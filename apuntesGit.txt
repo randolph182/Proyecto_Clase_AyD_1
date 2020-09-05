@@ -64,7 +64,15 @@ o	Comando: git merge agregando_lineas
 •	Rama afectada: master
 •	Rama no afectada: agreando_lineas
 
+================  Experiencias ================ 
+cuando quiera hacer merge a la principal pero yo estoy en otra rama
+- primero me voy la rama principal o la rama que me interesa
+	- con el comando git checkout nombreRama
+- luego hago el merge a la rama que me interesa el comando esta arriba
+- OJO aca estoy trabajando en mi repositorio local por eso es que los demas no podran visualizar los cambios
+- para que todos vean los cambios tengo que subirlo con el git push.....
 
+hago push porque estan en el repo local
 
 
 

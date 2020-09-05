@@ -1,0 +1,84 @@
+<div class="container">
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+    
+          <!-- Portfolio Section Heading -->
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Usuarios</h2>
+    
+          <!-- Icon Divider -->
+          <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+            
+                <fa-icon [icon] = "faStar" >
+          
+                </fa-icon>
+              <!--i class="fas fa-star"></i-->
+            </div>
+            <div class="divider-custom-line"></div>
+          </div>
+    
+          <!-- Portfolio Grid Items -->
+          <div class="row" >
+       
+              <!-- Portfolio Item 1 -->
+              <div class="col-md-6 col-lg-4">
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" (click)="buscar()" type="button">Buscar</button>
+                      </div>
+                      <select class="custom-select" id="inputGroupSelect03" [(ngModel)] ="selectBus">
+                        <option selected [value]="1">Estudiantes</option>
+                        <option [value]="2">Catedraticos</option>
+                        <option [value]="3">Administradores</option>
+                      </select>
+                    </div>
+              </div>
+              
+
+              <br>
+              <br>
+
+      
+            </div>
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellidos</th>
+                  <th scope="col">Asignar</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of usuarios; let indice = index">
+                  <th scope="row">{{indice + 1}}</th>
+                  <td>{{user.nombre}}</td>
+                  <td>{{user.apellido}}</td>
+                  <td> <a routerLink="/registro-cuenta/{{user.id}}"><fa-icon [icon] = "faPlus">
+        
+                </fa-icon>
+                </a ></td>
+                </tr>
+              </tbody>
+            </table>
+           <br>
+           <!--div *ngIf="selectTipo==1"class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text">Contenido</span>
+               </div>
+               <textarea class="form-control"
+               [(ngModel)]="contenido" rows="10" aria-label="With textarea"></textarea>
+           </div--->
+
+
+  
+          <!--button type="submit" class="btn btn-primary btn-xl float-right" id="btnCrear" (click)="">Crear</button--->
+            
+          <!-- /.row -->
+    
+        </div>
+      </section>
+    
+</div>

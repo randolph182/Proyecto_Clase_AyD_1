@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3A4B20D9-5C4A-EFD8-A54A-57A7D3FBC431" name="Usuario">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:29:06 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario" id="61BBCC9C-4244-4192-DEA0-8B4CE388B18A">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:29:13 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="identificador" id="99DE04BC-4280-1310-9BDC-C41145D86C5C">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:29:27 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="8DC66A76-45F6-E400-7E8B-A47DB0A6F122">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:32:31 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_rol" id="295ABED1-3BE1-C435-B565-95087D6834F2">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:33:57 UTC</createdTime>
+<generatorID>DE3D61C0-645D-81BE-996E-C88415C12E03</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>90743A4F-F31E-4B26-A11F-A4633787B94C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_estudiante" id="A885C191-79AD-9CCA-F7EF-A75521BCB188">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:36:00 UTC</createdTime>
+<generatorID>4EA90F5A-6E18-E425-126B-9EA3FC63CFF4</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>4C004B7A-E132-91B8-BC8D-C3C3BFAC9708</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_catedratico" id="816C625F-EB52-F319-3E6C-F7FAA54F44E6">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:36:08 UTC</createdTime>
+<generatorID>A6AB4365-B88D-9F27-4287-63398C34C8EE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<referedAttribute>2E63647C-40D3-4606-5885-90D6475EA0D9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4562D213-FE99-6394-39E8-47B21FAEBB03" name="Usuario PK">
+<createdBy>Rm</createdBy>
+<createdTime>2020-08-23 23:29:24 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="EBA51C6B-E17B-12C7-D1E4-049346DF62C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>61BBCC9C-4244-4192-DEA0-8B4CE388B18A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
