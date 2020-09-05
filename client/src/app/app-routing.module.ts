@@ -13,9 +13,19 @@ const routes: Routes = [
   {path: 'aceptarasignacion',component:AceptarasignacionComponent},
   {path: 'registro-usuario', component:RegistroUsuarioComponent}
 ];
+import { LoginComponent } from './components/login/login.component';
+import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
+
 export class AppRoutingModule { }
+
+
+const rutas: Routes = [
+  {path: 'login', component: LoginComponent},
+  {path: 'registro', component: RegistroUsuarioComponent}
+];

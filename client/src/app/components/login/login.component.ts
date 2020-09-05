@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService, AuthenticationService } from './login.service';
+import { LogearseService} from '../../services/logearse.service';
+
 
 @Component({
   selector: 'app-login',
@@ -18,11 +20,15 @@ export class LoginComponent implements OnInit {
 
     getuser: string;
     getpass: string;
+    rolseleccionado: string = '';
+    mensaje: string;
+    retorno: string;
 
   constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private LogearseService: LogearseService
   ) { }
 
   ngOnInit() {
@@ -39,6 +45,15 @@ export class LoginComponent implements OnInit {
   GetControls(){
     this.getuser = this.f.username.value;
     this.getpass = this.f.password.value;
+    if (this.getuser == '' || this.getpass == '') {
+        this.mensaje = "Favor de llenar todos los campos!";
+    }
+    else
+    {
+        this.mensaje = "";
+        this.LogearseService.login2(this.getuser, this.getpass, this.rolseleccionado);
+    }
+    
   }
  
   onSubmit()
@@ -46,6 +61,9 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
   }
 
+  selectChangeHandler (event: any) {
+    this.rolseleccionado = event.target.value;
+  }
 
 public showMyMessage = false
 

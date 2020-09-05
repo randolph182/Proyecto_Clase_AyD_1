@@ -10,5 +10,8 @@
   "description": "",
   "devDependencies": {
     "@angular/compiler-cli": "^10.0.11"
+  },
+  "dependencies": {
+    "angular-localstorage": "^1.1.5"
   }
 }
