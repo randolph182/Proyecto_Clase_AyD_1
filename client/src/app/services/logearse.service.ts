@@ -20,7 +20,7 @@ export class LogearseService {
 
   retorno: string;
 
-  private usuariourl = 'http://3.91.73.220:3000/login';
+  private usuariourl = 'http://3.227.118.254:3000/login';
   constructor(private http:HttpClient) { }
 
   /*headers: HttpHeaders = new HttpHeaders({
