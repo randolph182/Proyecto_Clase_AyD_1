@@ -20,7 +20,7 @@ export class LogearseService {
 
   retorno: string;
 
-  private usuariourl = 'http://3.85.52.106:3000/login';
+  private usuariourl = 'http://3.91.73.220:3000/login';
   constructor(private http:HttpClient) { }
 
   /*headers: HttpHeaders = new HttpHeaders({
@@ -43,7 +43,7 @@ export class LogearseService {
 
   login2(correo: string, pass: string, rol: string)
   {
-    this.http.post<any>(this.usuariourl, {"correo": correo, "password": pass, "rol": rol }, httpOptions).subscribe(data => {
+    this.http.post<any>(this.usuariourl, {correo: "correo" , pass : "password", rol: "rol" }, httpOptions).subscribe(data => {
     this.retorno = data.id;
     console.log('respuesta: ' + data.id);})
   }
