@@ -47,6 +47,8 @@
                   <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Apellidos</th>
+                  <th scope="col">Asignar</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -54,6 +56,10 @@
                   <th scope="row">{{indice + 1}}</th>
                   <td>{{user.nombre}}</td>
                   <td>{{user.apellido}}</td>
+                  <td> <a routerLink="/registro-cuenta/{{user.id}}"><fa-icon [icon] = "faPlus">
+        
+                </fa-icon>
+                </a ></td>
                 </tr>
               </tbody>
             </table>

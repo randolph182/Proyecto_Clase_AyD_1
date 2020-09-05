@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { RegistroCuentaComponent } from './components/registro-cuenta/registro-cuenta.component';
 
 library.add(fas,far);
 @NgModule({
@@ -23,14 +24,16 @@ library.add(fas,far);
     EncabezadoComponent,
     HomeComponent,
     RegistroUsuarioComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    RegistroCuentaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

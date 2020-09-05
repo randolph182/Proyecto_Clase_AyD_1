@@ -13,15 +13,19 @@ import { Router } from '@angular/router';
 export class RegistroUsuarioComponent implements OnInit {
 
   usuarioForm:FormGroup;
+
   constructor(private formBuilder:FormBuilder,
-    private router:Router) { }
+    private router:Router,
+    private registroService:RegistroService) {
+
+     }
 
   ngOnInit(): void {
 
     this.usuarioForm = this.formBuilder.group(
       {
         nombre: ['',Validators.required],
-        apellidos: ['',Validators.required],
+        apellido: ['',Validators.required],
         selectUsuario: ['',Validators.required]
         
       }
@@ -29,38 +33,44 @@ export class RegistroUsuarioComponent implements OnInit {
 
   }
 
+  public getError(controlName:string):string{
+    let error= '';
+    const control = this.usuarioForm.controls[controlName];
+    if(control.touched && control.errors != null){
+      if(controlName == 'clave'){
+        error = 'Se necesita '+controlName+' campo obligatorio, al menos 1 letra, 1 simbolo y 1 numero.';
+      }else {
+        error = 'Se necesita '+controlName+' campo obligatorio.';
+      }
+
+    }
+    return error;
+
+  }
+
   addUsuario():void{
 
     let user:Catedratico = new Catedratico();
-    if(this.usuarioForm.controls['selectUsuario'].value == "1"){
-      console.log('Es un administrador');
-      alert('Es un administrador');
-      
-    }
+    
+
+    user.nombre = this.usuarioForm.controls['nombre'].value;
+    user.apellido = this.usuarioForm.controls['apellido'].value;
 
 
-    /*if(this.usuarios.find(usuario => usuario.username === user.username)){
-      alert('utilice otro nombre de usuario, ya existe este DX');
-      return;
-    }
+    console.log(user);
+    
 
-    if(this.usuarios.find(usuario => usuario.correo === user.correo)){
-      alert('Correo ya registrado');
-      return;
-    }
-
-    this.usuarioService.addUsuario(user).
+    this.registroService.addCatedratico(user).
       subscribe(
         usuario => {
           alert('Usuario ingresado con exito');
           console.log(usuario);
-          this.usuarios.push(user);
           // redireccionamos para que este en una pagina para que valide su correo..
 
         }
       );
 
-    */
+    
   }
   
 
