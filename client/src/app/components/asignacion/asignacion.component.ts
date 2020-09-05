@@ -8,7 +8,7 @@ import {CursoService} from '../../Services/curso.service'
 })
 export class AsignacionComponent implements OnInit {
 
-  constructor(/*private cursoService:CursoService*/) { }
+  constructor(private cursoService:CursoService) { }
   cursos:any=[];
   cursosAgregados:any=[];
   
@@ -16,21 +16,27 @@ export class AsignacionComponent implements OnInit {
     this.getCursos(); 
   }
   getCursos(){
-    const id_usuario:number = 0;
-    /*this.cursoService.getCursosEstudiante(id_usuario).subscribe(
+    this.cursoService.getCursosEstudiante()
+    .subscribe(
       res=>{
-        this.cursos= res;
+        this.cursos = res;
+        console.log(this.cursos);
       },
       err=> console.error(err)
-    );*/
+    );
   }
   agregar(curso){
-    let nuevo = this.cursos.filter(item=>item.id_curso=curso.id_curso);
-    this.cursosAgregados.push(nuevo);
+    console.log(curso);
+    this.cursos.forEach(element => {
+      if((element.curso+element.seccion)==curso){
+        this.cursosAgregados.push(element);
+      }
+    });
   }
-  eliminar(id_curso:number){
+  eliminar(curso){
     if(this.cursosAgregados.length>0){
-      this.cursosAgregados = this.cursosAgregados.filter(curso=> curso.id!=id_curso);
     }
+  }
+  aceptar(){
   }
 }

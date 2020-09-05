@@ -4,12 +4,12 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class CursoService {
-  API_URI = 'http://';
+  API_URI = 'http://3.85.52.106:3000';
   cursos:any=[];
   constructor(private http:HttpClient) { }
 
-  getCursosEstudiante(id_estudiante:number){
-    return this.http.post(`${this.API_URI}/getCursos`,id_estudiante);
+  getCursosEstudiante(){
+    return this.http.get(`${this.API_URI}/obtener_cursos`);
   }
   getCurso(id_curso:number){
     return this.http.post(`${this.API_URI}/getCurso`,id_curso);

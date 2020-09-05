@@ -7,25 +7,26 @@
         <div class="form-group ">
             <label for="inputState">Cursos disponibles</label>
             <select  id="inputState" class="form-control" #txtCurso>    
-                <option  type="text"  *ngFor="let curso of this.cursos | keyvalue" [value]="curso.value['ID']">{{curso.value['NOMBRE']}}</option>
-
+                <option  type="text"  *ngFor="let curso of this.cursos" [value]="curso.curso+curso.seccion">{{curso.curso}} Sección: {{curso.seccion}}</option>
               </select>
             <small><p class="text-error"></p></small>
             <button  type="button"  class="btn btn-primary btn-block" (click)="agregar(txtCurso.value)">Agregar Curso</button>
         </div> 
     </div>
-    <div class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4" (ngModel)="cursosAgregados">
-        <mdb-card *ngFor="let curso for cursosAgregados">
-            <!--Card content-->
-            <mdb-card-body>
-                <!--Title-->
-                <mdb-card-title>
-                    <h4>{{ curso.name }}</h4>
-                </mdb-card-title>
-                <mdb-card-text> {{curso.descripcion}}    </mdb-card-text>
-                <mat-card-actions>
-                    <button mat-button>Eliminar</button>
-                </mat-card-actions>
-            </mdb-card-body>
-        </mdb-card> 
+    <div class="col-md-4" *ngFor="let curso of cursosAgregados">
+        <div class="card text-center">
+          <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{curso.curso}}
+            <button class="btn btn-danger" (click)="eliminar(curso.curso+curso.seccion)">
+              <i class="far fa-trash-alt">Delete</i>
+            </button>
+          </div>
+          <div class="card-body">
+            <p>{{curso.catedratico}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 pt-2">
+      <button class="btn btn-danger btn-block" (click)="aceptar()">Aceptar Asignación</button>
+      </div>
 </div>

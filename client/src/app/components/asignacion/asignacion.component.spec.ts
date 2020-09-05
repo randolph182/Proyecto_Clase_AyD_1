@@ -22,4 +22,9 @@ describe('AsignacionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it ('should delete curso',()=>{
+    //let arr = [casdkljfañslkdfj];
+    //eliminar(0);
+  })
 });
