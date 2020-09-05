@@ -33,7 +33,7 @@ function createRouter(db) {
 
   //******Registrar cuenta******
   router.post('/registrar_cuenta', (req, res, next) => {
-    if(req.body.rol = 1)
+    if(req.body.rol == 1)
     {
       db.query(
         'INSERT INTO ESTUDIANTE_CUENTA(login, password, activo, id_estudiante) VALUES(?,?,?,?)',
@@ -51,7 +51,7 @@ function createRouter(db) {
         }
       );
     }
-    else if(req.body.rol = 2)
+    else if(req.body.rol == 2)
     {
       db.query(
         'INSERT INTO CATE_CUENTA(login, password, activo, id_estudiante) VALUES(?,?,?,?)',
@@ -69,7 +69,7 @@ function createRouter(db) {
         }
       );
     }
-    else
+    else if(req.body.rol == 3)
     {
       db.query(
         'INSERT INTO ADMIN_CUENTA(login, password, activo, id_estudiante) VALUES(?,?,?,?)',
@@ -96,7 +96,7 @@ function createRouter(db) {
   *****************************************************
   */
   router.post('/registrar_usuario', (req, res, next) => {
-    if(req.body.rol = 1)
+    if(req.body.rol == 1)
     {
       db.query(
         'INSERT INTO ESTUDIANTE(nombre, apellido) VALUES(?,?)',
@@ -114,7 +114,7 @@ function createRouter(db) {
         }
       );
     }
-    else if(req.body.rol = 2)
+    else if(req.body.rol == 2)
     {
       db.query(
         'INSERT INTO CATEDRATICO(nombre, apellido) VALUES(?,?)',
@@ -132,7 +132,7 @@ function createRouter(db) {
         }
       );
     }
-    else
+    else if(req.body.rol == 3)
     {
       db.query(
         'INSERT INTO ADMINISTRADOR(nombre, apellido) VALUES(?,?)',
@@ -177,7 +177,7 @@ router.post('/obtener_seccion', (req, res, next) => {
 
 //******Login******
 router.post('/login', (req, res, next) => {
-  if(req.body.rol = 1)
+  if(req.body.rol == 1)
   {
     db.query(
       'SELECT * FROM ESTUDIANTE_CUENTA WHERE login = ? AND password = ?',
@@ -195,7 +195,7 @@ router.post('/login', (req, res, next) => {
       }
     );
   }
-  if(req.body.rol = 2)
+  else if(req.body.rol == 2)
   {
     db.query(
       'SELECT * FROM CATE_CUENTA WHERE login = ? AND password = ?',
@@ -213,7 +213,7 @@ router.post('/login', (req, res, next) => {
       }
     );
   }
-  else
+  else if(req.body.rol == 3)
   {
     db.query(
       'SELECT * FROM ADMIN_CUENTA WHERE login = ? AND password = ?',
