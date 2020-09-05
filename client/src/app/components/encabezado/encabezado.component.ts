@@ -10,25 +10,14 @@ import { faSms } from '@fortawesome/free-solid-svg-icons';
 export class EncabezadoComponent implements OnInit {
   faSignInAlt  = faSignInAlt;
   faSms = faSms;
-<<<<<<< HEAD
-  constructor() {
-    
-   }
-
-  ngOnInit(): void {
-=======
 
   constructor() { }
 
   ngOnInit(): void {
     
->>>>>>> login2
   }
   logout(){
     
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> login2
 }
