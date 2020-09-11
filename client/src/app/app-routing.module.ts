@@ -8,6 +8,7 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { RegistroCuentaComponent } from './components/registro-cuenta/registro-cuenta.component';
 import { LoginComponent } from './components/login/login.component';
+import { ModificacionUsuarioComponent } from './components/modificacion-usuario/modificacion-usuario.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home' , pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'aceptarasignacion',component:AceptarasignacionComponent},
   {path: 'registro-usuario', component:RegistroUsuarioComponent},
   {path: 'usuarios', component:UsuariosComponent},
-  {path: 'registro-cuenta/:id', component:RegistroCuentaComponent }
+  {path: 'registro-cuenta/:id', component:RegistroCuentaComponent },
+  {path: 'modificacion-usuario/:id', component:ModificacionUsuarioComponent}
 ];
 
 @NgModule({

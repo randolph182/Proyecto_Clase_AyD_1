@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { Catedratico } from 'src/app/models/catedratico';
 import { RegistroService } from 'src/app/services/registro.service';
@@ -13,6 +14,7 @@ import { RegistroService } from 'src/app/services/registro.service';
 export class UsuariosComponent implements OnInit {
   faStar = faStar;
   faPlus = faPlus;
+  faEdit = faEdit;
   selectBus:number = 1;
   usuarios:Catedratico[] = [];
 
