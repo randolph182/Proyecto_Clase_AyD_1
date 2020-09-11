@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class CursoService {
-  API_URI = 'http://3.91.73.220:3000';
+  API_URI = 'http://3.227.118.254:3000';
   cursos:any=[];
   constructor(private http:HttpClient) { }
 

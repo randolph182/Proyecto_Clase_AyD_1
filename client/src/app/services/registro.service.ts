@@ -22,7 +22,7 @@ export class RegistroService {
 
   /** GET Usuarios from the server */
   getCatedraticos (): Observable<Catedratico[]> {
-    let urlUsuarios = 'http://3.85.52.106:3000/obtener_usuarios';
+    let urlUsuarios = 'http://3.227.118.254:3000/obtener_usuarios/1';
     return this.http.get<Catedratico[]>(urlUsuarios)
     .pipe(
       tap(_ => console.log('fetched catedraticos')),
