@@ -26,7 +26,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   getUsuarios():void{
-    this.registroService.getCatedraticos().
+    this.registroService.getCatedraticos(1).
     subscribe(usuarios =>{
       this.usuarios = usuarios as Catedratico[];
       console.log("--------usuarios local------------\n");
@@ -44,6 +44,15 @@ export class UsuariosComponent implements OnInit {
     let usuario:Catedratico = new Catedratico();
     usuario.rol = this.selectBus;
     // aqui devuelve para llenar de nuevo el arreglo de usuarios.
+    this.registroService.getCatedraticos(this.selectBus).
+      subscribe(usuarios =>{
+        this.usuarios = usuarios as Catedratico[];
+        console.log("--------usuarios local------------\n");
+        console.log(usuarios);
+        console.log("--------usuarios global------------\n");
+        console.log(this.usuarios);
+      }, 
+      error => console.error(error));
     
     
 
