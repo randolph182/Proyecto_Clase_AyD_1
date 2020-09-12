@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'encabezado', component:EncabezadoComponent},
   {path: 'home', component:HomeComponent },
   {path: 'asignacion', component:AsignacionComponent},
-  {path: 'aceptarasignacion',component:AceptarasignacionComponent},
+  {path: 'asignacion/confirmar',component:AceptarasignacionComponent},
   {path: 'registro-usuario', component:RegistroUsuarioComponent},
   {path: 'usuarios', component:UsuariosComponent},
   {path: 'registro-cuenta/:id', component:RegistroCuentaComponent }

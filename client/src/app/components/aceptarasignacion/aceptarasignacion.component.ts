@@ -12,4 +12,7 @@ export class AceptarasignacionComponent implements OnInit {
   ngOnInit(): void {
    // asginacionService.agregarAsignacion();
   }
+
+
+  
 }
