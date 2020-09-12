@@ -318,6 +318,72 @@ router.get('/obtener_usuarios/:rol', (req, res, next) => {
   }
 });
 
+
+/*
+************************************************************************************************
+******************************************METODOS PUT*******************************************
+************************************************************************************************
+*/
+
+//******Dar de baja a los usuarios******
+router.put('/baja_cuenta/:rol', (req, res, next) => {
+  const {rol} = req.params;
+  if(rol == 1)
+  {
+    db.query(
+      'UPDATE ESTUDIANTE_CUENTA SET activo = 0 WHERE id_estudiante=?',
+      [req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.rol == 2)
+  {
+    db.query(
+      'UPDATE CATE_CUENTA SET activo = 0 WHERE id_catedratico=?',
+      [req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.rol == 3)
+  {
+    db.query(
+      'UPDATE ADMIN_CUENTA SET activo = 0 WHERE id_admin=?',
+      [req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+});
+
   return router;
 }
 module.exports = createRouter;
