@@ -64,6 +64,15 @@ export class RegistroService {
 
   }
 
+  /** PUT: update the hero on the server */
+  updateUsuario(usuario:Catedratico): Observable<any> {
+    let url = 'http://3.85.52.106:3000/actualizar_cuenta';
+    return this.http.put(url, usuario, httpOptions).pipe(
+      tap(_ => console.log(`updated hero id=${usuario.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
  
