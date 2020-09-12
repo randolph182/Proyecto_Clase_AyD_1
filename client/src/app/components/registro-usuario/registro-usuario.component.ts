@@ -26,6 +26,8 @@ export class RegistroUsuarioComponent implements OnInit {
       {
         nombre: ['',Validators.required],
         apellido: ['',Validators.required],
+        dpi: ['', [Validators.required, Validators.maxLength(13), Validators.pattern('^\d+$')]],
+        carnet: ['', [Validators.required, Validators.maxLength(9), Validators.pattern('^\d+$')]],
         selectUsuario: ['',Validators.required]
         
       }
