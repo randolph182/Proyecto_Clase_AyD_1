@@ -30,6 +30,14 @@ export class RegistroService {
     );
   }
 
+  getUsuario(id: number): Observable<Catedratico> {
+    const url = `http://3.227.118.254:3000/obtener_usuario/${id}`;
+    return this.http.get<Catedratico>(url).pipe(
+      tap(_ => console.log(`fetched usuario id=${id}`)),
+      catchError(this.handleError<Catedratico>(`getUsuario id=${id}`))
+    );
+  }
+
   
 
 
@@ -43,6 +51,8 @@ export class RegistroService {
     );
 
   }
+
+
 
   addCuenta(catedratico : Catedratico) : Observable<Catedratico>{
     let url = 'http://3.85.52.106:3000/registrar_cuenta';
