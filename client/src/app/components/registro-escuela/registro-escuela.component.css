@@ -3101,14 +3101,14 @@
   
   .btn-group,
   .btn-group-vertical {
-    position: relative;
+    position: absolute;
     display: inline-flex;
     vertical-align: middle;
   }
   
   .btn-group > .btn,
   .btn-group-vertical > .btn {
-    position: relative;
+    position: absolute;
     flex: 1 1 auto;
   }
   
@@ -3219,7 +3219,7 @@
   }
   
   .input-group {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
@@ -3230,7 +3230,7 @@
   .input-group > .form-control-plaintext,
   .input-group > .custom-select,
   .input-group > .custom-file {
-    position: relative;
+    position: absolute;
     flex: 1 1 auto;
     width: 1%;
     margin-bottom: 0;
@@ -9726,7 +9726,7 @@
   
   .portfolio .portfolio-item {
     cursor: pointer;
-    position: relative;
+    position: absolute;
     display: block;
     max-width: 25rem;
     margin-bottom: 30px;
@@ -9782,7 +9782,7 @@
   .floating-label-form-group input,
   .floating-label-form-group textarea {
     font-size: 1.5em;
-    position: relative;
+    position: absolute;
     z-index: 1;
     padding-right: 0;
     padding-left: 0;
