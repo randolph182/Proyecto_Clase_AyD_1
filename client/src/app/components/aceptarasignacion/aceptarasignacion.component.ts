@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-aceptarasignacion',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aceptarasignacion.component.css']
 })
 export class AceptarasignacionComponent implements OnInit {
-  asignaciones:any=[];
+  @Input()asignaciones:any=[];
   constructor() { }
 
   ngOnInit(): void {
