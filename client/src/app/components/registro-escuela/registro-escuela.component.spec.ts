@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RegistroUsuarioComponent } from '../registro-usuario/registro-usuario.component';
 
 import { RegistroEscuelaComponent } from './registro-escuela.component';
 
@@ -21,5 +22,8 @@ describe('RegistroEscuelaComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('deberia guardar el valor del nombre', () => {
+    //expect(RegistroEscuelaComponent['nombre'] != "");
   });
 });
