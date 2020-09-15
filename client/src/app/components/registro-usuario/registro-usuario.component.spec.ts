@@ -6,7 +6,7 @@ import { RegistroService } from 'src/app/services/registro.service';
 import { Catedratico } from '../../models/catedratico';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-fdescribe('RegistroUsuarioComponent', () => {
+describe('RegistroUsuarioComponent', () => {
   let component: RegistroUsuarioComponent;
   let fixture: ComponentFixture<RegistroUsuarioComponent>;
 

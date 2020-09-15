@@ -61,6 +61,8 @@ export class UsuariosComponent implements OnInit {
   }
 
   eliminar(id:number):void{
+    this.registroService.darDeBaja(id).subscribe( usuario => { alert('Usuario eliminado Dx');});
+
 
 
   }
