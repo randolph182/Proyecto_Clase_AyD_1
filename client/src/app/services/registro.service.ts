@@ -52,6 +52,14 @@ export class RegistroService {
 
   }
 
+  // dar baja
+  darDeBaja(id: number): Observable<Catedratico> {
+    const url = `http://3.227.118.254:3000/baja_cuenta/${id}`;
+    return this.http.put<Catedratico>(url, httpOptions).pipe(
+      tap(_ => console.log(`deleted usuario id=${id}`)),
+      catchError(this.handleError<Catedratico>(`darDeBaja id=${id}`))
+    );
+  }
 
 
   addCuenta(catedratico : Catedratico) : Observable<Catedratico>{

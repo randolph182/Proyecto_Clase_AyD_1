@@ -61,6 +61,8 @@
                         </fa-icon></a ><br/>
                         <a routerLink="/modificacion-usuario/{{user.id}}"><fa-icon [icon] = "faEdit">
                         </fa-icon></a > 
+                        <a (click)="eliminar(user.id)"><fa-icon [icon] = "faTrashAlt">
+                        </fa-icon></a > 
                   </td>
                 </tr>
               </tbody>

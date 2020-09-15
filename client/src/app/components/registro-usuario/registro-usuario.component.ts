@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Catedratico } from 'src/app/models/catedratico';
-import { Estudiante } from 'src/app/models/estudiante';
-import { Administrativo } from 'src/app/models/administrativo';
 import { RegistroService } from 'src/app/services/registro.service';
 import { Router } from '@angular/router';
 @Component({
