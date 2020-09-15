@@ -327,7 +327,7 @@ router.put('/baja_cuenta/:rol', (req, res, next) => {
       }
     );
   }
-  else if(req.body.rol == 2)
+  else if(rol == 2)
   {
     db.query(
       'UPDATE CATE_CUENTA SET activo = 0 WHERE id_catedratico=?',
@@ -345,7 +345,7 @@ router.put('/baja_cuenta/:rol', (req, res, next) => {
       }
     );
   }
-  else if(req.body.rol == 3)
+  else if(rol == 3)
   {
     db.query(
       'UPDATE ADMIN_CUENTA SET activo = 0 WHERE id_admin=?',
