@@ -17,7 +17,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
-import { RegistroCongresoComponent } from './components/registro-congreso/registro-congreso.component';
+import { AsignacionCongresoComponent } from './components/asignacion-congreso/asignacion-congreso.component';
 
 library.add(fas,far);
 @NgModule({
@@ -29,9 +29,8 @@ library.add(fas,far);
     RegistroUsuarioComponent,
     LoginComponent,
     AceptarasignacionComponent,
-    RegistroCongresoComponent,
     UsuariosComponent,
-    RegistroCongresoComponent
+    AsignacionCongresoComponent
   ],
   imports: [
     BrowserModule,
