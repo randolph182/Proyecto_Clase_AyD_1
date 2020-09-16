@@ -306,6 +306,64 @@ router.get('/obtener_usuarios/:rol', (req, res, next) => {
 ************************************************************************************************
 */
 
+//******Actualizar datos de los usuarios******
+router.put('/actualizacion_datos', (req, res, next) => {
+  if(req.body.rol == 1)
+  {
+    db.query(
+      'UPDATE ESTUDIANTE SET nombre = ?, apellido = ? WHERE id_estudiante=?',
+      [req.body.nombre, req.body.apellido ,req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.rol == 2)
+  {
+    db.query(
+      'UPDATE CATEDRATICO SET nombre = ?, apellido = ? WHERE id_estudiante=?',
+      [req.body.nombre, req.body.apellido ,req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.rol == 3)
+  {
+    db.query(
+      'UPDATE ESTUDIANTE SET nombre = ?, apellido = ? WHERE id_estudiante=?',
+      [req.body.nombre, req.body.apellido ,req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+});
+
 //******Dar de baja a los usuarios******
 router.put('/baja_cuenta', (req, res, next) => {
   if(req.body.rol == 1)
