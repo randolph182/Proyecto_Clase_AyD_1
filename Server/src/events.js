@@ -307,9 +307,8 @@ router.get('/obtener_usuarios/:rol', (req, res, next) => {
 */
 
 //******Dar de baja a los usuarios******
-router.put('/baja_cuenta/:rol', (req, res, next) => {
-  const {rol} = req.params;
-  if(rol == 1)
+router.put('/baja_cuenta', (req, res, next) => {
+  if(req.body.rol == 1)
   {
     db.query(
       'UPDATE ESTUDIANTE_CUENTA SET activo = 0 WHERE id_estudiante=?',
@@ -327,7 +326,7 @@ router.put('/baja_cuenta/:rol', (req, res, next) => {
       }
     );
   }
-  else if(rol == 2)
+  else if(req.body.rol == 2)
   {
     db.query(
       'UPDATE CATE_CUENTA SET activo = 0 WHERE id_catedratico=?',
@@ -345,7 +344,7 @@ router.put('/baja_cuenta/:rol', (req, res, next) => {
       }
     );
   }
-  else if(rol == 3)
+  else if(req.body.rol == 3)
   {
     db.query(
       'UPDATE ADMIN_CUENTA SET activo = 0 WHERE id_admin=?',
