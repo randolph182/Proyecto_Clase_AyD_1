@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RegistroUsuarioComponent } from '../registro-usuario/registro-usuario.component';
-
 import { RegistroEscuelaComponent } from './registro-escuela.component';
+import 'zone.js/dist/zone-testing';
 
 describe('RegistroEscuelaComponent', () => {
   let component: RegistroEscuelaComponent;
@@ -24,6 +23,6 @@ describe('RegistroEscuelaComponent', () => {
     expect(component).toBeTruthy();
   });
   it('deberia guardar el valor del nombre', () => {
-    //expect(RegistroEscuelaComponent['nombre'] != "");
+    expect(RegistroEscuelaComponent['nombre'] != "");
   });
 });
