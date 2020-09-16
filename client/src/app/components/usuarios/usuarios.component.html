@@ -58,9 +58,12 @@
                   <td>{{user.nombre}}</td>
                   <td>{{user.apellido}}</td>
                   <td> <a routerLink="/registro-cuenta/{{user.id}}"><fa-icon [icon] = "faPlus">
-        
-                </fa-icon>
-                </a ></td>
+                        </fa-icon></a ><br/>
+                        <a routerLink="/modificacion-usuario/{{user.id}}"><fa-icon [icon] = "faEdit">
+                        </fa-icon></a > 
+                        <a href="#" (click)="eliminar(user)"><fa-icon [icon] = "faTrashAlt">
+                        </fa-icon></a > 
+                  </td>
                 </tr>
               </tbody>
             </table>

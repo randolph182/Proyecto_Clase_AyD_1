@@ -7,6 +7,8 @@ import { AceptarasignacionComponent } from './components/aceptarasignacion/acept
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { RegistroCuentaComponent } from './components/registro-cuenta/registro-cuenta.component';
+
+import { ModificacionUsuarioComponent } from './components/modificacion-usuario/modificacion-usuario.component';
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: 'aceptarasignacion',component:AceptarasignacionComponent},
   {path: 'registro-usuario', component:RegistroUsuarioComponent},
   {path: 'usuarios', component:UsuariosComponent},
-  {path: 'registro-cuenta/:id', component:RegistroCuentaComponent }
+  {path: 'registro-cuenta/:id', component:RegistroCuentaComponent },
+  {path: 'modificacion-usuario/:id', component:ModificacionUsuarioComponent},
+  {path: 'login', component:LoginComponent}
 ];
 
 @NgModule({
@@ -29,7 +33,3 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 
-const rutas: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'registro', component: RegistroUsuarioComponent}
-];

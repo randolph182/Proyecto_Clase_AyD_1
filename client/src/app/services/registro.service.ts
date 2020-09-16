@@ -21,12 +21,20 @@ export class RegistroService {
    }
 
   /** GET Usuarios from the server */
-  getCatedraticos (): Observable<Catedratico[]> {
-    let urlUsuarios = 'http://3.227.118.254:3000/obtener_usuarios/1';
-    return this.http.get<Catedratico[]>(urlUsuarios)
+  getCatedraticos (rol:number): Observable<Catedratico[]> {
+    let urlUsuarios = `http://3.227.118.254:3000/obtener_usuarios/${rol}`;
+    return this.http.get<Catedratico[]>(urlUsuarios, httpOptions)
     .pipe(
       tap(_ => console.log('fetched catedraticos')),
       catchError(this.handleError<Catedratico[]>('getcatedraticos', []))
+    );
+  }
+
+  getUsuario(id: number): Observable<Catedratico> {
+    const url = `http://3.227.118.254:3000/obtener_usuario/${id}`;
+    return this.http.get<Catedratico>(url).pipe(
+      tap(_ => console.log(`fetched usuario id=${id}`)),
+      catchError(this.handleError<Catedratico>(`getUsuario id=${id}`))
     );
   }
 
@@ -44,6 +52,16 @@ export class RegistroService {
 
   }
 
+  // dar baja
+  darDeBaja(user:Catedratico): Observable<Catedratico> {
+    const url = `http://3.227.118.254:3000/baja_cuenta`;
+    return this.http.put<Catedratico>(url, user,httpOptions).pipe(
+      tap(_ => console.log(`deleted usuario id=${user.id}`)),
+      catchError(this.handleError<Catedratico>(`darDeBaja id=${user.id}`))
+    );
+  }
+
+
   addCuenta(catedratico : Catedratico) : Observable<Catedratico>{
     let url = 'http://3.85.52.106:3000/registrar_cuenta';
     return this.http.post<Catedratico>(url, catedratico, httpOptions)
@@ -52,6 +70,15 @@ export class RegistroService {
       catchError(this.handleError<Catedratico>('Catedratico'))
     );
 
+  }
+
+  /** PUT: update the hero on the server */
+  updateUsuario(usuario:Catedratico): Observable<any> {
+    let url = 'http://3.85.52.106:3000/actualizar_cuenta';
+    return this.http.put(url, usuario, httpOptions).pipe(
+      tap(_ => console.log(`updated hero id=${usuario.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

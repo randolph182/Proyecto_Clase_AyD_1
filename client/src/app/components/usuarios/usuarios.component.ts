@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { Catedratico } from 'src/app/models/catedratico';
 import { RegistroService } from 'src/app/services/registro.service';
@@ -13,6 +15,8 @@ import { RegistroService } from 'src/app/services/registro.service';
 export class UsuariosComponent implements OnInit {
   faStar = faStar;
   faPlus = faPlus;
+  faEdit = faEdit;
+  faTrashAlt = faTrashAlt;
   selectBus:number = 1;
   usuarios:Catedratico[] = [];
 
@@ -24,7 +28,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   getUsuarios():void{
-    this.registroService.getCatedraticos().
+    this.registroService.getCatedraticos(1).
     subscribe(usuarios =>{
       this.usuarios = usuarios as Catedratico[];
       console.log("--------usuarios local------------\n");
@@ -42,8 +46,24 @@ export class UsuariosComponent implements OnInit {
     let usuario:Catedratico = new Catedratico();
     usuario.rol = this.selectBus;
     // aqui devuelve para llenar de nuevo el arreglo de usuarios.
+    this.registroService.getCatedraticos(this.selectBus).
+      subscribe(usuarios =>{
+        this.usuarios = usuarios as Catedratico[];
+        console.log("--------usuarios local------------\n");
+        console.log(usuarios);
+        console.log("--------usuarios global------------\n");
+        console.log(this.usuarios);
+      }, 
+      error => console.error(error));
     
     
+
+  }
+
+  eliminar(user:Catedratico):void{
+    this.registroService.darDeBaja(user).subscribe( usuario => { alert('Usuario eliminado Dx');});
+
+
 
   }
 

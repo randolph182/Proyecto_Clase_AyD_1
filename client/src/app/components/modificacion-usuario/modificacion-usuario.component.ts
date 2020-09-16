@@ -5,17 +5,15 @@ import { RegistroService } from 'src/app/services/registro.service';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-registro-cuenta',
-  templateUrl: './registro-cuenta.component.html',
-  styleUrls: ['./registro-cuenta.component.css']
+  selector: 'app-modificacion-usuario',
+  templateUrl: './modificacion-usuario.component.html',
+  styleUrls: ['./modificacion-usuario.component.css']
 })
-export class RegistroCuentaComponent implements OnInit {
+export class ModificacionUsuarioComponent implements OnInit {
   usuario:Catedratico;
   constructor(private route:ActivatedRoute,
     private location:Location,
-    private registroService:RegistroService) {
-
-   }
+    private registroService:RegistroService) { }
 
   ngOnInit(): void {
   }
@@ -30,16 +28,9 @@ export class RegistroCuentaComponent implements OnInit {
       .subscribe(usuario => this.usuario = usuario);
   }
 
-  agregarCuenta(usuario:Catedratico){
-    this.registroService.addCuenta(usuario).
-      subscribe(
-        usuario => {
-          alert('Usuario ingresado con exito');
-          console.log(usuario);
-          // redireccionamos para que este en una pagina para que valide su correo..
-
-        }
-      );
+  actualizarDatos(id:number){
+    this.registroService.updateUsuario(this.usuario)
+      .subscribe(() => this.goBack());
   }
 
 }
