@@ -54,3 +54,13 @@ describe('Prueba para dar de actualizar datos del usuario: ', ()=>{
         expect(res.status).to.equal(200);
     });
 });
+
+describe('Prueba para registrar una escuela', () => {
+    it('Registrar una escuela', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_escuela')
+        .send({nombre: "Sistemas"});
+        expect(res.status).to.equal(200);
+    });
+});
