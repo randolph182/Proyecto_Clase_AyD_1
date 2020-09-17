@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Escuela } from 'src/app/models/escuela';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { InsertarescuelaService } from 'src/app/Services/insertarescuela.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-registro-escuela',
@@ -12,8 +15,9 @@ export class RegistroEscuelaComponent implements OnInit {
   nombre :string;
   loginForm: FormGroup;
   mensaje: string;
+  escuela:Escuela;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, private insertarescuela:InsertarescuelaService) {
     
   }
 
@@ -28,5 +32,22 @@ export class RegistroEscuelaComponent implements OnInit {
           this.mensaje = "Favor de llenar todos los campos!";
 
 }
+  }
+
+  addEscuela(){
+      let user:Escuela = new Escuela();
+
+      user.nombre = this.nombre;
+      console.log(user);
+
+      this.insertarescuela.addEscuela(user).
+      subscribe(
+        escuela => {
+          alert('Escuela ingresado con exito');
+          console.log(escuela);
+          
+
+        }
+      );
   }
 }
