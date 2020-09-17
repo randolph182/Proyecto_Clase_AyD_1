@@ -329,7 +329,7 @@ router.put('/actualizacion_datos', (req, res, next) => {
   else if(req.body.rol == 2)
   {
     db.query(
-      'UPDATE CATEDRATICO SET nombre = ?, apellido = ? WHERE id_estudiante=?',
+      'UPDATE CATEDRATICO SET nombre = ?, apellido = ? WHERE id_catedratico=?',
       [req.body.nombre, req.body.apellido ,req.body.id],
       (error) => {
         if(error)
@@ -347,7 +347,7 @@ router.put('/actualizacion_datos', (req, res, next) => {
   else if(req.body.rol == 3)
   {
     db.query(
-      'UPDATE ESTUDIANTE SET nombre = ?, apellido = ? WHERE id_estudiante=?',
+      'UPDATE ADMINISTRADOR SET nombre = ?, apellido = ? WHERE id_admin=?',
       [req.body.nombre, req.body.apellido ,req.body.id],
       (error) => {
         if(error)
