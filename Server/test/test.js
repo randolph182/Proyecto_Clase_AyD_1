@@ -10,7 +10,19 @@ describe.only('Prueba para obtener informacion de la API: ',()=>{
     it('Debe poder obtener usuarios en base al rol', async ()=>{
         let res = await chai
         .request(url)
-        .get('/obtener_usuarios/:1'); //obteniendo estudiantes
+        .get('/obtener_usuarios/1'); //obteniendo estudiantes
+        expect(res.status).to.equal(200);
+    });
+    it('Debe poder obtener catedraticos en base al rol', async ()=>{
+        let res = await chai
+        .request(url)
+        .get('/obtener_usuarios/2'); //obteniendo estudiantes
+        expect(res.status).to.equal(200);
+    });
+    it('Debe poder obtener catedraticos en base al rol', async ()=>{
+        let res = await chai
+        .request(url)
+        .get('/obtener_usuarios/3'); //obteniendo estudiantes
         expect(res.status).to.equal(200);
     });
 });
