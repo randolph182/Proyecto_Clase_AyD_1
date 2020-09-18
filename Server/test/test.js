@@ -4,6 +4,19 @@ const expect = require('chai').expect;
 chai.use(chaiHttp);
 const url = 'http://localhost:3000';
 
+
+//OBTENCION DE INFORMACION DE LA BASE DE DATOS
+describe.only('Prueba para obtener informacion de la API: ',()=>{
+    it('Debe poder obtener usuarios en base al rol', async ()=>{
+        let res = await chai
+        .request(url)
+        .get('/obtener_usuarios/:1'); //obteniendo estudiantes
+        expect(res.status).to.equal(200);
+    });
+});
+
+
+
 //DAR DE BAJA CUENTA
 describe('Prueba para dar de baja un usuario: ', ()=>{
     it('Debe poder dar de baja a un estudiante', async () => {
