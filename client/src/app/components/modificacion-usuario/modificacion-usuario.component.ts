@@ -16,6 +16,8 @@ export class ModificacionUsuarioComponent implements OnInit {
     private registroService:RegistroService) { }
 
   ngOnInit(): void {
+    this.usuario = new Catedratico();
+    this.getUsuario();
   }
 
   goBack(){
@@ -23,9 +25,15 @@ export class ModificacionUsuarioComponent implements OnInit {
   }
 
   getUsuario():void{
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.registroService.getUsuario(id)
-      .subscribe(usuario => this.usuario = usuario);
+    
+    this.usuario.id = +this.route.snapshot.paramMap.get('id');
+    this.usuario.nombre = this.route.snapshot.paramMap.get('nombre');
+    this.usuario.apellido = this.route.snapshot.paramMap.get('apellido');
+    this.usuario.password = this.route.snapshot.paramMap.get('password');
+    this.usuario.carnet = +this.route.snapshot.paramMap.get('carnet');
+    this.usuario.dpi   = +this.route.snapshot.paramMap.get('dpi');
+
+    
   }
 
   actualizarDatos(id:number){
