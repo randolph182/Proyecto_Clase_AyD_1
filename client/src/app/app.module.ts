@@ -18,6 +18,7 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
 import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { ModificacionUsuarioComponent } from './components/modificacion-usuario/modificacion-usuario.component';
+import { AsignacionCongresoComponent } from './components/asignacion-congreso/asignacion-congreso.component';
 
 library.add(fas,far);
 @NgModule({
@@ -31,6 +32,8 @@ library.add(fas,far);
     AceptarasignacionComponent,
     UsuariosComponent,
     ModificacionUsuarioComponent
+    UsuariosComponent,
+    AsignacionCongresoComponent
   ],
   imports: [
     BrowserModule,

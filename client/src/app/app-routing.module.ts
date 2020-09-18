@@ -10,6 +10,7 @@ import { RegistroCuentaComponent } from './components/registro-cuenta/registro-c
 
 import { ModificacionUsuarioComponent } from './components/modificacion-usuario/modificacion-usuario.component';
 import { LoginComponent } from './components/login/login.component';
+import { AsignacionCongresoComponent } from './components/asignacion-congreso/asignacion-congreso.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home' , pathMatch: 'full'},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'usuarios', component:UsuariosComponent},
   {path: 'registro-cuenta/:id', component:RegistroCuentaComponent },
   {path: 'modificacion-usuario/:id', component:ModificacionUsuarioComponent},
-  {path: 'login', component:LoginComponent}
+  {path: 'login', component:LoginComponent},
+  {path: 'asignacion/congresos', component:AsignacionCongresoComponent}
 ];
 
 @NgModule({
