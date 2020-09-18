@@ -31,8 +31,7 @@ library.add(fas,far);
     LoginComponent,
     AceptarasignacionComponent,
     UsuariosComponent,
-    ModificacionUsuarioComponent
-    UsuariosComponent,
+    ModificacionUsuarioComponent,
     AsignacionCongresoComponent
   ],
   imports: [
