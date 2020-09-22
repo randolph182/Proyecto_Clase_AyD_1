@@ -4,6 +4,13 @@ const expect = require('chai').expect;
 chai.use(chaiHttp);
 const url = 'http://localhost:3000';
 
+//PRUEBA UNITARIA PARA REGISTRAR UNA CUENTA DE USUARIO
+    describe.only('Prueba para registrar una cuenta en la API: ',()=>{
+
+    });
+    
+
+
 
 //OBTENCION DE INFORMACION DE LA BASE DE DATOS
 // describe.only('Prueba para obtener informacion de la API: ',()=>{
