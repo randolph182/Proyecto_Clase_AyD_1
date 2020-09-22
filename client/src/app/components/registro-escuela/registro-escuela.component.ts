@@ -12,6 +12,7 @@ import { Subscriber } from 'rxjs';
 })
 export class RegistroEscuelaComponent implements OnInit {
 
+  escuelas:Escuela[]=[];
   nombre :string;
   loginForm: FormGroup;
   mensaje: string;
@@ -21,12 +22,26 @@ export class RegistroEscuelaComponent implements OnInit {
     
   }
 
+  getEscuela():void{
+    this.insertarescuela.getEscuelas().
+    subscribe(escuela =>{
+      this.escuelas = escuela as Escuela[];
+      console.log("--------categoria local------------\n");
+      console.log(escuela);
+      console.log("--------categoria global------------\n");
+      console.log(this.escuela);
+    }, 
+    error => console.error(error));
+  }
+
   ngOnInit(): void {
+    this.escuela = new Escuela();
+    this.getEscuela();
   }
 
   get f() { return this.loginForm.controls;}
 
-  getEscuela(){
+  getDatosEscuela(){
       this.nombre = this.f.nombre.value;
       if (this.nombre == '') {
           this.mensaje = "Favor de llenar todos los campos!";
@@ -49,5 +64,19 @@ export class RegistroEscuelaComponent implements OnInit {
 
         }
       );
+  }
+
+  onSave()
+  {}
+
+  onEdit(indice)
+  {
+    
+    
+  }
+
+  onDelete(indice)
+  {
+    
   }
 }

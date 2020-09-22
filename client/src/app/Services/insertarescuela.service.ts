@@ -30,6 +30,15 @@ export class InsertarescuelaService {
 
   }
 
+  getEscuelas (): Observable<Escuela[]> {
+    let urlUsuarios = `http://3.85.52.106:3000/obtener_escuela`;
+    return this.http.get<Escuela[]>(urlUsuarios, httpOptions)
+    .pipe(
+      tap(_ => console.log('fetched escuela')),
+      catchError(this.handleError<Escuela[]>('getcategorias', []))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
  
