@@ -49,7 +49,7 @@ describe('AsignacionCongresoComponent', () => {
   it ('no debería enviar congresos',()=>{
     let congresos =[]
     component.congresosAgregados= congresos;
-    expect(component.enviar()).toBeFalsy();
+    expect(component.enviar()).toBeFalse();
     
   });
   
