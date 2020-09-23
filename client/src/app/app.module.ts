@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { ModificacionUsuarioComponent } from './components/modificacion-usuario/modificacion-usuario.component';
 import { AsignacionCongresoComponent } from './components/asignacion-congreso/asignacion-congreso.component';
+import { RegistroCongresoComponent } from './components/registro-congreso/registro-congreso.component';
 
 library.add(fas,far);
 @NgModule({
@@ -32,7 +33,8 @@ library.add(fas,far);
     AceptarasignacionComponent,
     UsuariosComponent,
     ModificacionUsuarioComponent,
-    AsignacionCongresoComponent
+    AsignacionCongresoComponent,
+    RegistroCongresoComponent
   ],
   imports: [
     BrowserModule,
