@@ -50,12 +50,12 @@ export class RegistroEscuelaComponent implements OnInit {
   }
 
   addEscuela(){
-      let user:Escuela = new Escuela();
+      //let user:Escuela = new Escuela();
 
-      user.nombre = this.nombre;
-      console.log(user);
+      //user.nombre = this.nombre;
+      //console.log(user);
 
-      this.insertarescuela.addEscuela(user).
+      this.insertarescuela.addEscuela(this.escuela).
       subscribe(
         escuela => {
           alert('Escuela ingresado con exito');

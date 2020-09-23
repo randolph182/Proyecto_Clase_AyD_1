@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RegistroEscuelaComponent } from './registro-escuela.component';
 import 'zone.js/dist/zone-testing';
 
-describe('RegistroEscuelaComponent', () => {
+fdescribe('RegistroEscuelaComponent', () => {
   let component: RegistroEscuelaComponent;
   let fixture: ComponentFixture<RegistroEscuelaComponent>;
 
