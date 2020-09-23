@@ -81,11 +81,23 @@ describe('Prueba para dar de actualizar datos del usuario: ', ()=>{
     });
 });
 
+//REGISTRO DE ESCUELA
 describe('Prueba para registrar una escuela', () => {
     it('Registrar una escuela', async () => {
         let res = await chai
         .request(url)
         .post('/registrar_escuela')
+        .send({nombre: "Sistemas"});
+        expect(res.status).to.equal(200);
+    });
+});
+
+//REGISTRAR CONGRESO
+describe('Prueba para registrar un congreso', () => {
+    it('Registrar un congreso', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_congreso')
         .send({nombre: "Sistemas"});
         expect(res.status).to.equal(200);
     });
