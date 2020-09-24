@@ -35,7 +35,7 @@ function createRouter(db) {
     else if(req.body.rol == 2)
     {
       db.query(
-        'INSERT INTO CATE_CUENTA(login, password, activo, id_estudiante) VALUES(?,?,?,?)',
+        'INSERT INTO CATE_CUENTA(login, password, activo, id_catedratico) VALUES(?,?,?,?)',
         [req.body.login, req.body.password, req.body.activo, req.body.id],
         (error) => {
           if(error)
@@ -53,7 +53,7 @@ function createRouter(db) {
     else if(req.body.rol == 3)
     {
       db.query(
-        'INSERT INTO ADMIN_CUENTA(login, password, activo, id_estudiante) VALUES(?,?,?,?)',
+        'INSERT INTO ADMIN_CUENTA(login, password, activo, id_admin) VALUES(?,?,?,?)',
         [req.body.login, req.body.password, req.body.activo, req.body.id],
         (error) => {
           if(error)
