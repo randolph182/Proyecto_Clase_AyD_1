@@ -6,7 +6,27 @@ const url = 'http://localhost:3000';
 
 //PRUEBA UNITARIA PARA REGISTRAR UNA CUENTA DE USUARIO
     describe.only('Prueba para registrar una cuenta en la API: ',()=>{
-
+        it('Debe poder realizar un registro de usuario', async ()=>{
+            let res = await chai
+            .request(url)
+            .post('/registrar_usuario') 
+            .send({rol:1, login:"usuario_prueba@usac.com", password:"123", activo:'0'});
+            expect(rs.status).to.equal(200);
+        });
+        it('Debe poder realizar un registro de un catedratico', async ()=>{
+            let res = await chai
+            .request(url)
+            .post('/registrar_usuario')
+            .send({rol:2, login:"cate_prueba@usac.com", password:"123", activo:'0'});
+            expect(rs.status).to.equal(200);
+        });
+        it('Debe poder realizar un registro de un adminsitrador', async ()=>{
+            let res = await chai
+            .request(url)
+            .post('/registrar_usuario')
+            .send({rol:3, login:"admin_prueba@usac.com", password:"123", activo:'0'});
+            expect(rs.status).to.equal(200);
+        });
     });
     
 
@@ -14,7 +34,7 @@ const url = 'http://localhost:3000';
 
 //OBTENCION DE INFORMACION DE LA BASE DE DATOS
 // describe.only('Prueba para obtener informacion de la API: ',()=>{
-describe.only('Prueba para obtener informacion de la API: ',()=>{
+describe('Prueba para obtener informacion de la API: ',()=>{
     it('Debe poder obtener usuarios en base al rol', async ()=>{
         let res = await chai
         .request(url)
