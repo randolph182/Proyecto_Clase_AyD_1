@@ -39,6 +39,22 @@ export class InsertarescuelaService {
     );
   }
 
+  updateEscuela(escuela:Escuela): Observable<any> {
+    let url = 'http://3.85.52.106:3000/actualizar_categoria';
+    return this.http.put(url, escuela, httpOptions).pipe(
+      tap(_ => console.log(`escuela actualizada id=${escuela.id}`)),
+      catchError(this.handleError<any>('updateescuela'))
+    );
+  }
+
+  deleteEscuela(escuela:Escuela): Observable<Escuela> {
+    const url = `http://3.85.52.106:3000/eliminar_categoria`;
+    return this.http.post<Escuela>(url, escuela,httpOptions).pipe(
+      tap(_ => console.log(`deleted escuela id=${escuela.id}`)),
+      catchError(this.handleError<Escuela>(`darDeBaja id=${escuela.id}`))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
  

@@ -5,6 +5,7 @@ import { InsertarescuelaService } from './insertarescuela.service';
 import { Escuela } from 'src/app/models/escuela';
 import { of } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
+import { faSortNumericDown } from '@fortawesome/free-solid-svg-icons';
 
 class HttpClientMock {
   get = jasmine.createSpy('httpClient.get');
@@ -43,16 +44,13 @@ describe('InsertarescuelaService', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('id para buscar escuela debería ser numero', () => {
+    expect(escuela.id).toEqual(jasmine.any(Number));
   });
 
   fit('debería de ingresar escuela con mock de objeto', () => {
     const catObservable: Observable<Escuela> = of(EscuelaMock);
     httpClientMock.post.and.returnValue(catObservable);
-
-    
-    
       service.addEscuela(EscuelaMock)
       .subscribe(catStatus => {
         expect(httpClientMock.post)
