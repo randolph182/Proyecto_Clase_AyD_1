@@ -165,8 +165,8 @@ router.post('/registrar_escuela', (req, res, next) => {
 
  router.post('/registrar_congreso', (req, res, next) => {
   db.query(
-    'INSERT INTO CONGRESO(nombre) VALUES(?)',
-    [req.body.nombre],
+    'INSERT INTO CONGRESO(nombre, ubicacion, descripcion, ano, id_escuela) VALUES(?,?,?,?,?)',
+    [req.body.nombre, req.body.ubicacion, req.body.descripcion, req.body.anio, req.body.id],
     (error) => {
       if(error)
       {

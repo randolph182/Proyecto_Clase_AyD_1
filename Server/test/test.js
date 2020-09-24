@@ -98,7 +98,7 @@ describe('Prueba para registrar un congreso', () => {
         let res = await chai
         .request(url)
         .post('/registrar_congreso')
-        .send({nombre: "Sistemas"});
+        .send({nombre: "Sistemas", descripcion: "Sistemas", ubicacion: "Sistemas", anio: 2020, id: 1});
         expect(res.status).to.equal(200);
     });
 });
