@@ -22,4 +22,17 @@ describe('RegistroCongresoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('deberia de tener un nombre', () => {
+    component.congreso.nombre = "asdkjf";
+    expect(component.onSave()).toBeTruthy();
+  });
+  it('deberia de tener un id escuela', () => {
+    component.congreso.id =9;
+    expect(component.onSave()).toBeTruthy();
+  });
+  it('deberia de tener el anño actual', () => {
+    component.onSave();
+    expect(component.congreso.anio==2020).toBeTruthy();
+  });
+  
 });
