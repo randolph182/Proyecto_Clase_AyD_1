@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule} from '@angular/common/http';
 import { AceptarasignacionComponent } from './components/aceptarasignacion/aceptarasignacion.component' 
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +18,7 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
 import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { ModificacionUsuarioComponent } from './components/modificacion-usuario/modificacion-usuario.component';
+import { CursosComponent } from './components/cursos/cursos.component';
 
 library.add(fas,far);
 @NgModule({
@@ -30,7 +31,8 @@ library.add(fas,far);
     LoginComponent,
     AceptarasignacionComponent,
     UsuariosComponent,
-    ModificacionUsuarioComponent
+    ModificacionUsuarioComponent,
+    CursosComponent
   ],
   imports: [
     BrowserModule,
