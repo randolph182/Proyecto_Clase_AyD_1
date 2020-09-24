@@ -9,23 +9,23 @@ const url = 'http://localhost:3000';
         it('Debe poder realizar un registro de usuario', async ()=>{
             let res = await chai
             .request(url)
-            .post('/registrar_usuario') 
-            .send({rol:1, login:"usuario_prueba@usac.com", password:"123", activo:'0'});
-            expect(rs.status).to.equal(200);
+            .post('/registrar_cuenta') 
+            .send({rol:1, login:"usuario_prueba@usac.com", password:"123", activo:'0',id:1});
+            expect(res.status).to.equal(200);
         });
         it('Debe poder realizar un registro de un catedratico', async ()=>{
             let res = await chai
             .request(url)
-            .post('/registrar_usuario')
-            .send({rol:2, login:"cate_prueba@usac.com", password:"123", activo:'0'});
-            expect(rs.status).to.equal(200);
+            .post('/registrar_cuenta')
+            .send({rol:2, login:"cate_prueba@usac.com", password:"123", activo:'0',id:1});
+            expect(res.status).to.equal(200);
         });
         it('Debe poder realizar un registro de un adminsitrador', async ()=>{
             let res = await chai
             .request(url)
-            .post('/registrar_usuario')
-            .send({rol:3, login:"admin_prueba@usac.com", password:"123", activo:'0'});
-            expect(rs.status).to.equal(200);
+            .post('/registrar_cuenta')
+            .send({rol:3, login:"admin_prueba@usac.com", password:"123", activo:'0',id:1});
+            expect(res.status).to.equal(200);
         });
     });
     
