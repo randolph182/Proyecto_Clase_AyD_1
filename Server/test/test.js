@@ -108,6 +108,7 @@ describe('Prueba para dar de actualizar datos del usuario: ', ()=>{
     });
 });
 
+//REGISTRO DE ESCUELA
 
 
 
@@ -123,6 +124,17 @@ describe('Prueba para registrar una escuela', () => {
         .request(url)
         .post('/registrar_escuela')
         .send({nombre: "Sistemas"});
+        expect(res.status).to.equal(200);
+    });
+});
+
+//REGISTRAR CONGRESO
+describe('Prueba para registrar un congreso', () => {
+    it('Registrar un congreso', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_congreso')
+        .send({nombre: "Sistemas", descripcion: "Sistemas", ubicacion: "Sistemas", anio: 2020, id: 1});
         expect(res.status).to.equal(200);
     });
 });
