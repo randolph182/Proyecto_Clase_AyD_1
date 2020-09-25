@@ -14,7 +14,7 @@ export class RegistroCongresoComponent implements OnInit {
   ngOnInit(): void {
   }
   onSave():boolean{
-    this.congreso.anio = new Date().getFullYear();
+    //this.congreso.anio = new Date().getFullYear();
     return false;
   }
 }

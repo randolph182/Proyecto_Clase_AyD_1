@@ -13,5 +13,10 @@ describe('CongresoService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+  it('deberia ser un congreso', () => {
+
+    expect(service.crearCongreso({escuela:'pinus'})).toBeNull();
+  });
+  
   
 });
