@@ -108,6 +108,15 @@ describe('Prueba para dar de actualizar datos del usuario: ', ()=>{
     });
 });
 
+
+
+
+/*
+***********************************
+  ************ ESCUELA ************
+  *********************************
+
+*/
 describe('Prueba para registrar una escuela', () => {
     it('Registrar una escuela', async () => {
         let res = await chai
@@ -116,4 +125,34 @@ describe('Prueba para registrar una escuela', () => {
         .send({nombre: "Sistemas"});
         expect(res.status).to.equal(200);
     });
+});
+
+describe('Prueba unitaria para obtener las escuelas registradas', ()=>{
+    // it('Debe porder registrar una escuela... ', async () => {
+    //     let res = await chai
+    //     .request(url)
+    //     .post('/registrar_escuela')
+    //     .send({nombre: "Prueba"});
+    //     expect(res.status).to.equal(200);
+    //     console.log(res.status);
+    // });
+
+    it('Debe poder obtener las escuelas registradas', async ()=>{
+        let res = await chai
+        .request(url)
+        .get('/obtener_escuelas');
+        expect(res.status).to.equal(200);
+    });
+
+//     afterEach(async () => {
+//         let res_id = await chai
+//            .request(url)
+//            .get('/ultima_escuela');
+
+//         let res_del = await chai
+//            .request(url)
+//            .put('/eliminar_producto')
+//            .send({ id_producto: res_id.id });
+//            expect(res_del.status).to.equal(200);
+//      });
 });
