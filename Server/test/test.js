@@ -127,7 +127,7 @@ describe('Prueba para registrar una escuela', () => {
     });
 });
 
-describe('Prueba unitaria para obtener las escuelas registradas', ()=>{
+describe.only('Prueba unitaria para obtener las escuelas registradas', ()=>{
     // it('Debe porder registrar una escuela... ', async () => {
     //     let res = await chai
     //     .request(url)
