@@ -7,7 +7,7 @@ const url = 'http://localhost:3000';
 
 //OBTENCION DE INFORMACION DE LA BASE DE DATOS
 // describe.only('Prueba para obtener informacion de la API: ',()=>{
-describe.only('Prueba para obtener informacion de la API: ',()=>{
+describe('Prueba para obtener informacion de la API: ',()=>{
     it('Debe poder obtener usuarios en base al rol', async ()=>{
         let res = await chai
         .request(url)
