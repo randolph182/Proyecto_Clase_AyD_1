@@ -224,6 +224,30 @@ router.get('/obtener_escuelas', (req, res, next) => {
   )
 });
 
+/*
+  ****************************************************************************
+  ************Obtener cursos para mostrarlos al momento de asignar************
+  ****************************************************************************
+  */
+
+ router.post('/registrar_congreso', (req, res, next) => {
+  db.query(
+    'INSERT INTO CONGRESO(nombre, ubicacion, descripcion, anio, id_escuela) VALUES(?,?,?,?,?)',
+    [req.body.nombre, req.body.ubicacion, req.body.descripcion, req.body.anio, req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
   /*
   ****************************************************************************
   ************Obtener cursos para mostrarlos al momento de asignar************

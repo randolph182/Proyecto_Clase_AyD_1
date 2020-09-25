@@ -118,6 +118,7 @@ describe('Prueba para dar de actualizar datos del usuario: ', ()=>{
   *********************************
 
 */
+//REGISTRO DE ESCUELA
 describe('Prueba para registrar una escuela', () => {
     it('Registrar una escuela', async () => {
         let res = await chai
@@ -167,4 +168,15 @@ describe('Prueba unitaria para obtener las escuelas registradas', ()=>{
 //            .send({ id_producto: res_id.id });
 //            expect(res_del.status).to.equal(200);
 //      });
+});
+
+//REGISTRAR CONGRESO
+describe('Prueba para registrar un congreso', () => {
+    it('Registrar un congreso', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_congreso')
+        .send({nombre: "Sistemas", descripcion: "Sistemas", ubicacion: "Sistemas", anio: 2020, id: 1});
+        expect(res.status).to.equal(200);
+    });
 });
