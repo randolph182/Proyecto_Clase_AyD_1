@@ -180,8 +180,25 @@ router.get('/obtener_escuelas', (req, res, next) => {
   );
 });
 
+router.post('/eliminar_escuela', (req, res, next) => {
+  db.query(
+    'DELETE FROM ESCUELA WHERE id_escuela = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
 //OBTENER ULTIMO REGISTRO DE ESCUELA
-  //metodo que obtiene el ultimo registro ingresado de los productos
   router.get('/ultima_escuela', (req, res, next) => {
     db.query(
       'SELECT MAX(id_escuela) AS id FROM ESCUELA',
@@ -193,12 +210,11 @@ router.get('/obtener_escuelas', (req, res, next) => {
         }
         else
         {
-          res.send(results[0]);
+          res.status(200).json(results);
         }
       }
     );
   });
-
 
 /*
   ****************************************************************************
@@ -224,16 +240,28 @@ router.get('/obtener_escuelas', (req, res, next) => {
   )
 });
 
-/*
-  ****************************************************************************
-  ************Obtener cursos para mostrarlos al momento de asignar************
-  ****************************************************************************
-  */
-
- router.post('/registrar_congreso', (req, res, next) => {
+//OBTENER ULTIMO REGISTRO DE ESCUELA
+router.get('/ultimo_congreso', (req, res, next) => {
   db.query(
-    'INSERT INTO CONGRESO(nombre, ubicacion, descripcion, anio, id_escuela) VALUES(?,?,?,?,?)',
-    [req.body.nombre, req.body.ubicacion, req.body.descripcion, req.body.anio, req.body.id],
+    'SELECT MAX(id_congreso) AS id FROM CONGRESO',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
+router.post('/eliminar_congreso', (req, res, next) => {
+  db.query(
+    'DELETE FROM CONGRESO WHERE id_congreso = ?',
+    [req.body.id],
     (error) => {
       if(error)
       {
