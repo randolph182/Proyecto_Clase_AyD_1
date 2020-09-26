@@ -40,7 +40,7 @@ export class InsertarescuelaService {
   }
 
   updateEscuela(escuela:Escuela): Observable<any> {
-    let url = 'http://3.85.52.106:3000/actualizar_escuela';
+    let url = 'http://3.85.52.106:3000/modificar_escuela';
     return this.http.put(url, escuela, httpOptions).pipe(
       tap(_ => console.log(`escuela actualizada id=${escuela.id}`)),
       catchError(this.handleError<any>('updateescuela'))

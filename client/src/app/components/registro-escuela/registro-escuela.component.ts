@@ -50,10 +50,6 @@ export class RegistroEscuelaComponent implements OnInit {
   }
 
   addEscuela(){
-      //let user:Escuela = new Escuela();
-
-      //user.nombre = this.nombre;
-      //console.log(user);
 
       this.insertarescuela.addEscuela(this.escuela).
       subscribe(
@@ -66,17 +62,33 @@ export class RegistroEscuelaComponent implements OnInit {
       );
   }
 
+  actualizarEscuela(escuela:Escuela):void{
+    this.insertarescuela.updateEscuela(escuela).subscribe( escuela => { alert('escuela actualizada!');});
+  }
+
+  eliminarEscuela(escuela:Escuela):void{
+    this.insertarescuela.deleteEscuela(escuela).subscribe( escuela => { alert('escuela eliminada!');});
+  }
+
   onSave()
   {}
 
   onEdit(indice)
   {
-    
+    let esc:Escuela = new Escuela();
+    esc.id = indice;
+    esc.nombre = this.escuela.nombre;
+    //console.log("nombre: " + esc.nombre);
+    esc.nombre = this.escuela.nombre;
+    //console.log("nombre: " + esc.nombre);
+    this.actualizarEscuela(esc); 
     
   }
 
   onDelete(indice)
   {
-    
+    let esc:Escuela = new Escuela();
+    esc.id = indice;
+    this.eliminarEscuela(esc);
   }
 }
