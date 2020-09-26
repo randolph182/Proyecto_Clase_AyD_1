@@ -6,7 +6,7 @@ import { Congreso } from '../Models/Congreso';
   providedIn: 'root'
 })
 export class CongresoService {
-  API_URI = 'http://3.227.118.254:3000';
+  API_URI = 'http://localhost:3000';
   constructor(private http:HttpClient) { }
   getCongresos(){
     return this.http.get(`${this.API_URI}/obtener_congresos`);
@@ -16,9 +16,11 @@ export class CongresoService {
   }
   crearCongreso(congreso){
     if(congreso instanceof Congreso){
-      return this.http.post(`${this.API_URI}/agregar_congreso`,congreso);
+      return this.http.post(`${this.API_URI}/registrar_congreso`,congreso);
     }
     return null;
-    
+  }
+  getEscuela(){
+    return this.http.get(`${this.API_URI}/obtener_escuelas`);
   }
 }

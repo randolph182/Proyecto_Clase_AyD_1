@@ -5,7 +5,7 @@
     </div>
     <br>
     <div class="regentry">
-      <form (ngSubmit)="onSave()">
+      <form (ngSubmit)="onSave(txtEscuela.value)">
         <div class="form-group row">
           <label for="nombre-input" class="col-2 col-form-label">Nombre</label>
           <div class="col-10">
@@ -28,8 +28,8 @@
             <label for="categoria-input" class="col-2 col-form-label">Escuela</label>
             <div class="col-10">
 
-                <select  id="inputState" class="form-control" #txtCurso>    
-                    <option  type="text"  *ngFor="let escula of this.escuelas" [(ngModel)]="congreso.id" [value]="escuela.id">{{escuela.nombre}}</option>
+                <select  id="inputState" class="form-control"  #txtEscuela>    
+                    <option  type="text"  *ngFor="let escuela of this.escuelas" [value]="escuela.id_escuela">{{escuela.nombre}}</option>
                   </select>
             </div>
         </div>

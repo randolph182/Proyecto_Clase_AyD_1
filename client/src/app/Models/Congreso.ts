@@ -2,7 +2,7 @@ export class Congreso{
     id_congreso:number;
     nombre:string;
     ubicacion?:string;
-    descripcion?:number;
+    descripcion?:string;
     anio:number;
     id:number;
 }
