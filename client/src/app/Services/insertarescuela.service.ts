@@ -31,7 +31,7 @@ export class InsertarescuelaService {
   }
 
   getEscuelas (): Observable<Escuela[]> {
-    let urlUsuarios = `http://3.85.52.106:3000/obtener_escuela`;
+    let urlUsuarios = `http://3.85.52.106:3000/obtener_escuelas`;
     return this.http.get<Escuela[]>(urlUsuarios, httpOptions)
     .pipe(
       tap(_ => console.log('fetched escuela')),
@@ -40,7 +40,7 @@ export class InsertarescuelaService {
   }
 
   updateEscuela(escuela:Escuela): Observable<any> {
-    let url = 'http://3.85.52.106:3000/actualizar_categoria';
+    let url = 'http://3.85.52.106:3000/actualizar_escuela';
     return this.http.put(url, escuela, httpOptions).pipe(
       tap(_ => console.log(`escuela actualizada id=${escuela.id}`)),
       catchError(this.handleError<any>('updateescuela'))
@@ -48,7 +48,7 @@ export class InsertarescuelaService {
   }
 
   deleteEscuela(escuela:Escuela): Observable<Escuela> {
-    const url = `http://3.85.52.106:3000/eliminar_categoria`;
+    const url = `http://3.85.52.106:3000/eliminar_escuela`;
     return this.http.post<Escuela>(url, escuela,httpOptions).pipe(
       tap(_ => console.log(`deleted escuela id=${escuela.id}`)),
       catchError(this.handleError<Escuela>(`darDeBaja id=${escuela.id}`))
