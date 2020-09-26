@@ -4,33 +4,32 @@ const expect = require('chai').expect;
 chai.use(chaiHttp);
 const url = 'http://localhost:3000';
 
+/*
 //PRUEBA UNITARIA PARA REGISTRAR UNA CUENTA DE USUARIO
-    describe.only('Prueba para registrar una cuenta en la API: ',()=>{
-        it('Debe poder realizar un registro de usuario', async ()=>{
-            let res = await chai
-            .request(url)
-            .post('/registrar_cuenta') 
-            .send({rol:1, login:"usuario_prueba@usac.com", password:"123", activo:'0',id:1});
-            expect(res.status).to.equal(200);
-        });
-        it('Debe poder realizar un registro de un catedratico', async ()=>{
-            let res = await chai
-            .request(url)
-            .post('/registrar_cuenta')
-            .send({rol:2, login:"cate_prueba@usac.com", password:"123", activo:'0',id:1});
-            expect(res.status).to.equal(200);
-        });
-        it('Debe poder realizar un registro de un adminsitrador', async ()=>{
-            let res = await chai
-            .request(url)
-            .post('/registrar_cuenta')
-            .send({rol:3, login:"admin_prueba@usac.com", password:"123", activo:'0',id:1});
-            expect(res.status).to.equal(200);
-        });
+describe.only('Prueba para registrar una cuenta en la API: ',()=>{
+    it('Debe poder realizar un registro de usuario', async ()=>{
+        let res = await chai
+        .request(url)
+        .post('/registrar_cuenta') 
+        .send({rol:1, login:"usuario_prueba@usac.com", password:"123", activo:'0',id:1});
+        expect(res.status).to.equal(200);
     });
-    
-
-
+    it('Debe poder realizar un registro de un catedratico', async ()=>{
+        let res = await chai
+        .request(url)
+        .post('/registrar_cuenta')
+        .send({rol:2, login:"cate_prueba@usac.com", password:"123", activo:'0',id:1});
+        expect(res.status).to.equal(200);
+    });
+    it('Debe poder realizar un registro de un adminsitrador', async ()=>{
+        let res = await chai
+        .request(url)
+        .post('/registrar_cuenta')
+        .send({rol:3, login:"admin_prueba@usac.com", password:"123", activo:'0',id:1});
+        expect(res.status).to.equal(200);
+    });
+});
+*/
 
 //OBTENCION DE INFORMACION DE LA BASE DE DATOS
 // describe.only('Prueba para obtener informacion de la API: ',()=>{
@@ -54,8 +53,6 @@ describe('Prueba para obtener informacion de la API: ',()=>{
         expect(res.status).to.equal(200);
     });
 });
-
-
 
 //DAR DE BAJA CUENTA
 describe('Prueba para dar de baja un usuario: ', ()=>{
@@ -129,13 +126,22 @@ describe('Prueba para registrar una escuela', () => {
     });
 });
 
-//REGISTRAR CONGRESO
-describe('Prueba para registrar un congreso', () => {
-    it('Registrar un congreso', async () => {
+//ELIMINAR ESCUELA
+describe('Prueba para eliminar una escuela', () => {
+    it('Eliminar una escuela', async () => {
+        let r = await chai
+        .request(url)
+        .post('/registrar_escuela')
+        .send({nombre: "Sistemas"});
+
+        let re = await chai
+        .request(url)
+        .get('/ultima_escuela');
+
         let res = await chai
         .request(url)
-        .post('/registrar_congreso')
-        .send({nombre: "Sistemas", descripcion: "Sistemas", ubicacion: "Sistemas", anio: 2020, id: 1});
+        .post('/eliminar_escuela')
+        .send({id:re.body[0].id});
         expect(res.status).to.equal(200);
     });
 });
@@ -176,7 +182,16 @@ describe('Prueba para registrar un congreso', () => {
         let res = await chai
         .request(url)
         .post('/registrar_congreso')
-        .send({nombre: "Sistemas", descripcion: "Sistemas", ubicacion: "Sistemas", anio: 2020, id: 1});
+        .send({nombre: "Sistemas", descripcion: "Sistemas", ubicacion: "Sistemas", anio: 2019, id: 1});
+
+        let r = await chai
+        .request(url)
+        .get('/ultimo_congreso')
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_congreso')
+        .send({id:r.body[0].id})
         expect(res.status).to.equal(200);
     });
 });
