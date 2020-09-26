@@ -4,5 +4,5 @@ export class Congreso{
     ubicacion?:string;
     descripcion?:number;
     anio:number;
-    id_escuela:number;
+    id:number;
 }

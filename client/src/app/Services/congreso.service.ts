@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Congreso } from '../Models/Congreso';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +13,12 @@ export class CongresoService {
   }
   enviarCongresos(id:number,congresos:any){
     return this.http.post(`${this.API_URI}/asignar_congresos/${id}`,congresos);
+  }
+  crearCongreso(congreso){
+    if(congreso instanceof Congreso){
+      return this.http.post(`${this.API_URI}/agregar_congreso`,congreso);
+    }
+    return null;
+    
   }
 }
