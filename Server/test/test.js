@@ -146,6 +146,32 @@ describe('Prueba para eliminar una escuela', () => {
     });
 });
 
+//REGISTRO DE ESCUELA
+describe('Prueba para modificar una escuela', () => {
+    it('Modificar una escuela', async () => {
+        let r = await chai
+        .request(url)
+        .post('/registrar_escuela')
+        .send({nombre: "Sistemas"});
+
+        let re = await chai
+        .request(url)
+        .get('/ultima_escuela');
+
+        let m = await chai
+        .request(url)
+        .post('/modificar_escuela')
+        .send({id:re.body[0].id, nombre: "Mecanica"});
+        
+        let res = await chai
+        .request(url)
+        .post('/eliminar_escuela')
+        .send({id:re.body[0].id});
+
+        expect(res.status).to.equal(200);
+    });
+});
+
 describe('Prueba unitaria para obtener las escuelas registradas', ()=>{
     // it('Debe porder registrar una escuela... ', async () => {
     //     let res = await chai

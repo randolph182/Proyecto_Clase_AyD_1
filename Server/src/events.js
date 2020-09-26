@@ -240,7 +240,7 @@ router.post('/eliminar_escuela', (req, res, next) => {
   )
 });
 
-//OBTENER ULTIMO REGISTRO DE ESCUELA
+//OBTENER ULTIMO REGISTRO DE CCONGRESO
 router.get('/ultimo_congreso', (req, res, next) => {
   db.query(
     'SELECT MAX(id_congreso) AS id FROM CONGRESO',
@@ -563,6 +563,25 @@ router.put('/baja_cuenta', (req, res, next) => {
       }
     );
   }
+});
+
+//Modificar escuela
+router.post('/modificar_escuela', (req, res, next) => {
+  db.query(
+    'UPDATE ESCUELA SET nombre = ? WHERE id_escuela = ?',
+    [req.body.nombre, req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
 });
 
   return router;
