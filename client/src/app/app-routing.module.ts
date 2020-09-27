@@ -22,10 +22,10 @@ const routes: Routes = [
   {path: 'registro-usuario', component:RegistroUsuarioComponent},
   {path: 'usuarios', component:UsuariosComponent},
   {path: 'registro-cuenta/:id', component:RegistroCuentaComponent },
+  {path: 'modificacion-usuario/:id/:nombre/:apellido/:password/:dpi/:carnet', component:ModificacionUsuarioComponent},
   {path: 'registro-congreso',component:RegistroCongresoComponent},
-  {path: 'modificacion-usuario/:id', component:ModificacionUsuarioComponent},
-  {path: 'login', component:LoginComponent},
   {path: 'asignacion/congresos', component:AsignacionCongresoComponent}
+  {path: 'login', component:LoginComponent},
 ];
 
 @NgModule({
