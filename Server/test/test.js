@@ -220,4 +220,60 @@ describe('Prueba para registrar un congreso', () => {
         .send({id:r.body[0].id})
         expect(res.status).to.equal(200);
     });
+
+
+
+/*
+************************************************************************************************
+****************************************** BDD *******************************************
+************************************************************************************************
+*/
+
+describe('BDD Login - Ingreso Exitoso', function () {
+    before('Given: Usuario desea ingresar al sistema', function () {
+        //se empieza proceso en el que elusuario empieza a loggearse 
+    });
+  
+    after('When: Ingresar Datos de usuario para poder validar',function () {
+      // runs once after the last test in this block
+      let id = await chai
+      .request(url)
+      .put('/login')
+      .send({ login: 'usuario1@gmail.com', password: '123'});
+      expect(res_del.status).to.equal(200);
+    });
+  
+  
+    afterEach('Then: Login exitoso',function () {
+      //  login exitoso
+    });
+  
+    // test cases
+  });
+
+
+  describe('BDD Login - Ingreso Fallido', function () {
+    before('Given: Usuario desea ingresar al sistema', function () {
+        //se empieza proceso en el que elusuario empieza a loggearse 
+    });
+  
+    after('When: Ingresar Datos de usuario para poder validar',function () {
+      // runs once after the last test in this block
+      let id = await chai
+      .request(url)
+      .put('/login')
+      .send({ login: 'usuarioFake@gmail.com', password: '123'});
+      expect(res_del.status).to.equal(500);
+    });
+  
+  
+    afterEach('Then: Login exitoso',function () {
+      //  login exitoso
+    });
+  
+    // test cases
+  });
+
+
+
 });
