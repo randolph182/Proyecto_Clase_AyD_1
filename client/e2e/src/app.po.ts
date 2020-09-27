@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementFinder } from 'protractor';
 
 export class AppPage {
   navigateTo(): Promise<unknown> {
@@ -7,5 +7,25 @@ export class AppPage {
 
   getTitleText(): Promise<string> {
     return element(by.css('app-root .content span')).getText() as Promise<string>;
+  }
+}
+
+export class RegistroCongreso{
+
+  btnGuardar: ElementFinder;
+
+  constructor(){
+    this.btnGuardar = element(by.id('btnGuardar'));
+  }
+
+  async navigateTo(){
+    await browser.get(`http://localhost:4200/registro-congreso`)
+  }
+  
+  async guardar(){
+    
+  }
+
+  async setValuesCrear(nombre_grado: string){
   }
 }
