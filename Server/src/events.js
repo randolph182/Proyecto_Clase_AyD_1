@@ -80,8 +80,8 @@ function createRouter(db) {
     if(req.body.rol == 1)
     {
       db.query(
-        'INSERT INTO ESTUDIANTE(nombre, apellido) VALUES(?,?)',
-        [req.body.nombre, req.body.apellido],
+        'INSERT INTO ESTUDIANTE(nombre, apellido, carnet, dpi) VALUES(?,?,?,?)',
+        [req.body.nombre, req.body.apellido, req.body.carnet, req.body.dpi],
         (error) => {
           if(error)
           {
