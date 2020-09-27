@@ -17,10 +17,12 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { RegistroEscuelaComponent } from './components/registro-escuela/registro-escuela.component';
 import { ModificacionUsuarioComponent } from './components/modificacion-usuario/modificacion-usuario.component';
 import { AsignacionCongresoComponent } from './components/asignacion-congreso/asignacion-congreso.component';
 import { RegistroCongresoComponent } from './components/registro-congreso/registro-congreso.component';
 import { CursosComponent } from './components/cursos/cursos.component';
+
 
 library.add(fas,far);
 @NgModule({
@@ -38,6 +40,7 @@ library.add(fas,far);
     RegistroCongresoComponent
     ModificacionUsuarioComponent,
     CursosComponent
+    RegistroEscuelaComponent,
   ],
   imports: [
     BrowserModule,
