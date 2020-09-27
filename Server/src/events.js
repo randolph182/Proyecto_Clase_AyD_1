@@ -584,6 +584,10 @@ router.post('/modificar_escuela', (req, res, next) => {
   )
 });
 
+
+
+
+
   return router;
 }
 module.exports = createRouter;
