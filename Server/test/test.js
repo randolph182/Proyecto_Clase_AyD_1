@@ -277,3 +277,40 @@ describe('BDD Login - Ingreso Exitoso', function () {
 
 
 });
+
+/*
+*********************************************
+******************** BDD ********************
+*********************************************
+*/
+
+describe('Prueba para el registro de un usuario:', () =>{
+    it('Registro usuario exitoso de estudiante', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_usuario')
+        .send({rol:1, nombre:"Alejandro", apellido:"Rodriguez", carnet:2020, dpi:2020});
+        expect(res.status).to.equal(200);
+    });
+    it('Registro usuario exitoso de catedratico', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_usuario')
+        .send({rol:2, nombre:"Alejandro", apellido:"Rodriguez"});
+        expect(res.status).to.equal(200);
+    });
+    it('Registro usuario exitoso de administrador', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_usuario')
+        .send({rol:3, nombre:"Alejandro", apellido:"Rodriguez"});
+        expect(res.status).to.equal(200);
+    });
+    it('Registro usuario fallido de estudiante por falta de atributos', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_usuario')
+        .send({rol:1, nombre:"Alejandro", apellido:"Rodriguez"});
+        expect(res.status).to.equal(500);
+    });
+});
