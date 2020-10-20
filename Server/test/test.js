@@ -220,15 +220,35 @@ describe('Prueba para registrar un congreso', () => {
         .send({id:r.body[0].id})
         expect(res.status).to.equal(200);
     });
+});
 
 
+//REGISTRAR CURSO
+describe('Prueba para registrar un curso', () => {
+    it('Registrar un curso', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_curso')
+        .send({nombre: "Bases", descripcion: "Curso de bases de datos", creditos: 5, id: 1});
+
+        let r = await chai
+        .request(url)
+        .get('/ultimo_curso')
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_curso')
+        .send({id:r.body[0].id})
+        expect(res.status).to.equal(200);
+    });
+});
 
 /*
 ************************************************************************************************
 ****************************************** BDD *******************************************
 ************************************************************************************************
 */
-
+/*
 describe('BDD Login - Ingreso Exitoso', function () {
     before('Given: Usuario desea ingresar al sistema', function () {
         //se empieza proceso en el que elusuario empieza a loggearse 
@@ -249,10 +269,10 @@ describe('BDD Login - Ingreso Exitoso', function () {
     });
   
     // test cases
-  });
+});
 
 
-  describe('BDD Login - Ingreso Fallido', function () {
+describe('BDD Login - Ingreso Fallido', function () {
     before('Given: Usuario desea ingresar al sistema', function () {
         //se empieza proceso en el que elusuario empieza a loggearse 
     });
@@ -272,12 +292,8 @@ describe('BDD Login - Ingreso Exitoso', function () {
     });
   
     // test cases
-  });
-
-
-
 });
-
+*/
 /*
 *********************************************
 ******************** BDD ********************
