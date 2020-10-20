@@ -77,59 +77,70 @@ function createRouter(db) {
   *****************************************************
   */
   router.post('/registrar_usuario', (req, res, next) => {
-    if(req.body.rol == 1)
+    if(req.body.nombre != null && req.body.apellido != null)
     {
-      db.query(
-        'INSERT INTO ESTUDIANTE(nombre, apellido, carnet, dpi) VALUES(?,?,?,?)',
-        [req.body.nombre, req.body.apellido, req.body.carnet, req.body.dpi],
-        (error) => {
-          if(error)
-          {
-            console.error(error);
-            res.status(500).json({status:'error'});
+      if(req.body.rol == 1 && req.body.carnet != null && req.body.dpi != null)
+      {
+        db.query(
+          'INSERT INTO ESTUDIANTE(nombre, apellido, carnet, dpi) VALUES(?,?,?,?)',
+          [req.body.nombre, req.body.apellido, req.body.carnet, req.body.dpi],
+          (error) => {
+            if(error)
+            {
+              console.error(error);
+              res.status(500).json({status:'error'});
+            }
+            else
+            {
+              res.status(200).json({status:'ok'});
+            }
           }
-          else
-          {
-            res.status(200).json({status:'ok'});
+        );
+      }
+      else if(req.body.rol == 2)
+      {
+        db.query(
+          'INSERT INTO CATEDRATICO(nombre, apellido) VALUES(?,?)',
+          [req.body.nombre, req.body.apellido],
+          (error) => {
+            if(error)
+            {
+              console.error(error);
+              res.status(500).json({status:'error'});
+            }
+            else
+            {
+              res.status(200).json({status:'ok'});
+            }
           }
-        }
-      );
+        );
+      }
+      else if(req.body.rol == 3)
+      {
+        db.query(
+          'INSERT INTO ADMINISTRADOR(nombre, apellido) VALUES(?,?)',
+          [req.body.nombre, req.body.apellido],
+          (error) => {
+            if(error)
+            {
+              console.error(error);
+              res.status(500).json({status:'error'});
+            }
+            else
+            {
+              res.status(200).json({status:'ok'});
+            }
+          }
+        );
+      }
+      else
+      {
+        res.status(500).json({status:'error'});
+      }
     }
-    else if(req.body.rol == 2)
+    else
     {
-      db.query(
-        'INSERT INTO CATEDRATICO(nombre, apellido) VALUES(?,?)',
-        [req.body.nombre, req.body.apellido],
-        (error) => {
-          if(error)
-          {
-            console.error(error);
-            res.status(500).json({status:'error'});
-          }
-          else
-          {
-            res.status(200).json({status:'ok'});
-          }
-        }
-      );
-    }
-    else if(req.body.rol == 3)
-    {
-      db.query(
-        'INSERT INTO ADMINISTRADOR(nombre, apellido) VALUES(?,?)',
-        [req.body.nombre, req.body.apellido],
-        (error) => {
-          if(error)
-          {
-            console.error(error);
-            res.status(500).json({status:'error'});
-          }
-          else
-          {
-            res.status(200).json({status:'ok'});
-          }
-        }
-      );
+      res.status(500).json({status:'error'});
     }
   });
 
@@ -217,9 +228,9 @@ router.post('/eliminar_escuela', (req, res, next) => {
   });
 
 /*
-  ****************************************************************************
-  ************Obtener cursos para mostrarlos al momento de asignar************
-  ****************************************************************************
+  *******************************************
+  ************Registrar congresos************
+  *******************************************
   */
 
  router.post('/registrar_congreso', (req, res, next) => {
@@ -584,9 +595,60 @@ router.post('/modificar_escuela', (req, res, next) => {
   )
 });
 
+/********* Registrar cursos ********/
+router.post('/registrar_curso', (req, res, next) => {
+  db.query(
+    'INSERT INTO CURSO(nombre, no_creditos, descripcion, id_escuela) VALUES(?,?,?,?)',
+    [req.body.nombre, req.body.creditos, req.body.descripcion, req.body.id],
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
 
+router.post('/eliminar_curso', (req, res, next) => {
+  db.query(
+    'DELETE FROM CURSO WHERE id_curso = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
 
-
+//OBTENER ULTIMO REGISTRO DE CURSO
+router.get('/ultimo_curso', (req, res, next) => {
+  db.query(
+    'SELECT MAX(id_curso) AS id FROM CURSO',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
 
   return router;
 }
