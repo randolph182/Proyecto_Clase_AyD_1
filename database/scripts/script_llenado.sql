@@ -1,5 +1,5 @@
 --- INSERTANDO EN ESTUDIANTE ---- 
-INSERT INTO ESTUDIANTE(nombre,apellido)VALUES('usuario1',"apellido1");
+INSERT INTO ESTUDIANTE(nombre,apellido,carnet,dpi)VALUES('usuario1',"apellido1","202014225","2566257140101");
 INSERT INTO ESTUDIANTE_CUENTA(login,password,activo,id_estudiante)
 VALUES('usuario1@usac.com','123','1',1);
 

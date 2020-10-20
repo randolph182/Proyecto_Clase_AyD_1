@@ -6,25 +6,6 @@ function createRouter(db) {
 
   // the routes are defined here
 
-  //******Insertar escuela******
-  router.get('/insertar_escuela', (req, res, next) => {
-    db.query(
-      'INSERT INTO ESCUELA(id_escuela, nombre) VALUES(?,?)',
-      [req.body.id, req.body.nombre],
-      (error) => {
-        if(error)
-        {
-          console.error(error);
-          res.status(500).json({status:'error'});
-        }
-        else
-        {
-          res.status(200).json({status:'ok'});
-        }
-      }
-    );
-  });
-
 /*
 ************************************************************************************************
 ******************************************METODOS POST******************************************
@@ -54,7 +35,7 @@ function createRouter(db) {
     else if(req.body.rol == 2)
     {
       db.query(
-        'INSERT INTO CATE_CUENTA(login, password, activo, id_estudiante) VALUES(?,?,?,?)',
+        'INSERT INTO CATE_CUENTA(login, password, activo, id_catedratico) VALUES(?,?,?,?)',
         [req.body.login, req.body.password, req.body.activo, req.body.id],
         (error) => {
           if(error)
@@ -72,7 +53,7 @@ function createRouter(db) {
     else if(req.body.rol == 3)
     {
       db.query(
-        'INSERT INTO ADMIN_CUENTA(login, password, activo, id_estudiante) VALUES(?,?,?,?)',
+        'INSERT INTO ADMIN_CUENTA(login, password, activo, id_admin) VALUES(?,?,?,?)',
         [req.body.login, req.body.password, req.body.activo, req.body.id],
         (error) => {
           if(error)
@@ -99,8 +80,8 @@ function createRouter(db) {
     if(req.body.rol == 1)
     {
       db.query(
-        'INSERT INTO ESTUDIANTE(nombre, apellido) VALUES(?,?)',
-        [req.body.nombre, req.body.apellido],
+        'INSERT INTO ESTUDIANTE(nombre, apellido, carnet, dpi) VALUES(?,?,?,?)',
+        [req.body.nombre, req.body.apellido, req.body.carnet, req.body.dpi],
         (error) => {
           if(error)
           {
@@ -151,6 +132,149 @@ function createRouter(db) {
       );
     }
   });
+
+
+/*
+***********************************
+  ************ ESCUELA ************
+  *********************************
+
+*/
+
+
+// REGISTRO DE ESCUELA
+
+router.post('/registrar_escuela', (req, res, next) => {
+  db.query(
+    'INSERT INTO ESCUELA(nombre) VALUES(?)',
+    [req.body.nombre],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+// OBTENCION DE ESCUELA 
+router.get('/obtener_escuelas', (req, res, next) => {
+  db.query(
+    'SELECT * FROM ESCUELA',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
+router.post('/eliminar_escuela', (req, res, next) => {
+  db.query(
+    'DELETE FROM ESCUELA WHERE id_escuela = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+//OBTENER ULTIMO REGISTRO DE ESCUELA
+  router.get('/ultima_escuela', (req, res, next) => {
+    db.query(
+      'SELECT MAX(id_escuela) AS id FROM ESCUELA',
+      (error, results) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json(results);
+        }
+      }
+    );
+  });
+
+/*
+  ****************************************************************************
+  ************Obtener cursos para mostrarlos al momento de asignar************
+  ****************************************************************************
+  */
+
+ router.post('/registrar_congreso', (req, res, next) => {
+  db.query(
+    'INSERT INTO CONGRESO(nombre, ubicacion, descripcion, anio, id_escuela) VALUES(?,?,?,?,?)',
+    [req.body.nombre, req.body.ubicacion, req.body.descripcion, req.body.anio, req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+//OBTENER ULTIMO REGISTRO DE CCONGRESO
+router.get('/ultimo_congreso', (req, res, next) => {
+  db.query(
+    'SELECT MAX(id_congreso) AS id FROM CONGRESO',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
+router.post('/eliminar_congreso', (req, res, next) => {
+  db.query(
+    'DELETE FROM CONGRESO WHERE id_congreso = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
 
   /*
   ****************************************************************************
@@ -317,6 +441,152 @@ router.get('/obtener_usuarios/:rol', (req, res, next) => {
     );
   }
 });
+
+
+/*
+************************************************************************************************
+******************************************METODOS PUT*******************************************
+************************************************************************************************
+*/
+
+//******Actualizar datos de los usuarios******
+router.put('/actualizacion_datos', (req, res, next) => {
+  if(req.body.rol == 1)
+  {
+    db.query(
+      'UPDATE ESTUDIANTE SET nombre = ?, apellido = ? WHERE id_estudiante=?',
+      [req.body.nombre, req.body.apellido ,req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.rol == 2)
+  {
+    db.query(
+      'UPDATE CATEDRATICO SET nombre = ?, apellido = ? WHERE id_catedratico=?',
+      [req.body.nombre, req.body.apellido ,req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.rol == 3)
+  {
+    db.query(
+      'UPDATE ADMINISTRADOR SET nombre = ?, apellido = ? WHERE id_admin=?',
+      [req.body.nombre, req.body.apellido ,req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+});
+
+//******Dar de baja a los usuarios******
+router.put('/baja_cuenta', (req, res, next) => {
+  if(req.body.rol == 1)
+  {
+    db.query(
+      'UPDATE ESTUDIANTE_CUENTA SET activo = 0 WHERE id_estudiante=?',
+      [req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.rol == 2)
+  {
+    db.query(
+      'UPDATE CATE_CUENTA SET activo = 0 WHERE id_catedratico=?',
+      [req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.rol == 3)
+  {
+    db.query(
+      'UPDATE ADMIN_CUENTA SET activo = 0 WHERE id_admin=?',
+      [req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+});
+
+//Modificar escuela
+router.post('/modificar_escuela', (req, res, next) => {
+  db.query(
+    'UPDATE ESCUELA SET nombre = ? WHERE id_escuela = ?',
+    [req.body.nombre, req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+
+
+
 
   return router;
 }

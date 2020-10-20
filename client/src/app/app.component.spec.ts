@@ -1,12 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule
       ],
       declarations: [
         AppComponent

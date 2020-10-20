@@ -6,6 +6,8 @@ export class Catedratico {
     password:string;
     login:string;
     activo:number;
+    dpi:number;
+    carnet:number;
     
     public Catedratico(){
 

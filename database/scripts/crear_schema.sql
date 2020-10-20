@@ -102,6 +102,8 @@ CREATE TABLE ESTUDIANTE (
     id_estudiante   INTEGER AUTO_INCREMENT,
     nombre          VARCHAR(30) NOT NULL,
     apellido        VARCHAR(30) NOT NULL,
+    carnet          VARCHAR(20) NOT NULL,
+    dpi             VARCHAR(20) NOT NULL,
     PRIMARY KEY(id_estudiante)
 );
 
