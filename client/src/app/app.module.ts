@@ -22,6 +22,7 @@ import { ModificacionUsuarioComponent } from './components/modificacion-usuario/
 import { AsignacionCongresoComponent } from './components/asignacion-congreso/asignacion-congreso.component';
 import { RegistroCongresoComponent } from './components/registro-congreso/registro-congreso.component';
 import { CursosComponent } from './components/cursos/cursos.component';
+import { VerdocenteComponent } from './components/verdocente/verdocente.component';
 
 
 library.add(fas,far);
@@ -41,6 +42,7 @@ library.add(fas,far);
     ModificacionUsuarioComponent,
     CursosComponent
     RegistroEscuelaComponent,
+    VerdocenteComponent,
   ],
   imports: [
     BrowserModule,

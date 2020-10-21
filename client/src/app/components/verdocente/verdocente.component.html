@@ -1,0 +1,29 @@
+<app-encabezado></app-encabezado>
+<p>Docentes actualmente registrados</p>
+<div class="reglist">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Docente</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let docente of docentes; let i =index ">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ docente.nombre }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="form-group row">
+  <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+  <div class="col-md-8">
+      <input id="name" name="name" type="text" placeholder="Docente"
+       class="form-control" type="text" [(ngModel)]="escuela.nombre" name="apellido">
+       <span style="color:red;"></span>
+       
+  </div>
+</div>
