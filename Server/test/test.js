@@ -243,6 +243,26 @@ describe('Prueba para registrar un curso', () => {
     });
 });
 
+//REGISTRAR CICLO
+describe('Prueba para registrar un ciclo académico', () => {
+    it('Registrar ciclo', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_ciclo')
+        .send({nombre: "primer semestre", anio: 2020});
+
+        let r = await chai
+        .request(url)
+        .get('/ultimo_ciclo')
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_ciclo')
+        .send({id:r.body[0].id})
+        expect(res.status).to.equal(200);
+    });
+});
+
 /*
 ************************************************************************************************
 ****************************************** BDD *******************************************
@@ -305,21 +325,21 @@ describe('Prueba para el registro de un usuario:', () =>{
         let res = await chai
         .request(url)
         .post('/registrar_usuario')
-        .send({rol:1, nombre:"Alejandro", apellido:"Rodriguez", carnet:2020, dpi:2020});
+        .send({rol:1, nombre:"Alejandro", apellido:"Rodriguez", carnet:2021, dpi:2021});
         expect(res.status).to.equal(200);
     });
     it('Registro usuario exitoso de catedratico', async () => {
         let res = await chai
         .request(url)
         .post('/registrar_usuario')
-        .send({rol:2, nombre:"Alejandro", apellido:"Rodriguez"});
+        .send({rol:2, nombre:"Alejandro", apellido:"Rodriguez", dpi:2020});
         expect(res.status).to.equal(200);
     });
     it('Registro usuario exitoso de administrador', async () => {
         let res = await chai
         .request(url)
         .post('/registrar_usuario')
-        .send({rol:3, nombre:"Alejandro", apellido:"Rodriguez"});
+        .send({rol:3, nombre:"Alejandro", apellido:"Rodriguez", dpi:2020});
         expect(res.status).to.equal(200);
     });
     it('Registro usuario fallido de estudiante por falta de atributos', async () => {
