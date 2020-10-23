@@ -263,6 +263,46 @@ describe('Prueba para registrar un ciclo académico', () => {
     });
 });
 
+//REGISTRAR SECCION
+describe('Prueba para registrar una seccion', () => {
+    it('Registrar seccion', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_seccion')
+        .send({curso: 1, salon: 1, seccion: "A"});
+
+        let r = await chai
+        .request(url)
+        .get('/ultima_seccion')
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_seccion')
+        .send({id:r.body[0].id})
+        expect(res.status).to.equal(200);
+    });
+});
+
+//ASIGNAR CATEDRATICO
+describe('Prueba para asignar un catedratico', () => {
+    it('Asignar catedratico', async () => {
+        let res = await chai
+        .request(url)
+        .post('/asignar_catedratico')
+        .send({id_ciclo: 1, id_cat: 1});
+
+        let r = await chai
+        .request(url)
+        .get('/ultima_asig_cat')
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_asig_cat')
+        .send({id:r.body[0].id})
+        expect(res.status).to.equal(200);
+    });
+});
+
 /*
 ************************************************************************************************
 ****************************************** BDD *******************************************
@@ -320,6 +360,7 @@ describe('BDD Login - Ingreso Fallido', function () {
 *********************************************
 */
 
+/*
 describe('Prueba para el registro de un usuario:', () =>{
     it('Registro usuario exitoso de estudiante', async () => {
         let res = await chai
@@ -350,3 +391,4 @@ describe('Prueba para el registro de un usuario:', () =>{
         expect(res.status).to.equal(500);
     });
 });
+*/

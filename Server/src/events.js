@@ -687,7 +687,7 @@ router.post('/eliminar_ciclo', (req, res, next) => {
   )
 });
 
-//OBTENER ULTIMA ASIGNACION DE CATEDRATICO
+//OBTENER ULTIMA ASIGNACION DE CICLO ACADEMICO
 router.get('/ultimo_ciclo', (req, res, next) => {
   db.query(
     'SELECT MAX(id_cl_acad) AS id FROM CICLO_ACADEMICO',
@@ -724,7 +724,41 @@ router.post('/asignar_catedratico', (req, res, next) => {
   );
 });
 
+router.post('/eliminar_asig_cat', (req, res, next) => {
+  db.query(
+    'DELETE FROM ASIG_CATEDRATICO WHERE id_asig_cate = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
 
+//OBTENER ULTIMA ASIGNACION DE CATEDRATICO
+router.get('/ultima_asig_cat', (req, res, next) => {
+  db.query(
+    'SELECT MAX(id_asig_cate) AS id FROM ASIG_CATEDRATICO',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
 
 /********* Detalle asig_catedrático ********/
 router.post('/detalle_cat_curso', (req, res, next) => {
@@ -740,6 +774,61 @@ router.post('/detalle_cat_curso', (req, res, next) => {
       else
       {
         res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
+
+/********* Registrar sección ********/
+router.post('/registrar_seccion', (req, res, next) => {
+  db.query(
+    'INSERT INTO SECCION(seccion, id_curso, id_salon) VALUES(?,?,?)',
+    [req.body.seccion, req.body.curso, req.body.salon],
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
+
+router.post('/eliminar_seccion', (req, res, next) => {
+  db.query(
+    'DELETE FROM SECCION WHERE id_seccion = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+//OBTENER ULTIMA ASIGNACION DE CICLO ACADEMICO
+router.get('/ultima_seccion', (req, res, next) => {
+  db.query(
+    'SELECT MAX(id_seccion) AS id FROM SECCION',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
       }
     }
   );
