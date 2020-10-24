@@ -709,7 +709,7 @@ router.get('/ultimo_ciclo', (req, res, next) => {
 router.post('/asignar_catedratico', (req, res, next) => {
   db.query(
     'INSERT INTO ASIG_CATEDRATICO(id_cl_acad, id_catedratico) VALUES(?,?)',
-    [req.body.id_ciclo, req.body.id_cat],
+    [req.body.ciclo, req.body.cat],
     (error, results) => {
       if(error)
       {
@@ -764,7 +764,7 @@ router.get('/ultima_asig_cat', (req, res, next) => {
 router.post('/detalle_cat_curso', (req, res, next) => {
   db.query(
     'INSERT INTO DETALLE_CAT_CURSO(id_seccion, id_asig_cate) VALUES(?,?)',
-    [req.body.id_ciclo, req.body.id_cat],
+    [req.body.seccion, req.body.asignacion],
     (error, results) => {
       if(error)
       {
@@ -777,6 +777,24 @@ router.post('/detalle_cat_curso', (req, res, next) => {
       }
     }
   );
+});
+
+router.post('/eliminar_detalle_cat_curso', (req, res, next) => {
+  db.query(
+    'DELETE FROM DETALLE_CAT_CURSO WHERE id_seccion = ? AND id_asig_cate = ?',
+    [req.body.seccion, req.body.asignacion],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
 });
 
 /********* Registrar sección ********/

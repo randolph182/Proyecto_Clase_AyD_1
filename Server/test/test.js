@@ -289,7 +289,23 @@ describe('Prueba para asignar un catedratico', () => {
         let res = await chai
         .request(url)
         .post('/asignar_catedratico')
-        .send({id_ciclo: 1, id_cat: 1});
+        .send({ciclo: 1, cat: 1});
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_detalle_cat_curso')
+        .send({seccion: 1, asignacion:1})
+        expect(res.status).to.equal(200);
+    });
+});
+
+//ASIGNAR CATEDRATICO
+describe('Prueba para el detalle de curso y catedratico', () => {
+    it('Detalle de curso y catedratico', async () => {
+        let res = await chai
+        .request(url)
+        .post('/detalle_cat_curso')
+        .send({seccion: 1, asignacion: 1});
 
         let r = await chai
         .request(url)
