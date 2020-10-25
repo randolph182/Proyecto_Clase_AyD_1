@@ -77,9 +77,9 @@ function createRouter(db) {
   *****************************************************
   */
   router.post('/registrar_usuario', (req, res, next) => {
-    if(req.body.nombre != null && req.body.apellido != null)
+    if(req.body.nombre != null || req.body.apellido != null ||  req.body.dpi != null)
     {
-      if(req.body.rol == 1 && req.body.carnet != null && req.body.dpi != null)
+      if(req.body.rol == 1 && req.body.carnet != null)
       {
         db.query(
           'INSERT INTO ESTUDIANTE(nombre, apellido, carnet, dpi) VALUES(?,?,?,?)',
@@ -100,8 +100,8 @@ function createRouter(db) {
       else if(req.body.rol == 2)
       {
         db.query(
-          'INSERT INTO CATEDRATICO(nombre, apellido) VALUES(?,?)',
-          [req.body.nombre, req.body.apellido],
+          'INSERT INTO CATEDRATICO(nombre, apellido, dpi) VALUES(?,?,?)',
+          [req.body.nombre, req.body.apellido, req.body.dpi],
           (error) => {
             if(error)
             {
@@ -118,8 +118,8 @@ function createRouter(db) {
       else if(req.body.rol == 3)
       {
         db.query(
-          'INSERT INTO ADMINISTRADOR(nombre, apellido) VALUES(?,?)',
-          [req.body.nombre, req.body.apellido],
+          'INSERT INTO ADMINISTRADOR(nombre, apellido, dpi) VALUES(?,?,?)',
+          [req.body.nombre, req.body.apellido, req.body.dpi],
           (error) => {
             if(error)
             {
@@ -636,6 +636,208 @@ router.post('/eliminar_curso', (req, res, next) => {
 router.get('/ultimo_curso', (req, res, next) => {
   db.query(
     'SELECT MAX(id_curso) AS id FROM CURSO',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
+/********* Registrar ciclo académico ********/
+router.post('/registrar_ciclo', (req, res, next) => {
+  db.query(
+    'INSERT INTO CICLO_ACADEMICO(nombre, anio) VALUES(?,?)',
+    [req.body.nombre, req.body.anio],
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
+
+router.post('/eliminar_ciclo', (req, res, next) => {
+  db.query(
+    'DELETE FROM CICLO_ACADEMICO WHERE id_cl_acad = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+//OBTENER ULTIMA ASIGNACION DE CICLO ACADEMICO
+router.get('/ultimo_ciclo', (req, res, next) => {
+  db.query(
+    'SELECT MAX(id_cl_acad) AS id FROM CICLO_ACADEMICO',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
+/********* Asignar catedrático ********/
+router.post('/asignar_catedratico', (req, res, next) => {
+  db.query(
+    'INSERT INTO ASIG_CATEDRATICO(id_cl_acad, id_catedratico) VALUES(?,?)',
+    [req.body.ciclo, req.body.cat],
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
+
+router.post('/eliminar_asig_cat', (req, res, next) => {
+  db.query(
+    'DELETE FROM ASIG_CATEDRATICO WHERE id_asig_cate = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+//OBTENER ULTIMA ASIGNACION DE CATEDRATICO
+router.get('/ultima_asig_cat', (req, res, next) => {
+  db.query(
+    'SELECT MAX(id_asig_cate) AS id FROM ASIG_CATEDRATICO',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
+/********* Detalle asig_catedrático ********/
+router.post('/detalle_cat_curso', (req, res, next) => {
+  db.query(
+    'INSERT INTO DETALLE_CAT_CURSO(id_seccion, id_asig_cate) VALUES(?,?)',
+    [req.body.seccion, req.body.asignacion],
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
+
+router.post('/eliminar_detalle_cat_curso', (req, res, next) => {
+  db.query(
+    'DELETE FROM DETALLE_CAT_CURSO WHERE id_seccion = ? AND id_asig_cate = ?',
+    [req.body.seccion, req.body.asignacion],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+/********* Registrar sección ********/
+router.post('/registrar_seccion', (req, res, next) => {
+  db.query(
+    'INSERT INTO SECCION(seccion, id_curso, id_salon) VALUES(?,?,?)',
+    [req.body.seccion, req.body.curso, req.body.salon],
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
+
+router.post('/eliminar_seccion', (req, res, next) => {
+  db.query(
+    'DELETE FROM SECCION WHERE id_seccion = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+//OBTENER ULTIMA ASIGNACION DE CICLO ACADEMICO
+router.get('/ultima_seccion', (req, res, next) => {
+  db.query(
+    'SELECT MAX(id_seccion) AS id FROM SECCION',
     (error, results) => {
       if(error)
       {
