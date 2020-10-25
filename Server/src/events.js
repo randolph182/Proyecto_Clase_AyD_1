@@ -852,6 +852,98 @@ router.get('/ultima_seccion', (req, res, next) => {
   );
 });
 
+/********* Registrar asignacion de estudiante ********/
+router.post('/registrar_asig_estudiante', (req, res, next) => {
+  db.query(
+    'INSERT INTO ASIG_ESTUDIANTE(id_estudiante, id_cl_acad) VALUES(?,?)',
+    [req.body.estudiante, req.body.ciclo],
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
+
+router.post('/eliminar_asig_estudiante', (req, res, next) => {
+  db.query(
+    'DELETE FROM ASIG_ESTUDIANTE WHERE id_asig_est = ?',
+    [req.body.id],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
+//OBTENER ULTIMA ASIGNACION DE ESTUDIANTE
+router.get('/ultima_asig_estudiante', (req, res, next) => {
+  db.query(
+    'SELECT MAX(id_asig_est) AS id FROM ASIG_ESTUDIANTE',
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json(results);
+      }
+    }
+  );
+});
+
+/********* Registrar asignacion de estudiante ********/
+router.post('/detalle_asig_est', (req, res, next) => {
+  db.query(
+    'INSERT INTO DETALLE_ASIG_EST(id_asig_est, id_seccion, nota, zona) VALUES(?,?,?,?)',
+    [req.body.asignacion, req.body.seccion, req.body.nota, req.body.zona],
+    (error, results) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  );
+});
+
+router.post('/eliminar_detalle_asig_est', (req, res, next) => {
+  db.query(
+    'DELETE FROM DETALLE_ASIG_EST WHERE id_asig_est = ? AND id_seccion = ?',
+    [req.body.asignacion, req.body.seccion],
+    (error) => {
+      if(error)
+      {
+        console.error(error);
+        res.status(500).json({status:'error'});
+      }
+      else
+      {
+        res.status(200).json({status:'ok'});
+      }
+    }
+  )
+});
+
   return router;
 }
 module.exports = createRouter;
