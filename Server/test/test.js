@@ -291,22 +291,6 @@ describe('Prueba para asignar un catedratico', () => {
         .post('/asignar_catedratico')
         .send({ciclo: 1, cat: 1});
 
-        let bo = await chai
-        .request(url)
-        .post('/eliminar_detalle_cat_curso')
-        .send({seccion: 1, asignacion:1})
-        expect(res.status).to.equal(200);
-    });
-});
-
-//ASIGNAR CATEDRATICO
-describe('Prueba para el detalle de curso y catedratico', () => {
-    it('Detalle de curso y catedratico', async () => {
-        let res = await chai
-        .request(url)
-        .post('/detalle_cat_curso')
-        .send({seccion: 1, asignacion: 1});
-
         let r = await chai
         .request(url)
         .get('/ultima_asig_cat')
@@ -315,6 +299,58 @@ describe('Prueba para el detalle de curso y catedratico', () => {
         .request(url)
         .post('/eliminar_asig_cat')
         .send({id:r.body[0].id})
+        expect(res.status).to.equal(200);
+    });
+});
+
+//REGISTRAR DETALLE DE CURSO CATEDRATICO
+describe('Prueba para el detalle de curso y catedratico', () => {
+    it('Detalle de curso y catedratico', async () => {
+        let res = await chai
+        .request(url)
+        .post('/detalle_cat_curso')
+        .send({seccion: 2, asignacion: 2});
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_detalle_cat_curso')
+        .send({seccion: 2, asignacion:2})
+        expect(res.status).to.equal(200);
+    });
+});
+
+//REGISTRO ASIGNACION DE ESTUDIANTE
+describe('Prueba para registrar asignacion de estudiante', () => {
+    it('Estudiante y ciclo academico', async () => {
+        let res = await chai
+        .request(url)
+        .post('/registrar_asig_estudiante')
+        .send({estudiante: 1, ciclo: 1});
+
+        let r = await chai
+        .request(url)
+        .get('/ultima_asig_estudiante')
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_asig_estudiante')
+        .send({id:r.body[0].id})
+        expect(res.status).to.equal(200);
+    });
+});
+
+//REGISTRO DETALLE ASIG_ESTUDIANTE Y SECCION
+describe('Prueba para registrar detalle de estudiante y seccion', () => {
+    it('', async () => {
+        let res = await chai
+        .request(url)
+        .post('/detalle_asig_est')
+        .send({asignacion: 1, seccion: 1, nota:0, zona:0});
+
+        let bo = await chai
+        .request(url)
+        .post('/eliminar_detalle_asig_est')
+        .send({asignacion: 1, seccion:1})
         expect(res.status).to.equal(200);
     });
 });
