@@ -944,6 +944,46 @@ router.post('/eliminar_detalle_asig_est', (req, res, next) => {
   )
 });
 
+//******Actualizar datos de los usuarios******
+router.put('/update_cat_asig', (req, res, next) => {
+  if(req.body.ciclo != null)
+  {
+    db.query(
+      'UPDATE ASIG_CATEDRATICO SET id_cl_acad = ? WHERE id_asig_cate = ?',
+      [req.body.ciclo, req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.catedratico != null)
+  {
+    db.query(
+      'UPDATE ASIG_CATEDRATICO SET id_catedratico = ? WHERE id_asig_cate = ?',
+      [req.body.catedratico, req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+});
+
   return router;
 }
 module.exports = createRouter;
