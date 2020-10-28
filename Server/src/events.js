@@ -944,7 +944,7 @@ router.post('/eliminar_detalle_asig_est', (req, res, next) => {
   )
 });
 
-//******Actualizar datos de los usuarios******
+//******Actualizar datos de la asignación de catedratico******
 router.put('/update_cat_asig', (req, res, next) => {
   if(req.body.ciclo != null)
   {
@@ -969,6 +969,46 @@ router.put('/update_cat_asig', (req, res, next) => {
     db.query(
       'UPDATE ASIG_CATEDRATICO SET id_catedratico = ? WHERE id_asig_cate = ?',
       [req.body.catedratico, req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+  else if(req.body.catedratico != null && req.body.ciclo != null)
+  {
+    db.query(
+      'UPDATE ASIG_CATEDRATICO SET id_catedratico = ? AND id_cl_acad = ? WHERE id_asig_cate = ?',
+      [req.body.catedratico, req.body.ciclo, req.body.id],
+      (error) => {
+        if(error)
+        {
+          console.error(error);
+          res.status(500).json({status:'error'});
+        }
+        else
+        {
+          res.status(200).json({status:'ok'});
+        }
+      }
+    );
+  }
+});
+
+//******Actualizar datos del detalle de asgnacion de catedratico******
+router.put('/update_detalle_asig_cat', (req, res, next) => {
+  if(req.body.seccion != null)
+  {
+    db.query(
+      'UPDATE DETALLE_CAT_CURSO SET id_seccion = ? WHERE id_asig_cate = ?',
+      [req.body.seccion, req.body.id],
       (error) => {
         if(error)
         {
