@@ -443,4 +443,29 @@ describe('Prueba para el registro de un usuario:', () =>{
         expect(res.status).to.equal(500);
     });
 });
+
+/*
+*********************************************
+******* BDD insertar Catedratico  ***************
+*********************************************
 */
+describe.only('Registrar un nuevo Catedratico', function(){
+    context('Given: nombre de un nuevo catedrtico', function(){
+        it('Deberia tirar error si existe el catedratico en el sistema', async ()=>{
+            let res = await chai
+            .request(url)
+            .post('/registrar_usuario')
+            .send({rol:2, nombre:"randolph", apellido:"muy", dpi:"2020"});
+            expect(res.status).to.equal(500);
+        });
+    });
+    context('When: No existe un Catedratico', function(){
+        it('debo poder registrarme exitosamente', async ()=>{
+            let res = await chai
+            .request(url)
+            .post('/registrar_usuario')
+            .send({rol:2, nombre:"randolph", apellido:"muy", dpi:"20201"});
+            expect(res.status).to.equal(500);
+        });
+    });
+});
