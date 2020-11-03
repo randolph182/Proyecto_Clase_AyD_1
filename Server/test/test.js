@@ -337,7 +337,7 @@ describe('Prueba para el registro de un usuario:', () =>{
 *********************************************
 */
 describe.only('Registrar un nuevo Catedratico', function(){
-    context('Given: Quiero registrar un Nuevo catedratico', function(){
+    context('Given: nombre de un nuevo catedrtico', function(){
         it('Deberia tirar error si existe el catedratico en el sistema', async ()=>{
             let res = await chai
             .request(url)
