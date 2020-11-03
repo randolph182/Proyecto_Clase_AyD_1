@@ -207,7 +207,7 @@ describe('Prueba para registrar un congreso', () => {
     it('Registrar un congreso', async () => {
         let res = await chai
         .request(url)
-        .post('/registrar_congresok')
+        .post('/registrar_congreso')
         .send({nombre: "Sistemas", descripcion: "Sistemas", ubicacion: "Sistemas", anio: 2019, id: 1});
 
         let r = await chai
