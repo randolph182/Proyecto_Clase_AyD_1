@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/-OLC2-Proyecto/static/css/main.e2635582.chunk.css",
+    "main.js": "/-OLC2-Proyecto/static/js/main.6be07449.chunk.js",
+    "main.js.map": "/-OLC2-Proyecto/static/js/main.6be07449.chunk.js.map",
+    "runtime-main.js": "/-OLC2-Proyecto/static/js/runtime-main.7210e4ee.js",
+    "runtime-main.js.map": "/-OLC2-Proyecto/static/js/runtime-main.7210e4ee.js.map",
+    "static/css/2.c7a26ce1.chunk.css": "/-OLC2-Proyecto/static/css/2.c7a26ce1.chunk.css",
+    "static/js/2.acff0128.chunk.js": "/-OLC2-Proyecto/static/js/2.acff0128.chunk.js",
+    "static/js/2.acff0128.chunk.js.map": "/-OLC2-Proyecto/static/js/2.acff0128.chunk.js.map",
+    "static/js/3.b416fca1.chunk.js": "/-OLC2-Proyecto/static/js/3.b416fca1.chunk.js",
+    "static/js/3.b416fca1.chunk.js.map": "/-OLC2-Proyecto/static/js/3.b416fca1.chunk.js.map",
+    "index.html": "/-OLC2-Proyecto/index.html",
+    "static/css/2.c7a26ce1.chunk.css.map": "/-OLC2-Proyecto/static/css/2.c7a26ce1.chunk.css.map",
+    "static/css/main.e2635582.chunk.css.map": "/-OLC2-Proyecto/static/css/main.e2635582.chunk.css.map",
+    "static/js/2.acff0128.chunk.js.LICENSE.txt": "/-OLC2-Proyecto/static/js/2.acff0128.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/-OLC2-Proyecto/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7210e4ee.js",
+    "static/css/2.c7a26ce1.chunk.css",
+    "static/js/2.acff0128.chunk.js",
+    "static/css/main.e2635582.chunk.css",
+    "static/js/main.6be07449.chunk.js"
+  ]
+}
